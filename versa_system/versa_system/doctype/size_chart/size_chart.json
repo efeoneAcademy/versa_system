@@ -1,0 +1,65 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{SC}-{DD}-{MM}-{YY}",
+ "creation": "2024-05-31 12:50:09.002053",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "length",
+  "width",
+  "radius",
+  "dimension"
+ ],
+ "fields": [
+  {
+   "fieldname": "length",
+   "fieldtype": "Float",
+   "label": "Length",
+   "precision": "2"
+  },
+  {
+   "fieldname": "width",
+   "fieldtype": "Float",
+   "label": "Width",
+   "precision": "2"
+  },
+  {
+   "fieldname": "radius",
+   "fieldtype": "Float",
+   "label": "Radius",
+   "precision": "2"
+  },
+  {
+   "fieldname": "dimension",
+   "fieldtype": "Float",
+   "label": "Dimension",
+   "precision": "2"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-05-31 13:21:03.887461",
+ "modified_by": "Administrator",
+ "module": "Versa System",
+ "name": "Size Chart",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

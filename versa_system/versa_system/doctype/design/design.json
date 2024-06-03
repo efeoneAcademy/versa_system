@@ -1,10 +1,12 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:design_name",
  "creation": "2024-05-31 12:43:48.070371",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "design_name",
   "item_type",
   "image",
   "model"
@@ -23,16 +25,24 @@
   },
   {
    "fieldname": "model",
+   "fieldtype": "Link",
+   "label": "Model",
+   "options": "Model"
+  },
+  {
+   "fieldname": "design_name",
    "fieldtype": "Data",
-   "label": "Model"
+   "label": "Design Name",
+   "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-31 13:09:09.306319",
+ "modified": "2024-05-31 13:54:06.042181",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Design",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

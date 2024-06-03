@@ -1,13 +1,14 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:MD-{DD}{MM}{YY}{####}",
  "creation": "2024-06-03 09:47:06.696455",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "mockup_design_name",
   "item_type",
-  "image"
+  "image",
+  "from_lead"
  ],
  "fields": [
   {
@@ -22,17 +23,19 @@
    "label": "Image"
   },
   {
-   "fieldname": "mockup_design_name",
-   "fieldtype": "Data",
-   "label": "Mockup Design Name"
+   "fieldname": "from_lead",
+   "fieldtype": "Link",
+   "label": "From Lead",
+   "options": "Lead"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 09:50:12.253145",
+ "modified": "2024-06-03 14:14:05.077725",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Mockup Design",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

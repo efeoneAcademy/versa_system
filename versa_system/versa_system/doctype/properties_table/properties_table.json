@@ -1,0 +1,101 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:item_type",
+ "creation": "2024-06-03 09:59:37.035887",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "item_type",
+  "material_type",
+  "design",
+  "model",
+  "brand",
+  "size_chart",
+  "colour",
+  "customized",
+  "make"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_type",
+   "fieldtype": "Link",
+   "label": "Item Type",
+   "options": "Item Type",
+   "unique": 1
+  },
+  {
+   "fieldname": "material_type",
+   "fieldtype": "Link",
+   "label": "Material Type",
+   "options": "Material Type"
+  },
+  {
+   "fieldname": "design",
+   "fieldtype": "Link",
+   "label": "Design",
+   "options": "Design"
+  },
+  {
+   "fieldname": "model",
+   "fieldtype": "Link",
+   "label": "Model",
+   "options": "Model"
+  },
+  {
+   "fieldname": "brand",
+   "fieldtype": "Link",
+   "label": "Brand",
+   "options": "Brand Name"
+  },
+  {
+   "fieldname": "size_chart",
+   "fieldtype": "Link",
+   "label": "Size Chart",
+   "options": "Size Chart"
+  },
+  {
+   "fieldname": "colour",
+   "fieldtype": "Link",
+   "label": "Colour",
+   "options": "Colour"
+  },
+  {
+   "default": "0",
+   "fieldname": "customized",
+   "fieldtype": "Check",
+   "label": "Customized"
+  },
+  {
+   "fieldname": "make",
+   "fieldtype": "Select",
+   "label": "Make",
+   "options": "Hand Made\nMachine Made"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-06-03 10:12:25.514260",
+ "modified_by": "Administrator",
+ "module": "Versa System",
+ "name": "Properties Table",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

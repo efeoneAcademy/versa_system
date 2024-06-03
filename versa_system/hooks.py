@@ -228,5 +228,6 @@ app_license = "mit"
 # }
 
 fixtures = [
-    {"dt":"Role", "filters":[["name", "=", "Manufacturing  User"]]}
+    {"dt":"Role", "filters":[["name", "=", "Manufacturing  User"]]},
+    {"dt":"Workflow","filters":[["name","in",["Feasibility"]]]},
 ]

@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestFesibilityPropertyCheck(FrappeTestCase):
+class TestFeasibilityPropertyCheck(FrappeTestCase):
 	pass

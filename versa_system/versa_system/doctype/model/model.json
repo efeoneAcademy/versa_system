@@ -27,7 +27,7 @@
   },
   {
    "fieldname": "description",
-   "fieldtype": "Data",
+   "fieldtype": "Text",
    "label": "Description"
   },
   {
@@ -42,7 +42,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-31 13:05:48.977260",
+ "modified": "2024-06-03 12:28:59.512443",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Model",

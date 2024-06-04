@@ -230,4 +230,7 @@ app_license = "mit"
 fixtures = [
     {"dt":"Role", "filters":[["name", "=", "Manufacturing  User"]]},
     {"dt":"Workflow","filters":[["name","in",["Feasibility"]]]},
+    {"dt":"Workflow State","filters":[["name","in",["sent to customer"]]]},
+    {"dt":"Workflow Action Master","filters":[["name","in",["send to customer"]]]},
+    {"dt":"Workflow","filters":[["name","in",["Quotation Workflow"]]]},
 ]

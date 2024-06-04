@@ -122,12 +122,14 @@ app_license = "mit"
 # ---------------
 # Hook on document methods and events
 
+# my_custom_app/my_custom_app/hooks.py
+
+# versa_system/versa_system/hooks.py
+
 # doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
+#     "Feasibility Property Check": {
+#         "on_update": "versa_system.versa_system.doctype.feasibility_property_check.feasibility_property_check.update_lead_status"
+#     }
 # }
 
 # Scheduled Tasks
@@ -230,4 +232,5 @@ app_license = "mit"
 fixtures = [
     {"dt":"Role", "filters":[["name", "=", "Manufacturing  User"]]},
     {"dt":"Workflow","filters":[["name","in",["Feasibility"]]]},
+    {"dt":"Property Setter", "filters":[["module", "=", "Versa System"]]}
 ]

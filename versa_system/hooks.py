@@ -232,5 +232,6 @@ app_license = "mit"
 fixtures = [
     {"dt":"Role", "filters":[["name", "=", "Manufacturing  User"]]},
     {"dt":"Workflow","filters":[["name","in",["Feasibility"]]]},
-    {"dt":"Property Setter", "filters":[["module", "=", "Versa System"]]}
+    {"dt":"Property Setter", "filters":[["module", "=", "Versa System"]]},
+    {"dt":"Workflow", "filters":[["name","in",["Mockup Design Approval"]]]},
 ]

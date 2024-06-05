@@ -13,5 +13,23 @@ frappe.ui.form.on('Lead', {
       frm.remove_custom_button('Prospect', 'Create');
       frm.remove_custom_button('Opportunity', 'Create');
     }, 10);
+
+    frm.add_custom_button(__('Mockup Design'), function() {
+      /**
+     * created a new custombutton MockupDesign in lead doc
+     */
+        frappe.call({
+            method: "versa_system.versa_system.custom_scripts.lead.lead.custom_button_for_mockup_design",
+            args: {
+                source_name: frm.doc.name
+            },
+            callback: function(r) {
+                if (r.message) {
+                    frappe.set_route("Form", "Mockup Design", r.message);
+                }
+            }
+        });
+    }, __('Create'));
+
   }
 });

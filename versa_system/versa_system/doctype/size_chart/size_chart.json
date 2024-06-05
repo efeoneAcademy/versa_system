@@ -1,11 +1,12 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{SC}-{DD}-{MM}-{YY}",
+ "autoname": "format:{SC}-{DD}{MM}{YY}{####}",
  "creation": "2024-05-31 12:50:09.002053",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "uom",
   "length",
   "width",
   "radius",
@@ -35,11 +36,17 @@
    "fieldtype": "Float",
    "label": "Dimension",
    "precision": "2"
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "Unit of Measure",
+   "options": "UOM"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-31 13:21:03.887461",
+ "modified": "2024-06-05 12:50:07.825650",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Size Chart",

@@ -52,7 +52,35 @@ def map_lead_to_feasibility_check(source_name, target_doc=None):
             },
         }, target_doc, set_missing_values)
 
-    target_doc.submit()
-    frappe.msgprint(('Feasibility Check created'), indicator="green", alert=1)
-    frappe.db.commit()
-    return target_doc.name
+    return target_doc
+
+@frappe.whitelist()
+def map_lead_to_mockup_design(source_name, target_doc=None):
+    """method to get Mockup Design for custom button in lead doctype by using mapdoc.
+       output: data from lead is mapped to a new mockup design document
+    """
+    def set_missing_values(source, target):
+        pass
+
+    target_doc = get_mapped_doc("Lead", source_name,
+    {
+        "Lead": {
+            "doctype": "Mockup Design",
+            "field_map": {
+            },
+        },
+         "Properties Table": {
+                "doctype": "Properties Table",
+                 "field_map": {
+                    'item_type': 'item_type',
+                    'meterial_type': 'meterial_type',
+                    'design': 'design',
+                    'model': 'model',
+                    'brand': 'brand',
+                    'size_chart': 'size_chart',
+                    'rate_range': 'rate_range'
+                },
+            },
+    }, target_doc, set_missing_values)
+
+    return target_doc

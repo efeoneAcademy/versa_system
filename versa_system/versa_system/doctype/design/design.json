@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:item_type",
+ "autoname": "format:DS-{DD}{MM}{YY}{####}",
  "creation": "2024-05-31 12:43:48.070371",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -15,8 +15,7 @@
    "fieldname": "item_type",
    "fieldtype": "Link",
    "label": "Item Type",
-   "options": "Item Type",
-   "unique": 1
+   "options": "Item Type"
   },
   {
    "fieldname": "image",
@@ -32,11 +31,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 12:25:50.370967",
+ "modified": "2024-06-05 11:08:49.015113",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Design",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

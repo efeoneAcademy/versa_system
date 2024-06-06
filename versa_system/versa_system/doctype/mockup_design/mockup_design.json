@@ -8,6 +8,7 @@
  "field_order": [
   "from_lead",
   "properties",
+  "column_break_xuvm",
   "image"
  ],
  "fields": [
@@ -27,11 +28,15 @@
    "fieldtype": "Table",
    "label": "Properties",
    "options": "Properties Table"
+  },
+  {
+   "fieldname": "column_break_xuvm",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-06 09:50:30.603965",
+ "modified": "2024-06-06 12:18:39.184295",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Mockup Design",

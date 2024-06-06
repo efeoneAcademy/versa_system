@@ -9,6 +9,7 @@
   "design_name",
   "item_type",
   "model",
+  "column_break_dsww",
   "image"
  ],
  "fields": [
@@ -34,11 +35,15 @@
    "fieldtype": "Data",
    "label": "Design Name",
    "unique": 1
+  },
+  {
+   "fieldname": "column_break_dsww",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-05 14:15:13.251179",
+ "modified": "2024-06-06 12:16:54.718751",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Design",

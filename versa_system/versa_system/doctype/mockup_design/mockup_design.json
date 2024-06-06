@@ -6,32 +6,32 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "item_type",
-  "image",
-  "from_lead"
+  "from_lead",
+  "properties",
+  "image"
  ],
  "fields": [
   {
-   "fieldname": "item_type",
-   "fieldtype": "Link",
-   "label": "Item Type",
-   "options": "Item Type"
-  },
-  {
    "fieldname": "image",
    "fieldtype": "Attach Image",
-   "label": "Image"
+   "label": "Mockup Design"
   },
   {
    "fieldname": "from_lead",
    "fieldtype": "Link",
    "label": "From Lead",
    "options": "Lead"
+  },
+  {
+   "fieldname": "properties",
+   "fieldtype": "Table",
+   "label": "Properties",
+   "options": "Properties Table"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 14:14:05.077725",
+ "modified": "2024-06-06 09:50:30.603965",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Mockup Design",

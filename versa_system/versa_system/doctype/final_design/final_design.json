@@ -6,6 +6,8 @@
  "engine": "InnoDB",
  "field_order": [
   "from_lead",
+  "properties_table",
+  "quotation_items",
   "column_break_edmg",
   "image"
  ],
@@ -24,11 +26,23 @@
   {
    "fieldname": "column_break_edmg",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "properties_table",
+   "fieldtype": "Table",
+   "label": "Properties Table",
+   "options": "Properties Table"
+  },
+  {
+   "fieldname": "quotation_items",
+   "fieldtype": "Table",
+   "label": "Quotation Items",
+   "options": "Quotation Item"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-06 12:18:56.263928",
+ "modified": "2024-06-06 15:33:35.287753",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Final Design",

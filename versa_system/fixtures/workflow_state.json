@@ -3,9 +3,18 @@
   "docstatus": 0,
   "doctype": "Workflow State",
   "icon": "",
-  "modified": "2024-06-04 11:59:32.022789",
-  "name": "Sent to Customer",
+  "modified": "2024-06-06 12:34:23.344180",
+  "name": "Review Request",
   "style": "",
-  "workflow_state_name": "Sent to Customer"
+  "workflow_state_name": "Review Request"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "question-sign",
+  "modified": "2024-05-31 14:59:37.523490",
+  "name": "Pending",
+  "style": "",
+  "workflow_state_name": "Pending"
  }
 ]

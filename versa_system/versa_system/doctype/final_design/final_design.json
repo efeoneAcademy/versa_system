@@ -6,6 +6,7 @@
  "engine": "InnoDB",
  "field_order": [
   "from_lead",
+  "column_break_edmg",
   "image"
  ],
  "fields": [
@@ -19,11 +20,15 @@
    "fieldname": "image",
    "fieldtype": "Attach",
    "label": "Image"
+  },
+  {
+   "fieldname": "column_break_edmg",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-05 16:15:40.880195",
+ "modified": "2024-06-06 12:18:56.263928",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Final Design",

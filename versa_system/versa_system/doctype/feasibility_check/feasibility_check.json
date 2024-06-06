@@ -57,7 +57,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Brand Name",
-   "options": "Brand Name"
+   "options": "Brand"
   },
   {
    "fieldname": "size_chart",
@@ -84,7 +84,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-05-31 16:54:26.699744",
+ "modified": "2024-06-06 12:13:46.752793",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Feasibility Check",

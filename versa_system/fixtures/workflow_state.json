@@ -7,5 +7,14 @@
   "name": "Review Request",
   "style": "",
   "workflow_state_name": "Review Request"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "question-sign",
+  "modified": "2024-05-31 14:59:37.523490",
+  "name": "Pending",
+  "style": "",
+  "workflow_state_name": "Pending"
  }
 ]

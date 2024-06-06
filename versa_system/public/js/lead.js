@@ -30,5 +30,27 @@ frappe.ui.form.on('Lead', {
         });
     }, __('Create'));
 
+    set_model_query(frm)
+
   }
 });
+
+frappe.ui.form.on("Properties Table", {
+  item_type: function(frm, cdt, cdn) {
+    set_model_query(frm)
+  }
+})
+
+function set_model_query(frm) {
+  /*
+  * Function sets filter on Model field in Properties Table based on selected Item Type
+  */
+  frm.fields_dict["custom_property_table"].grid.get_field("model").get_query = function(doc, cdt, cdn) {
+      var child = locals[cdt][cdn];
+      return {
+          filters:[
+              ["item_type", "=", child.item_type]
+          ]
+      }
+  }
+}

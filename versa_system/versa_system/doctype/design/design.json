@@ -9,6 +9,7 @@
   "design_name",
   "item_type",
   "model",
+  "column_break_dsww",
   "image"
  ],
  "fields": [
@@ -20,7 +21,7 @@
   },
   {
    "fieldname": "image",
-   "fieldtype": "Attach",
+   "fieldtype": "Attach Image",
    "label": "Image"
   },
   {
@@ -34,11 +35,16 @@
    "fieldtype": "Data",
    "label": "Design Name",
    "unique": 1
+  },
+  {
+   "fieldname": "column_break_dsww",
+   "fieldtype": "Column Break"
   }
  ],
+ "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-05 14:15:13.251179",
+ "modified": "2024-06-06 14:08:14.598168",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Design",

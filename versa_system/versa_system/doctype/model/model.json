@@ -40,9 +40,10 @@
    "label": "Image"
   }
  ],
+ "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 12:28:59.512443",
+ "modified": "2024-06-07 15:42:07.028521",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Model",

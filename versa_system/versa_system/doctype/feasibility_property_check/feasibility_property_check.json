@@ -14,7 +14,8 @@
    "fieldname": "properties",
    "fieldtype": "Table",
    "label": "Properties",
-   "options": "Feasibility Check"
+   "options": "Feasibility Check",
+   "read_only": 1
   },
   {
    "fieldname": "from_lead",

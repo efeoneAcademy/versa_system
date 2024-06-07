@@ -1,5 +1,6 @@
 import frappe
 from frappe.model.mapper import get_mapped_doc
+from frappe import _
 
 @frappe.whitelist()
 def map_lead_to_quotation(source_name, target_doc=None):
@@ -84,3 +85,23 @@ def map_lead_to_mockup_design(source_name, target_doc=None):
     }, target_doc, set_missing_values)
 
     return target_doc
+
+@frappe.whitelist()
+def get_lead_properties(lead_name):
+    lead = frappe.get_doc("Lead", lead_name)
+    if not lead:
+        frappe.throw(_("Lead not found"))
+
+    custom_property_table = []
+    for item in lead.custom_property_table:
+        custom_property_table.append({
+            'item_type': item.item_type,
+            'material_type': item.material_type,
+            'design': item.design,
+            'model': item.model,
+            'brand': item.brand,
+            'size_chart': item.size_chart,
+            'colour': item.colour,
+        })
+
+    return custom_property_table

@@ -340,13 +340,13 @@
   "doctype": "Workflow",
   "document_type": "Final Design",
   "is_active": 1,
-  "modified": "2024-06-07 09:55:13.468070",
+  "modified": "2024-06-07 16:12:54.140054",
   "name": "Final Design Approval",
   "override_status": 0,
   "send_email_alert": 0,
   "states": [
    {
-    "allow_edit": "Accounts User",
+    "allow_edit": "Designer",
     "avoid_status_override": 0,
     "doc_status": "0",
     "is_optional_state": 0,
@@ -361,7 +361,7 @@
     "workflow_builder_id": null
    },
    {
-    "allow_edit": "Accounts User",
+    "allow_edit": "Designer",
     "avoid_status_override": 0,
     "doc_status": "0",
     "is_optional_state": 0,
@@ -376,7 +376,7 @@
     "workflow_builder_id": null
    },
    {
-    "allow_edit": "Accounts User",
+    "allow_edit": "Designer",
     "avoid_status_override": 0,
     "doc_status": "0",
     "is_optional_state": 0,
@@ -391,7 +391,7 @@
     "workflow_builder_id": null
    },
    {
-    "allow_edit": "Accounts User",
+    "allow_edit": "Designer",
     "avoid_status_override": 0,
     "doc_status": "1",
     "is_optional_state": 0,
@@ -406,7 +406,7 @@
     "workflow_builder_id": null
    },
    {
-    "allow_edit": "Accounts User",
+    "allow_edit": "Designer",
     "avoid_status_override": 0,
     "doc_status": "1",
     "is_optional_state": 0,
@@ -425,7 +425,7 @@
    {
     "action": "Send to Customer",
     "allow_self_approval": 1,
-    "allowed": "Accounts User",
+    "allowed": "Designer",
     "condition": null,
     "next_state": "Sent to Customer",
     "parent": "Final Design Approval",
@@ -437,7 +437,7 @@
    {
     "action": "Approve",
     "allow_self_approval": 1,
-    "allowed": "Accounts User",
+    "allowed": "Designer",
     "condition": null,
     "next_state": "Approved",
     "parent": "Final Design Approval",
@@ -449,7 +449,7 @@
    {
     "action": "Reject",
     "allow_self_approval": 1,
-    "allowed": "Accounts User",
+    "allowed": "Designer",
     "condition": null,
     "next_state": "Rejected",
     "parent": "Final Design Approval",
@@ -461,7 +461,7 @@
    {
     "action": "Review",
     "allow_self_approval": 1,
-    "allowed": "Accounts User",
+    "allowed": "Designer",
     "condition": null,
     "next_state": "Review Request",
     "parent": "Final Design Approval",
@@ -473,7 +473,7 @@
    {
     "action": "Send to Customer",
     "allow_self_approval": 1,
-    "allowed": "Accounts User",
+    "allowed": "Designer",
     "condition": null,
     "next_state": "Sent to Customer",
     "parent": "Final Design Approval",

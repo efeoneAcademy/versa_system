@@ -19,3 +19,16 @@ class FeasibilityPropertyCheck(Document):
 
 	        # Optionally, you can add a comment to the lead document
 	        lead.add_comment('Comment', 'Feasibility check approved and status updated.')
+
+	    if self.workflow_state == "Rejected":
+	        # Fetch the related lead document
+	        lead = frappe.get_doc("Lead", self.from_lead)
+
+	        # Update the lead status0
+	        lead.status = "Feasibility Check Rejected"
+
+	        # Save the changes to the lead document
+	        lead.save()
+
+	        # Optionally, you can add a comment to the lead document
+	        lead.add_comment('Comment', 'Feasibility check rejected and status updated.')

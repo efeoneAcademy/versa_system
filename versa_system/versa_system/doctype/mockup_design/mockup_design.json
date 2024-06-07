@@ -27,7 +27,8 @@
    "fieldname": "properties",
    "fieldtype": "Table",
    "label": "Properties",
-   "options": "Properties Table"
+   "options": "Properties Table",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_xuvm",
@@ -37,7 +38,7 @@
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-06 14:06:12.817928",
+ "modified": "2024-06-07 10:25:22.285751",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Mockup Design",

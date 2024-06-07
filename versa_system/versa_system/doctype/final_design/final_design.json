@@ -31,18 +31,20 @@
    "fieldname": "properties_table",
    "fieldtype": "Table",
    "label": "Properties Table",
-   "options": "Properties Table"
+   "options": "Properties Table",
+   "read_only": 1
   },
   {
    "fieldname": "quotation_items",
    "fieldtype": "Table",
    "label": "Quotation Items",
-   "options": "Quotation Item"
+   "options": "Quotation Item",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-06 15:33:35.287753",
+ "modified": "2024-06-07 10:26:23.097611",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Final Design",

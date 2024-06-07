@@ -14,7 +14,8 @@
    "fieldname": "properties",
    "fieldtype": "Table",
    "label": "Properties",
-   "options": "Feasibility Check"
+   "options": "Feasibility Check",
+   "read_only": 1
   },
   {
    "fieldname": "from_lead",
@@ -26,7 +27,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 10:32:59.290849",
+ "modified": "2024-06-07 10:23:38.511565",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Feasibility Property Check",

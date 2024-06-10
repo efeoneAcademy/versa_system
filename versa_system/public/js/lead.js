@@ -27,44 +27,31 @@ frappe.ui.form.on('Lead', {
           });
       }, __('Create'));
 
-       //Quotation button based on Mockup design status
-      if (frm.doc.status === "Mockup Design Approved") {
-          mockup_design_button.hide();
-          quotation_button.show();
-          feasibility_check_button.hide();
-      } else if(frm.doc.status === "Mockup Design Rejected"){
-          mockup_design_button.hide();
-          quotation_button.hide();
-          feasibility_check_button.hide();
-      } else if (frm.doc.status === "Mockup Design Pending") {
-          mockup_design_button.show();
-          quotation_button.hide();
-          feasibility_check_button.hide();
-      } else {
-            // Default case: hide all buttons
-            quotation_button.hide();
-            mockup_design_button.show();
-            feasibility_check_button.show();
-      }
+         // Initialize all buttons to hidden
+         mockup_design_button.hide();
+         quotation_button.hide();
+         feasibility_check_button.hide();
 
-      if (frm.doc.status === "Lead") {
-           mockup_design_button.hide();
-           quotation_button.hide();
-           feasibility_check_button.show();
-       } else if(frm.doc.status === "Feasibility Check Approved"){
+         // Handle Lead buttons visibility based on status
+         if (frm.doc.status === "Mockup Design Approved") {
+           quotation_button.show();
+         } else if (frm.doc.status === "Mockup Design Rejected") {
+           // All buttons remain hidden
+         } else if (frm.doc.status === "Mockup Design Pending") {
+            mockup_design_button.show();
+         } else if (frm.doc.status === "Lead") {
+            feasibility_check_button.show();
+         } else if (frm.doc.status === "Feasibility Check Approved") {
            mockup_design_button.show();
            quotation_button.show();
-           feasibility_check_button.hide();
-       }else if (frm.doc.status === "Feasibility Check Rejected") {
-           mockup_design_button.hide();
-           quotation_button.hide();
-           feasibility_check_button.hide();
+         } else if (frm.doc.status === "Feasibility Check Rejected") {
+           // All buttons remain hidden
+         } else {
+           // Default case for any other status
+            mockup_design_button.show();
+            feasibility_check_button.show();
+          }
 
-       } else {
-             quotation_button.hide();
-             mockup_design_button.hide();
-             feasibility_check_button.hide();
-         }
 
 
 

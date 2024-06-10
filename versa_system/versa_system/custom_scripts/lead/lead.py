@@ -4,6 +4,10 @@ from frappe import _
 
 @frappe.whitelist()
 def map_lead_to_quotation(source_name, target_doc=None):
+    '''
+       Method: Method to map a Lead to Quotation doctype
+       output: data from lead is mapped to a new Quotation document
+    '''
     def set_missing_values(source, target):
         target.quotation_to = "Lead"
     target_doc = get_mapped_doc("Lead", source_name,
@@ -85,7 +89,6 @@ def map_lead_to_mockup_design(source_name, target_doc=None):
     }, target_doc, set_missing_values)
 
     return target_doc
-
 
 @frappe.whitelist()
 def get_lead_properties(lead_name):

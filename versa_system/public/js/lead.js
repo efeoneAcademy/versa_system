@@ -1,58 +1,56 @@
 frappe.ui.form.on('Lead', {
-    refresh: function(frm) {
-        setTimeout(() => {
-            frm.remove_custom_button('Quotation', 'Create');
-            frm.remove_custom_button('Customer', 'Create');
-            frm.remove_custom_button('Prospect', 'Create');
-            frm.remove_custom_button('Opportunity', 'Create');
-        }, 10);
+  refresh: function(frm) {
+    setTimeout(() => {
+      frm.remove_custom_button('Quotation', 'Create');
+      frm.remove_custom_button('Customer', 'Create');
+      frm.remove_custom_button('Prospect', 'Create');
+      frm.remove_custom_button('Opportunity', 'Create');
 
-        // Add custom Button 'New Quotation'
-        let quotationButton = frm.add_custom_button(__('New Quotation'), function() {
-            frappe.model.open_mapped_doc({
-                method: 'versa_system.versa_system.custom_scripts.lead.lead.map_lead_to_quotation',
-                frm: frm
-            });
-        }, __('Create'));
-        // Add Custom Button 'Feasibility Property Check'
-        let feasibilityCheckButton = frm.add_custom_button(__('Feasibility Property Check'), function() {
-            frappe.model.open_mapped_doc({
-                method: 'versa_system.versa_system.custom_scripts.lead.lead.map_lead_to_feasibility_check',
-                frm: frm
-            });
-        }, __('Create'));
-        //Add Custom Button 'Mockup Design'
-        let mockupDesignButton = frm.add_custom_button(__('Mockup Design'), function() {
-            frappe.model.open_mapped_doc({
-                method: 'versa_system.versa_system.custom_scripts.lead.lead.map_lead_to_mockup_design',
-                frm: frm
-            });
-        }, __('Create'));
+      let quotation_button=frm.add_custom_button(__('New Quotation'), function() {
+        frappe.model.open_mapped_doc({
+            method : 'versa_system.versa_system.custom_scripts.lead.lead.map_lead_to_quotation',
+            frm : frm
+          });
+      }, __('Create'));
 
-        // Toggle visibility of buttons based on the value of status
-        if (frm.doc.status === "Lead") {
-            mockupDesignButton.hide();
-            quotationButton.hide();
-            feasibilityCheckButton.show();
-        } else if(frm.doc.status === "Feasibility Check Approved"){
-            mockupDesignButton.show();
-            quotationButton.show();
-            feasibilityCheckButton.hide();
-        }else if (frm.doc.status === "Feasibility Check Rejected") {
-            mockupDesignButton.hide();
-            quotationButton.hide();
-            feasibilityCheckButton.hide();
+       let feasibility_check_button=frm.add_custom_button(__('Feasibility Property Check'), function() {
+        frappe.model.open_mapped_doc({
+            method : 'versa_system.versa_system.custom_scripts.lead.lead.map_lead_to_feasibility_check',
+            frm : frm
+          });
+      }, __('Create'));
 
-        } else {
-              quotationButton.hide();
-              mockupDesignButton.hide();
-              feasibilityCheckButton.hide();
-          }
+        let mockup_design_button=frm.add_custom_button(__('Mockup Design'), function() {
+        frappe.model.open_mapped_doc({
+            method : 'versa_system.versa_system.custom_scripts.lead.lead.map_lead_to_mockup_design',
+            frm : frm
+          });
+      }, __('Create'));
 
-        set_model_query(frm)
+       //Quotation button based on Mockup design status
+      if (frm.doc.status === "Mockup Design Approved") {
+          mockup_design_button.hide();
+          quotation_button.show();
+          feasibility_check_button.hide();
+      } else if(frm.doc.status === "Mockup Design Rejected"){
+          mockup_design_button.hide();
+          quotation_button.hide();
+          feasibility_check_button.hide();
+      } else if (frm.doc.status === "Mockup Design Pending") {
+          mockup_design_button.show();
+          quotation_button.hide();
+          feasibility_check_button.hide();
+      } else {
+            // Default case: hide all buttons
+            quotation_button.hide();
+            mockup_design_button.show();
+            feasibility_check_button.show();
+      }
 
+      set_model_query(frm)
+
+    }, 10);
   }
-
 });
 
 frappe.ui.form.on("Properties Table", {

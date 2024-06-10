@@ -47,6 +47,27 @@ frappe.ui.form.on('Lead', {
             feasibility_check_button.show();
       }
 
+      if (frm.doc.status === "Lead") {
+           mockup_design_button.hide();
+           quotation_button.hide();
+           feasibility_check_button.show();
+       } else if(frm.doc.status === "Feasibility Check Approved"){
+           mockup_design_button.show();
+           quotation_button.show();
+           feasibility_check_button.hide();
+       }else if (frm.doc.status === "Feasibility Check Rejected") {
+           mockup_design_button.hide();
+           quotation_button.hide();
+           feasibility_check_button.hide();
+
+       } else {
+             quotation_button.hide();
+             mockup_design_button.hide();
+             feasibility_check_button.hide();
+         }
+
+
+
       set_model_query(frm)
 
     }, 10);

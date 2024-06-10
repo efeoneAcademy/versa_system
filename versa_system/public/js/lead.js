@@ -8,52 +8,45 @@ frappe.ui.form.on('Lead', {
       frm.remove_custom_button('Opportunity', 'Create');
     }, 10);
 
-
-    let quotationButton=frm.add_custom_button(__('New Quotation'), function() {
+    let quotation_button=frm.add_custom_button(__('New Quotation'), function() {
       frappe.model.open_mapped_doc({
           method : 'versa_system.versa_system.custom_scripts.lead.lead.map_lead_to_quotation',
           frm : frm
         });
     }, __('Create'));
 
-
-
-     let feasibilityCheckButton=frm.add_custom_button(__('Feasibility Property Check'), function() {
+     let feasibility_check_button=frm.add_custom_button(__('Feasibility Property Check'), function() {
       frappe.model.open_mapped_doc({
           method : 'versa_system.versa_system.custom_scripts.lead.lead.map_lead_to_feasibility_check',
           frm : frm
         });
     }, __('Create'));
 
-      let mockupDesignButton=frm.add_custom_button(__('Mockup Design'), function() {
+      let mockup_design_button=frm.add_custom_button(__('Mockup Design'), function() {
       frappe.model.open_mapped_doc({
           method : 'versa_system.versa_system.custom_scripts.lead.lead.map_lead_to_mockup_design',
           frm : frm
         });
     }, __('Create'));
-
-
+     //Quotation button based on Mockup design status
     if (frm.doc.status === "Mockup Design Approved") {
-            mockupDesignButton.hide();
-            quotationButton.show();
-            feasibilityCheckButton.hide();
+            mockup_design_button.hide();
+            quotation_button.show();
+            feasibility_check_button.hide();
         } else if(frm.doc.status === "Mockup Design Rejected"){
-            mockupDesignButton.hide();
-            quotationButton.hide();
-            feasibilityCheckButton.hide();
+            mockup_design_button.hide();
+            quotation_button.hide();
+            feasibility_check_button.hide();
         }else if (frm.doc.status === "Mockup Design Pending") {
-            mockupDesignButton.hide();
-            quotationButton.hide();
-            feasibilityCheckButton.hide();
-
+            mockup_design_button.show();
+            quotation_button.hide();
+            feasibility_check_button.hide();
         }else {
               // Default case: hide all buttons
-              quotationButton.hide();
-              mockupDesignButton.show();
-              feasibilityCheckButton.show();
+              quotation_button.hide();
+              mockup_design_button.show();
+              feasibility_check_button.show();
           }
-
-
 
     set_model_query(frm)
 

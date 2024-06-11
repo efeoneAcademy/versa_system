@@ -34,15 +34,13 @@
    "fieldname": "properties_table",
    "fieldtype": "Table",
    "label": "Properties Table",
-   "options": "Properties Table",
-   "read_only": 1
+   "options": "Properties Table"
   },
   {
    "fieldname": "quotation_items",
    "fieldtype": "Table",
    "label": "Quotation Items",
-   "options": "Quotation Item",
-   "read_only": 1
+   "options": "Quotation Item"
   }
  ],
  "index_web_pages_for_search": 1,

@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{FD}-{####}",
  "creation": "2024-06-05 16:13:21.497345",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -44,10 +45,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-07 10:26:23.097611",
+ "modified": "2024-06-11 12:19:16.532193",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Final Design",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

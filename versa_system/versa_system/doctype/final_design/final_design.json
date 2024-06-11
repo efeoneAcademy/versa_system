@@ -22,7 +22,9 @@
   {
    "fieldname": "image",
    "fieldtype": "Attach",
-   "label": "Image"
+   "in_list_view": 1,
+   "label": "Image",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_edmg",

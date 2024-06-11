@@ -15,7 +15,8 @@
   {
    "fieldname": "image",
    "fieldtype": "Attach Image",
-   "label": "Mockup Design"
+   "label": "Mockup Design",
+   "reqd": 1
   },
   {
    "fieldname": "from_lead",
@@ -38,7 +39,7 @@
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-07 10:25:22.285751",
+ "modified": "2024-06-11 12:05:41.639797",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Mockup Design",

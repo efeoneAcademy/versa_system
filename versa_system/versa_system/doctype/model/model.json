@@ -37,13 +37,14 @@
   {
    "fieldname": "image",
    "fieldtype": "Attach Image",
-   "label": "Image"
+   "label": "Image",
+   "reqd": 1
   }
  ],
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-07 15:42:07.028521",
+ "modified": "2024-06-11 12:08:26.714656",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Model",

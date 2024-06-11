@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{FD}-{####}",
  "creation": "2024-06-05 16:13:21.497345",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -50,6 +51,7 @@
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Final Design",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

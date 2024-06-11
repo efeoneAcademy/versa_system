@@ -21,7 +21,9 @@
   {
    "fieldname": "image",
    "fieldtype": "Attach",
-   "label": "Image"
+   "in_list_view": 1,
+   "label": "Image",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_edmg",
@@ -44,7 +46,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-07 10:26:23.097611",
+ "modified": "2024-06-11 12:09:05.973636",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Final Design",

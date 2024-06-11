@@ -22,7 +22,8 @@
   {
    "fieldname": "image",
    "fieldtype": "Attach Image",
-   "label": "Image"
+   "label": "Image",
+   "reqd": 1
   },
   {
    "fieldname": "model",
@@ -44,7 +45,7 @@
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-06 14:08:14.598168",
+ "modified": "2024-06-11 12:08:44.583574",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Design",

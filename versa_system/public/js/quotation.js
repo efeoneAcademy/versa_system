@@ -11,8 +11,10 @@ function create_final_design_button(frm) {
   if (!frm.is_new() && frm.doc.workflow_state === 'Approved') {
       frm.add_custom_button(__('Final Design'), function() {
           frappe.model.open_mapped_doc({
-              method: 'versa_system.versa_system.custom_scripts.quotation.quotation.map_quotation_to_final_design',
-              frm: frm
+              method: 'versa_system.versa_system.custom_scripts.lead.lead.map_lead_to_final_design',
+              args: {
+                			docname: frm.doc.name
+                		},
           });
       }, __('Create'));
   }

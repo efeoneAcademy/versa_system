@@ -1,0 +1,96 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-05-31 16:42:45.716373",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_type",
+  "material_type",
+  "design",
+  "model",
+  "colour",
+  "brand_name",
+  "size_chart",
+  "go_forward",
+  "remark"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Type",
+   "options": "Item Type"
+  },
+  {
+   "fieldname": "material_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Material Type",
+   "options": "Material Type"
+  },
+  {
+   "fieldname": "design",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Design",
+   "options": "Design"
+  },
+  {
+   "fieldname": "model",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Model",
+   "options": "Model"
+  },
+  {
+   "fieldname": "colour",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Colour",
+   "options": "Color"
+  },
+  {
+   "fieldname": "brand_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Brand Name",
+   "options": "Brand"
+  },
+  {
+   "fieldname": "size_chart",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Size Chart",
+   "options": "Size Chart"
+  },
+  {
+   "default": "0",
+   "fieldname": "go_forward",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Go Forward ?",
+   "options": "0\n1"
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Remark"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-06-06 12:12:26.779539",
+ "modified_by": "Administrator",
+ "module": "Versa System",
+ "name": "Feasibility Solution",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

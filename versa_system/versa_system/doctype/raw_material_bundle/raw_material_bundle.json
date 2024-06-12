@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:RMB-{DD}{MM}{YY}-{####}",
  "creation": "2024-06-12 11:11:23.271381",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -17,10 +18,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-12 11:12:26.523575",
+ "modified": "2024-06-12 12:29:45.467014",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Raw Material Bundle",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

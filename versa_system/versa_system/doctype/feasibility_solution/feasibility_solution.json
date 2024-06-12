@@ -14,7 +14,8 @@
   "brand_name",
   "size_chart",
   "go_forward",
-  "remark"
+  "remark",
+  "create_raw_material"
  ],
  "fields": [
   {
@@ -79,12 +80,17 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Remark"
+  },
+  {
+   "fieldname": "create_raw_material",
+   "fieldtype": "Button",
+   "label": "Create Raw Material"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-06-06 12:12:26.779539",
+ "modified": "2024-06-12 14:24:19.373605",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Feasibility Solution",

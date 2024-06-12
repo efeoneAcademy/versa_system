@@ -25,11 +25,11 @@ def map_lead_to_quotation(source_name, target_doc=None):
 @frappe.whitelist()
 def map_lead_to_feasibility_check(source_name, target_doc=None):
     '''
-        Method: Method to map a Lead to a Feasibility Property Check document
+        Method: Method to map a Lead to a Feasibility Check document
         Args:
          source_name: The name of the Lead document to be mapped
          target_doc: The target document to which the Lead and its Properties Table should be mapped.
-        Output: Name of the newly created Feasibility Property Check document.
+        Output: Name of the newly created Feasibility Check document.
     '''
     def set_missing_values(source, target):
         pass
@@ -37,7 +37,7 @@ def map_lead_to_feasibility_check(source_name, target_doc=None):
     target_doc = get_mapped_doc("Lead", source_name,
         {
             "Lead": {
-                "doctype": "Feasibility Property Check",
+                "doctype": "Feasibility Check",
                 "field_map": {
                 },
             },

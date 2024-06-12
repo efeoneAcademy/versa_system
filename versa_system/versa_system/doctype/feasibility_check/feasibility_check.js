@@ -1,4 +1,4 @@
-frappe.ui.form.on('Feasibility Property Check', {
+frappe.ui.form.on('Feasibility Check', {
     from_lead: function(frm) {
         if (frm.doc.from_lead) {
             frappe.call({

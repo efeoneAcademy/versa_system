@@ -6,47 +6,33 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "uom",
-  "length",
-  "width",
-  "radius",
-  "dimension"
+  "reference_doctype",
+  "reference_name",
+  "size_attributes"
  ],
  "fields": [
   {
-   "fieldname": "length",
-   "fieldtype": "Float",
-   "label": "Length",
-   "precision": "2"
-  },
-  {
-   "fieldname": "width",
-   "fieldtype": "Float",
-   "label": "Width",
-   "precision": "2"
-  },
-  {
-   "fieldname": "radius",
-   "fieldtype": "Float",
-   "label": "Radius",
-   "precision": "2"
-  },
-  {
-   "fieldname": "dimension",
-   "fieldtype": "Float",
-   "label": "Dimension",
-   "precision": "2"
-  },
-  {
-   "fieldname": "uom",
+   "fieldname": "reference_doctype",
    "fieldtype": "Link",
-   "label": "Unit of Measure",
-   "options": "UOM"
+   "label": "Reference Doctype",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "reference_name",
+   "fieldtype": "Dynamic Link",
+   "label": "Reference Name",
+   "options": "reference_doctype"
+  },
+  {
+   "fieldname": "size_attributes",
+   "fieldtype": "Table",
+   "label": "Size Attributes",
+   "options": "Size Attribute"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-05 12:50:07.825650",
+ "modified": "2024-06-12 11:03:10.228720",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Size Chart",

@@ -7,14 +7,13 @@
  "engine": "InnoDB",
  "field_order": [
   "item_type",
+  "quantity",
   "brand",
   "material_type",
   "design",
   "model",
-  "size_chart",
   "colour",
   "customized",
-  "make",
   "low_range",
   "high_range"
  ],
@@ -55,13 +54,6 @@
    "options": "Brand"
   },
   {
-   "fieldname": "size_chart",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Size Chart",
-   "options": "Size Chart"
-  },
-  {
    "fieldname": "colour",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -76,13 +68,6 @@
    "label": "Customized"
   },
   {
-   "fieldname": "make",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "label": "Make",
-   "options": "Hand Made\nMachine Made"
-  },
-  {
    "fieldname": "low_range",
    "fieldtype": "Currency",
    "label": "Low Range"
@@ -91,12 +76,17 @@
    "fieldname": "high_range",
    "fieldtype": "Currency",
    "label": "High Range"
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Int",
+   "label": "Quantity"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-06-06 12:13:59.004767",
+ "modified": "2024-06-12 10:23:19.003350",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Properties Table",

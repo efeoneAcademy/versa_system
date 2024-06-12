@@ -28,4 +28,16 @@ frappe.ui.form.on('Feasibility Check', {
             });
         }
     }
+
+});
+frappe.ui.form.on('Feasibility Solution', {
+create_raw_material: function(frm, cdt , cdn) {
+ let row = locals[cdt][cdn];
+ frappe.new_doc('Raw Material Bundle', {
+  'feasibility_check': frm.doc.name,
+  'Feasibility_solution' : row.name,
+
+ })
+
+}
 });

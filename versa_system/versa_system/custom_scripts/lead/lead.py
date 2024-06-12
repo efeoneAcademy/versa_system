@@ -42,15 +42,16 @@ def map_lead_to_feasibility_check(source_name, target_doc=None):
                 },
             },
             "Properties Table": {
-                "doctype": "Feasibility Check",
+                "doctype": "Properties Table",
                 "field_map": {
                     'item_type': 'item_type',
-                    'meterial_type': 'meterial_type',
+                    'material_type': 'material_type',
                     'design': 'design',
                     'model': 'model',
                     'brand': 'brand',
                     'size_chart': 'size_chart',
                     'rate_range': 'rate_range'
+
                 },
             },
         }, target_doc, set_missing_values)
@@ -110,7 +111,6 @@ def get_lead_properties(lead_name):
     else:
         frappe.throw(_("Lead not found"))
 
-
 @frappe.whitelist()
 def map_lead_to_final_design(source_name, target_doc=None):
     '''
@@ -150,7 +150,7 @@ def map_lead_to_final_design(source_name, target_doc=None):
                     'model': 'model',
                     'brand': 'brand',
                     'size_chart': 'size_chart',
-                    'rate_range': 'rate_range'
+                    'rate_range': 'rate_range',
                 },
             },
         }, target_doc, set_missing_values)

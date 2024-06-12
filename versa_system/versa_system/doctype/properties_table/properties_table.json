@@ -15,7 +15,8 @@
   "colour",
   "customized",
   "low_range",
-  "high_range"
+  "high_range",
+  "create_size_chart"
  ],
  "fields": [
   {
@@ -81,12 +82,17 @@
    "fieldname": "quantity",
    "fieldtype": "Int",
    "label": "Quantity"
+  },
+  {
+   "fieldname": "create_size_chart",
+   "fieldtype": "Button",
+   "label": "Create Size Chart"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-06-12 10:23:19.003350",
+ "modified": "2024-06-12 15:40:55.298510",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Properties Table",

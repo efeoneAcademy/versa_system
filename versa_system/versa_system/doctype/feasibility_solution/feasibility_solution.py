@@ -5,6 +5,5 @@
 from frappe.model.document import Document
 
 
-class PropertiesTable(Document):
+class FeasibilitySolution(Document):
 	pass
- 		

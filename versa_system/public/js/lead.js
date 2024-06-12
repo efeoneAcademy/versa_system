@@ -13,7 +13,7 @@ frappe.ui.form.on('Lead', {
         });
       }, __('Create'));
 
-      let feasibility_check_button = frm.add_custom_button(__('Feasibility Property Check'), function() {
+      let feasibility_check_button = frm.add_custom_button(__('Feasibility Check'), function() {
         frappe.model.open_mapped_doc({
           method: 'versa_system.versa_system.custom_scripts.lead.lead.map_lead_to_feasibility_check',
           frm: frm

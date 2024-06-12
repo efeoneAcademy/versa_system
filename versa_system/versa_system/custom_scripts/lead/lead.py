@@ -42,7 +42,7 @@ def map_lead_to_feasibility_check(source_name, target_doc=None):
                 },
             },
             "Properties Table": {
-                "doctype": "Feasibility Check",
+                "doctype": "Feasibility Solution",
                 "field_map": {
                     'item_type': 'item_type',
                     'meterial_type': 'meterial_type',

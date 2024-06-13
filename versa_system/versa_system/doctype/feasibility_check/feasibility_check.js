@@ -10,7 +10,6 @@ frappe.ui.form.on('Feasibility Check', {
                     console.log('Response received:', r);
                     if (r.message) {
                         frm.clear_table("properties");
-
                         r.message.forEach(function(item) {
                             var row = frm.add_child("properties");
                             row.item_type = item.item_type;
@@ -21,7 +20,6 @@ frappe.ui.form.on('Feasibility Check', {
                             row.size_chart = item.size_chart;
                             row.colour = item.colour;
                         });
-
                         frm.refresh_field("properties");
                     }
                 }
@@ -30,14 +28,14 @@ frappe.ui.form.on('Feasibility Check', {
     }
 
 });
+
 frappe.ui.form.on('Feasibility Solution', {
-create_raw_material: function(frm, cdt , cdn) {
- let row = locals[cdt][cdn];
- frappe.new_doc('Raw Material Bundle', {
-  'feasibility_check': frm.doc.name,
-  'Feasibility_solution' : row.name,
+  create_raw_material: function(frm, cdt , cdn) {
+   let row = locals[cdt][cdn];
+   frappe.new_doc('Raw Material Bundle', {
+    'feasibility_check': frm.doc.name,
+    'Feasibility_solution' : row.name,
 
- })
-
-}
+   })
+  }
 });

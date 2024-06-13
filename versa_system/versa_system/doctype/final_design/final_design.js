@@ -46,7 +46,6 @@ frappe.ui.form.on('Final Design', {
                     fields: ['name']
                 },
                 callback: function(r) {
-                    console.log("Quotation List Response: ", r.message);
                     if (r.message && r.message.length > 0) {
                         let quotation_name = r.message[0].name;
 
@@ -58,7 +57,6 @@ frappe.ui.form.on('Final Design', {
                                 name: quotation_name
                             },
                             callback: function(r) {
-                                console.log("Quotation Items Response: ", r.message);
                                 if (r.message) {
                                     frm.clear_table('quotation_items');
                                     $.each(r.message.items || [], function(i, d) {

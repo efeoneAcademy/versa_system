@@ -132,6 +132,11 @@ def map_lead_to_final_design(source_name, target_doc=None):
                     'item_code': item.item_code,
                     'item_group': item.item_group,
                     'stock_uom': item.stock_uom,
+                      'qty'    : item.qty,
+                      'rate'   :item.rate,
+                      'amount'  :item.amount,
+                      'item_name':item.item_name,
+                      'uom'      :item.uom,
                 })
 
     target_doc = get_mapped_doc("Lead", source_name,

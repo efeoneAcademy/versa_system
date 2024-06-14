@@ -52,10 +52,12 @@ def map_lead_to_feasibility_check(source_name, target_doc=None):
                 "doctype": "Feasibility Solution",
                 "field_map": {
                     'item_type': 'item_type',
-                    'item_code': 'item_code',
-                    'quantity': 'quantity',
-                    'low_range': 'low_range',
-                    'high_range': 'high_range'
+                    'meterial_type': 'meterial_type',
+                    'design': 'design',
+                    'model': 'model',
+                    'brand': 'brand',
+                    'size_chart': 'size_chart',
+                    'rate_range': 'rate_range'
                 },
             },
         }, target_doc, set_missing_values)
@@ -104,10 +106,12 @@ def get_lead_properties(lead_name):
         for item in lead.custom_property_table:
             custom_property_table.append({
                 'item_type': item.item_type,
-                'item_code': item.item_code,
-                'quantity': item.quantity,
-                'low_range': item.low_range,
-                'high_range': item.high_range
+                'material_type': item.material_type,
+                'design': item.design,
+                'model': item.model,
+                'brand': item.brand,
+                'size_chart': item.size_chart,
+                'colour': item.colour,
             })
         return custom_property_table
     else:

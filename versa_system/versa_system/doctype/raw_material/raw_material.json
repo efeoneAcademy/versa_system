@@ -31,12 +31,39 @@
    "in_list_view": 1,
    "label": "UOM",
    "options": "UOM"
+<<<<<<< Updated upstream
+=======
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Rate"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Total Amount",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Quantity"
+>>>>>>> Stashed changes
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
+<<<<<<< Updated upstream
  "modified": "2024-06-13 11:30:40.849393",
+=======
+ "modified": "2024-06-14 10:00:26.498671",
+>>>>>>> Stashed changes
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Raw Material",

@@ -67,17 +67,7 @@ frappe.ui.form.on('Lead', {
     }, 10);
   }
 });
-frappe.ui.form.on('Properties Table', {
-    create_size_chart: function(frm, cdt, cdn) {
-        let row = locals[cdt][cdn];
 
-        // Create a new document for the 'Size Chart' doctype
-        frappe.new_doc('Size Chart', {
-            'property': row.name,
-            'lead': frm.doc.name
-        });
-    }
-});
 
 
 frappe.ui.form.on("Properties Table", {
@@ -99,3 +89,20 @@ function set_model_query(frm) {
     };
   }
 }
+
+
+frappe.ui.form.on('Properties Table', {
+    create_size_chart: function(frm, cdt, cdn) {
+        let row = locals[cdt][cdn];
+
+        frappe.new_doc('Size Chart', {
+            'property': row.name,
+            'lead': frm.doc.name
+        });
+        frappe.route_options = {
+            "reference_doctype": "Properties Table",
+            "reference_name": row.name
+        };
+        frappe.new_doc('Size Chart');
+    }
+});

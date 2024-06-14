@@ -82,7 +82,7 @@
    "type": "Link"
   }
  ],
- "modified": "2024-06-14 11:49:23.006927",
+ "modified": "2024-06-14 12:14:04.826162",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Versa System",
@@ -94,6 +94,14 @@
  "roles": [],
  "sequence_id": 1.0,
  "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Final Design",
+   "link_to": "Final Design",
+   "stats_filter": "[[\"Final Design\",\"workflow_state\",\"=\",\"Approved\",false]]",
+   "type": "DocType"
+  },
   {
    "color": "Grey",
    "doc_view": "List",
@@ -116,14 +124,6 @@
    "label": "Mockup Design",
    "link_to": "Mockup Design",
    "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Final Design",
-   "link_to": "Final Design",
-   "stats_filter": "[[\"Final Design\",\"workflow_state\",\"=\",\"Pending\",false]]",
    "type": "DocType"
   },
   {

@@ -7,15 +7,15 @@
  "engine": "InnoDB",
  "field_order": [
   "from_lead",
-  "properties"
+  "properties",
+  "go_forward"
  ],
  "fields": [
   {
    "fieldname": "properties",
    "fieldtype": "Table",
    "label": "Properties",
-   "options": "Feasibility Solution",
-   "read_only": 1
+   "options": "Feasibility Solution"
   },
   {
    "fieldname": "from_lead",
@@ -23,11 +23,18 @@
    "label": "From lead",
    "options": "Lead",
    "unique": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "go_forward",
+   "fieldtype": "Check",
+   "label": "Go Forward",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-07 10:23:38.511565",
+ "modified": "2024-06-14 15:15:45.146204",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Feasibility Check",

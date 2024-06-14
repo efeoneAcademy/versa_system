@@ -20,10 +20,12 @@ frappe.ui.form.on('Mockup Design', {
                         r.message.forEach(function(item) {
                             var row = frm.add_child("properties");
                             row.item_type = item.item_type;
-                            row.item_code = item.item_code;
-                            row.quantity = item.quantity;
-                            row.low_range = item.low_range;
-                            row.high_range = item.high_range;
+                            row.material_type = item.material_type;
+                            row.design = item.design;
+                            row.model = item.model;
+                            row.brand = item.brand;
+                            row.size_chart = item.size_chart;
+                            row.colour = item.colour;
                         });
 
                         frm.refresh_field("properties");

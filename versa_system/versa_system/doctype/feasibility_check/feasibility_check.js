@@ -7,19 +7,15 @@ frappe.ui.form.on('Feasibility Check', {
                     lead_name: frm.doc.from_lead
                 },
                 callback: function(r) {
-                    console.log('Response received:', r);
                     if (r.message) {
                         frm.clear_table("properties");
                         r.message.forEach(function(item) {
                             var row = frm.add_child("properties");
                             row.item_type = item.item_type;
-                            row.material_type = item.material_type;
-                            row.design = item.design;
-                            row.model = item.model;
-                            row.brand = item.brand;
-                            row.size_chart = item.size_chart;
-                            row.colour = item.colour;
-                            row.row_id =item.name;
+                            row.item_code = item.item_code;
+                            row.quantity = item.quantity;
+                            row.low_range = item.low_range;
+                            row.high_range = item.high_range;
                         });
                         frm.refresh_field("properties");
                     }

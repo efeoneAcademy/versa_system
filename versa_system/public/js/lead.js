@@ -106,3 +106,11 @@ frappe.ui.form.on('Properties Table', {
         frappe.new_doc('Size Chart');
     }
 });
+
+frappe.ui.form.on('Properties Table', {
+    create_features: function(frm, cdt , cdn) {
+        let row = locals[cdt][cdn];
+        frappe.new_doc('Features', {
+        })
+      }
+});

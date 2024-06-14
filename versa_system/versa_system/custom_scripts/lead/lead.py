@@ -1,7 +1,6 @@
 import frappe
 from frappe.model.mapper import get_mapped_doc
 from frappe import _
-
 @frappe.whitelist()
 def map_lead_to_quotation(source_name, target_doc=None):
     '''
@@ -16,7 +15,15 @@ def map_lead_to_quotation(source_name, target_doc=None):
             "Lead": {
                 "doctype": "Quotation",
                 "field_map": {
-                    "name": "party_name"
+                    "lead_name": "party_name",
+                },
+            },
+
+            "Properties Table":{
+                "doctype": "Quotation Item",
+                "field_map": {
+                    'quantity':'qty',
+                    'item_code':'item_code'
                 },
             },
         }, target_doc, set_missing_values)

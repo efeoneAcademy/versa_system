@@ -19,6 +19,7 @@ frappe.ui.form.on('Feasibility Check', {
                             row.brand = item.brand;
                             row.size_chart = item.size_chart;
                             row.colour = item.colour;
+                            row.row_id =item.name;
                         });
                         frm.refresh_field("properties");
                     }
@@ -30,12 +31,11 @@ frappe.ui.form.on('Feasibility Check', {
 });
 
 frappe.ui.form.on('Feasibility Solution', {
-  create_raw_material: function(frm, cdt , cdn) {
-   let row = locals[cdt][cdn];
-   frappe.new_doc('Raw Material Bundle', {
-    'feasibility_check': frm.doc.name,
-    'Feasibility_solution' : row.name,
+    create_raw_material: function(frm, cdt , cdn) {
+        let row = locals[cdt][cdn];
+        frappe.new_doc('Raw Material Bundle', {
+            'reference_doctype': 'Feasibility Solution',
+            'reference_name': row.name,
+        })
 
-   })
-  }
 });

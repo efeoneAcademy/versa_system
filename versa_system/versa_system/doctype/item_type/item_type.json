@@ -6,6 +6,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "item",
   "item_type"
  ],
  "fields": [
@@ -14,11 +15,17 @@
    "fieldtype": "Data",
    "label": "Item Type",
    "unique": 1
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "label": "Item",
+   "options": "Item"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-31 11:53:42.668380",
+ "modified": "2024-06-12 16:43:15.129122",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Item Type",

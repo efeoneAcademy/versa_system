@@ -57,7 +57,9 @@ def map_lead_to_feasibility_check(source_name, target_doc=None):
                     'model': 'model',
                     'brand': 'brand',
                     'size_chart': 'size_chart',
-                    'rate_range': 'rate_range'
+                    'rate_range': 'rate_range',
+                    'name' : 'reference'
+
                 },
             },
         }, target_doc, set_missing_values)

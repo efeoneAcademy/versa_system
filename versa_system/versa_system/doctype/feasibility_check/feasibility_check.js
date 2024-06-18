@@ -37,6 +37,37 @@ frappe.ui.form.on('Feasibility Solution', {
             'reference_doctype': 'Feasibility Solution',
             'reference_name': row.name,
         })
+    },
+    /*
+    Function to view size chart attributes
+     */
+    view_size_chart: function(frm, cdt, cdn) {
+        let row = locals[cdt][cdn];
+        console.log(row);
+        frappe.call({
+            method: 'versa_system.versa_system.custom_scripts.lead.lead.fetch_size_chart_details',
+            args: {
+                'reference': row.reference
+            },
+            callback: function(response) {
+                if (response.message && response.message.length > 0) {
+                    let size_html = '<table class="table table-bordered">';
+                    size_html += '<tr><th>Attribute</th><th>Value</th><th>UOM</th></tr>';
+                    response.message.forEach(attr => {
+                        size_html += `<tr><td>${attr.attribute}</td><td>${attr.value}</td><td>${attr.uom}</td></tr>`;
+                    });
+
+                    size_html += '</table>';
+
+                    frappe.msgprint({
+                        title: 'Size Attributes',
+                        message: size_html
+                    });
+                } else {
+                    frappe.msgprint(__('No size attributes available for this Feasibility Solution.'));
+                }
+            }
+        });
     }
 });
 

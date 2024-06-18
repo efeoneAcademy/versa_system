@@ -232,8 +232,6 @@ doctype_js = {"Lead" : "public/js/lead.js"}
 fixtures = [
     {"dt":"Role", "filters":[["name", "in", ["Manufacturing  User", "Designer"]]]},
     {"dt":"Workflow","filters":[["name","in",["Feasibility", "Quotation Approval", "Mockup Design Approval", "Final Design Approval"]]]},
-    {"dt":"Workflow State","filters":[["name","in",["sent to customer"]]]},
-    {"dt":"Workflow Action Master","filters":[["name","in",["send to customer"]]]},
-    {"dt":"Workflow State","filters":[["name","in",["Pending", "Review Request"]]]},
-
+    {"dt":"Workflow State","filters":[["name","in",["Sent to customer", "Pending", "Review Request"]]]},
+    {"dt":"Workflow Action Master","filters":[["name","in",["Send to customer"]]]},
 ]

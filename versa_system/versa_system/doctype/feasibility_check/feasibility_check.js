@@ -39,3 +39,16 @@ frappe.ui.form.on('Feasibility Solution', {
         })
     }
 });
+
+
+frappe.ui.form.on('Feasibility Check', {
+    validate: function(frm) {
+        // Check if all "Go Forward" checkboxes in the child table are checked
+        var allChecked = frm.doc.properties.every(function(row) {
+            return row.go_forward;
+        });
+
+        // Set the "Go Forward" checkbox in the parent document accordingly
+        frm.set_value('go_forward', allChecked);
+    }
+});

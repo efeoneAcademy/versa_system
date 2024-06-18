@@ -104,5 +104,17 @@ frappe.ui.form.on('Properties Table', {
             "reference_name": row.name
         };
         frappe.new_doc('Size Chart');
+    },
+    create_features: function(frm, cdt , cdn) {
+        let row = locals[cdt][cdn];
+        frappe.new_doc('Features',{
+              'property':row.name,
+             'lead': frm.doc.name
+        });
+        frappe.route_options = {
+            "reference_doctype": "Properties Table",
+            "reference_name": row.name
+        };
+        frappe.new_doc('Features');
     }
 });

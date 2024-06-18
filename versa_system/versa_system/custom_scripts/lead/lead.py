@@ -170,3 +170,22 @@ def map_lead_to_final_design(source_name, target_doc=None):
         }, target_doc, set_missing_values)
 
     return target_doc
+
+
+@frappe.whitelist()
+def fetch_size_chart_details(reference=None):
+    '''
+        Method: Fetches size attributes from a Size Chart based on a provided reference.
+
+        Output: Returns a list containing size attribute details 
+    '''
+    if reference:
+        size_chart_name = frappe.db.get_value("Size Chart", {"reference_name": reference}, "name")
+        if size_chart_name:
+            size_attributes = frappe.get_all("Size Attribute",filters={"parenttype": "Size Chart","parent": size_chart_name},fields=["attribute", "value", "uom"])
+            return size_attributes
+        else:
+            frappe.msgprint("Size Chart not found for the given reference.")
+            return []
+    else:
+        frappe.throw("Reference is required.")

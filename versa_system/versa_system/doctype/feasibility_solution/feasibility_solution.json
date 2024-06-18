@@ -13,7 +13,7 @@
   "model",
   "colour",
   "brand_name",
-  "size_chart",
+  "view_size_chart",
   "go_forward",
   "remark",
   "create_raw_material",
@@ -63,13 +63,6 @@
    "options": "Brand"
   },
   {
-   "fieldname": "size_chart",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Size Chart",
-   "options": "Size Chart"
-  },
-  {
    "default": "0",
    "fieldname": "go_forward",
    "fieldtype": "Check",
@@ -92,6 +85,11 @@
    "fieldname": "reference",
    "fieldtype": "Data",
    "label": "Reference"
+  },
+  {
+   "fieldname": "view_size_chart",
+   "fieldtype": "Button",
+   "label": "View Size Chart"
   }
  ],
  "index_web_pages_for_search": 1,

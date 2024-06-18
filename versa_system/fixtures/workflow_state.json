@@ -16,5 +16,14 @@
   "name": "Pending",
   "style": "",
   "workflow_state_name": "Pending"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2024-06-04 11:59:32.022789",
+  "name": "Sent to Customer",
+  "style": "",
+  "workflow_state_name": "Sent to Customer"
  }
 ]

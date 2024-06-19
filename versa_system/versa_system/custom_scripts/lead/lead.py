@@ -181,3 +181,23 @@ def fetch_size_chart_details(reference=None):
             return []
     else:
         frappe.throw("Reference is required.")
+
+
+
+@frappe.whitelist()
+def fetch_feature_details(reference=None):
+    '''
+        Method: Fetches  features from a Create Feature based on a provided reference.
+
+        Output: Returns a list containing Feature details
+    '''
+    if reference:
+        feature_name = frappe.db.get_value("Feature", {"reference_name": reference}, "name")
+        if feature_name:
+            feature_details = frappe.get_all("Features Table",filters={"parenttype": "Feature","parent": feature_name},fields=["attribute", "value"])
+            return feature_details
+        else:
+            frappe.msgprint("Feature not found for the given reference.")
+            return []
+    else:
+        frappe.throw("Reference is required.")

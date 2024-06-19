@@ -84,7 +84,18 @@ frappe.ui.form.on("Properties Table", {
           "reference_doctype": "Properties Table",
           "reference_name": row.name
       };
-  }
+  },
+  create_features: function(frm, cdt , cdn) {
+       let row = locals[cdt][cdn];
+
+       frappe.new_doc('Feature',{
+
+       });
+       frappe.route_options = {
+           "reference_doctype": "Properties Table",
+           "reference_name": row.name
+       };
+     }
 });
 
 

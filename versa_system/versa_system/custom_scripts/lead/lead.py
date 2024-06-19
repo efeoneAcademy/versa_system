@@ -51,14 +51,12 @@ def map_lead_to_feasibility_check(source_name, target_doc=None):
             "Properties Table": {
                 "doctype": "Feasibility Solution",
                 "field_map": {
-                    'item_type': 'item_type',
-                    'meterial_type': 'meterial_type',
-                    'design': 'design',
-                    'model': 'model',
-                    'brand': 'brand',
-                    'size_chart': 'size_chart',
-                    'rate_range': 'rate_range',
-                    'name' : 'reference'
+                    'item_type' : 'item_type',
+                    'item_code' : 'item_code',
+                    'quantity'  : 'quantity',
+                    'low_range' : 'low_range',
+                    'high_range': 'high_range',
+                    'name'      : 'reference'
 
                 },
             },
@@ -84,13 +82,11 @@ def map_lead_to_mockup_design(source_name, target_doc=None):
         "Properties Table": {
             "doctype": "Properties Table",
             "field_map": {
-                'item_type': 'item_type',
-                'meterial_type': 'meterial_type',
-                'design': 'design',
-                'model': 'model',
-                'brand': 'brand',
-                'size_chart': 'size_chart',
-                'rate_range': 'rate_range'
+                'item_type'  : 'item_type',
+                 'item_code' : 'item_code',
+                 'quantity'  : 'quantity',
+                 'low_range' : 'low_range',
+                 'high_range': 'high_range'
             },
         },
     }, target_doc, set_missing_values)
@@ -107,13 +103,11 @@ def get_lead_properties(lead_name):
         custom_property_table = []
         for item in lead.custom_property_table:
             custom_property_table.append({
-                'item_type': item.item_type,
-                'material_type': item.material_type,
-                'design': item.design,
-                'model': item.model,
-                'brand': item.brand,
-                'size_chart': item.size_chart,
-                'colour': item.colour,
+                'item_type' : item.item_type,
+                'item_code' : item.item_code,
+                'quantity'  : item.quantity,
+                'low_range' : item.low_range,
+                'high_range': item.high_range
             })
         return custom_property_table
     else:
@@ -159,12 +153,10 @@ def map_lead_to_final_design(source_name, target_doc=None):
                 "doctype": "Properties Table",
                 "field_map": {
                     'item_type': 'item_type',
-                    'material_type': 'material_type',
-                    'design': 'design',
-                    'model': 'model',
-                    'brand': 'brand',
-                    'size_chart': 'size_chart',
-                    'rate_range': 'rate_range'
+                    'item_code' : 'item_code',
+                    'quantity'  : 'quantity',
+                    'low_range' : 'low_range',
+                    'high_range': 'high_range'
                 },
             },
         }, target_doc, set_missing_values)
@@ -177,7 +169,7 @@ def fetch_size_chart_details(reference=None):
     '''
         Method: Fetches size attributes from a Size Chart based on a provided reference.
 
-        Output: Returns a list containing size attribute details 
+        Output: Returns a list containing size attribute details
     '''
     if reference:
         size_chart_name = frappe.db.get_value("Size Chart", {"reference_name": reference}, "name")

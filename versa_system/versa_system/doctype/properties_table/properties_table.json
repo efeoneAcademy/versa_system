@@ -18,7 +18,8 @@
   "customized",
   "low_range",
   "high_range",
-  "create_size_chart"
+  "create_size_chart",
+  "show_features"
  ],
  "fields": [
   {
@@ -96,12 +97,17 @@
    "in_list_view": 1,
    "label": "Item Code",
    "options": "Item"
+  },
+  {
+   "fieldname": "show_features",
+   "fieldtype": "Button",
+   "label": "Show Features"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-06-18 11:05:47.353351",
+ "modified": "2024-06-19 09:57:07.406391",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Properties Table",

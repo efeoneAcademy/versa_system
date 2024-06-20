@@ -9,6 +9,10 @@ def map_lead_to_quotation(source_name, target_doc=None):
     '''
     def set_missing_values(source, target):
         target.quotation_to = "Lead"
+        for row in target.items:
+            row.item_name = frappe.db.get_value("Item", row.item_code, "item_name")
+            row.uom = frappe.db.get_value("Item", row.item_code, "stock_uom")
+            row.rate = get_item_rate_from_rmb(row.item_code, source_name)
 
     target_doc = get_mapped_doc("Lead", source_name,
         {
@@ -215,3 +219,18 @@ def fetch_feature_detail():
     else:
         frappe.msgprint("No features found.")
         return []
+
+@frappe.whitelist()
+def get_item_rate_from_rmb(item_code, lead):
+    grand_total = 0
+    feasibility_check = frappe.db.exists("Feasibility Check", lead)
+    if feasibility_check:
+        feasibility_doc = frappe.get_doc("Feasibility Check", feasibility_check)
+        for row in feasibility_doc.properties:
+            rmr = frappe.db.exists("Raw Material Bundle", {"reference_doctype":"Feasibility Solution", "reference_name":row.name})
+            if rmr:
+                rmr_doc = frappe.get_doc("Raw Material Bundle", rmr)
+                for row in rmr_doc.raw_material:
+                    grand_total += row.total_amount
+    print("the returned value is : ", grand_total)
+    return grand_total

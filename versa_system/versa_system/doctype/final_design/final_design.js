@@ -78,5 +78,34 @@ frappe.ui.form.on('Final Design', {
                 }
             });
         }
-    }
+    },
+
+});
+
+frappe.ui.form.on('Properties Table', {
+  show_features: function(frm, cdt, cdn) {
+      let row = locals[cdt][cdn];
+      console.log(row);
+      frappe.call({
+          method: 'versa_system.versa_system.custom_scripts.lead.lead.fetch_feature_detail',
+          callback: function(response) {
+              if (response.message && response.message.length > 0) {
+                  let feature_html = '<table class="table table-bordered">';
+                  feature_html += '<tr><th>Attribute</th><th>Value</th></tr>';
+                  response.message.forEach(attr => {
+                      feature_html += `<tr><td>${attr.attribute}</td><td>${attr.value}</td></tr>`;
+                  });
+
+                  feature_html += '</table>';
+
+                  frappe.msgprint({
+                      title: 'Features',
+                      message: feature_html
+                  });
+              } else {
+                  frappe.msgprint(__('No Features available for this Feasibility Solution.'));
+              }
+          }
+      });
+  }
 });

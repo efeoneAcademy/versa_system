@@ -47,18 +47,12 @@
    "label": "Total Amount",
    "precision": "2",
    "read_only": 1
-  },
-  {
-   "fieldname": "quantity",
-   "fieldtype": "Float",
-   "in_list_view": 1,
-   "label": "Quantity"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-06-14 11:59:59.689016",
+ "modified": "2024-06-20 13:13:24.927899",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Raw Material",

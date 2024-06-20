@@ -15,15 +15,18 @@ frappe.ui.form.on('Raw Material Bundle', {
 
 frappe.ui.form.on('Raw Material', {
     quantity: function(frm, cdt, cdn) {
-        let d = locals[cdt][cdn];
-        let amt = d.quantity * d.rate;
-        frappe.model.set_value(cdt, cdn, 'total_amount', amt);
-        frm.refresh_field('raw_material'); // Refresh the raw_material field
+        calculate_total_amount(frm, cdt, cdn);
     },
     rate: function(frm, cdt, cdn) {
-        let d = locals[cdt][cdn];
-        let amt = d.quantity * d.rate;
-        frappe.model.set_value(cdt, cdn, 'total_amount', amt);
-        frm.refresh_field('raw_material'); // Refresh the raw_material field
+        calculate_total_amount(frm, cdt, cdn);
     }
 });
+
+function calculate_total_amount(frm, cdt, cdn) {
+  /*
+  * Function to calculate total amount Based on quantity and rate.
+  */
+    let d = locals[cdt][cdn];
+    let amt = d.quantity * d.rate;
+    frappe.model.set_value(cdt, cdn, 'total_amount', amt);
+}

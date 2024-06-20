@@ -6,6 +6,13 @@ from frappe.model.document import Document
 
 
 class FeasibilityCheck(Document):
+	def onload(self):
+		for row in self.properties:
+			if frappe.db.exists("Raw Material Bundle", {"reference_doctype":row.doctype,"reference_name":row.name}):
+				row.raw_material_exists = 1
+			else:
+				row.raw_material_exists = 0
+
 	def on_update(self):
 	    if self.workflow_state == "Approved":
 	        # Fetch the related lead document

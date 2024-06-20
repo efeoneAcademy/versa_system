@@ -15,9 +15,11 @@
   "view_size_chart",
   "go_forward",
   "remark",
-  "create_raw_material",
   "reference",
-  "show_features"
+  "show_features",
+  "create_raw_material",
+  "show_raw_material",
+  "raw_material_exists"
  ],
  "fields": [
   {
@@ -26,6 +28,11 @@
    "in_list_view": 1,
    "label": "Item Type",
    "options": "Item Type"
+  },
+  {
+   "fieldname": "view_size_chart",
+   "fieldtype": "Button",
+   "label": "View Size Chart"
   },
   {
    "default": "0",
@@ -42,6 +49,7 @@
    "label": "Remark"
   },
   {
+   "depends_on": "eval: !doc.raw_material_exists",
    "fieldname": "create_raw_material",
    "fieldtype": "Button",
    "label": "Create Raw Material"
@@ -52,15 +60,10 @@
    "label": "Reference"
   },
   {
-   "fieldname": "view_size_chart",
+   "depends_on": "eval: doc.raw_material_exists",
+   "fieldname": "show_raw_material",
    "fieldtype": "Button",
-   "label": "View Size Chart"
-  },
-  {
-   "fieldname": "item_code",
-   "fieldtype": "Link",
-   "label": "Item Code",
-   "options": "Item"
+   "label": "Show Raw Material"
   },
   {
    "fieldname": "quantity",
@@ -83,15 +86,24 @@
    "label": "Show Features"
   },
   {
-   "fieldname": "view_size_chart",
-   "fieldtype": "Button",
-   "label": "View Size Chart"
+   "default": "0",
+   "fieldname": "raw_material_exists",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Raw Material Exists"
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Code",
+   "options": "Item"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-06-19 15:08:53.676585",
+ "modified": "2024-06-20 16:29:54.308572",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Feasibility Solution",

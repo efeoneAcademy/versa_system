@@ -81,6 +81,11 @@
    "fieldname": "show_features",
    "fieldtype": "Button",
    "label": "Show Features"
+  },
+  {
+   "fieldname": "view_size_chart",
+   "fieldtype": "Button",
+   "label": "View Size Chart"
   }
  ],
  "index_web_pages_for_search": 1,

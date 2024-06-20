@@ -33,3 +33,41 @@ frappe.ui.form.on('Mockup Design', {
         }
     }
 });
+frappe.ui.form.on('Properties Table', {
+  create_raw_material: function(frm, cdt , cdn) {
+    let row = locals[cdt][cdn];
+    frappe.new_doc('Raw Material Bundle', {
+      'reference_doctype': 'Properties Table',
+      'reference_name': row.name,
+    })
+  },
+
+  show_features: function(frm, cdt, cdn) {
+       /**
+       * Function to display features for a selected property.
+       * Fetches and displays feature details in a message box.
+       */
+      let row = locals[cdt][cdn];
+      frappe.call({
+          method: 'versa_system.versa_system.custom_scripts.lead.lead.fetch_feature_detail',
+          callback: function(response) {
+              if (response.message && response.message.length > 0) {
+                  let feature_html = '<table class="table table-bordered">';
+                  feature_html += '<tr><th>Attribute</th><th>Value</th></tr>';
+                  response.message.forEach(attr => {
+                      feature_html += `<tr><td>${attr.attribute}</td><td>${attr.value}</td></tr>`;
+                  });
+
+                  feature_html += '</table>';
+
+                  frappe.msgprint({
+                      title: 'Features',
+                      message: feature_html
+                  });
+              } else {
+                  frappe.msgprint(__('No Features available for this Properties Table.'));
+              }
+          }
+    });
+}
+});

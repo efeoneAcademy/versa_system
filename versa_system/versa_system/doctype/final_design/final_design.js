@@ -84,6 +84,10 @@ frappe.ui.form.on('Final Design', {
 
 frappe.ui.form.on('Properties Table', {
   show_features: function(frm, cdt, cdn) {
+       /**
+       * Function to display features for a selected property.
+       * Fetches and displays feature details in a message box.
+       */
       let row = locals[cdt][cdn];
       console.log(row);
       frappe.call({

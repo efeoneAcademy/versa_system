@@ -15,7 +15,7 @@ def map_lead_to_quotation(source_name, target_doc=None):
             "Lead": {
                 "doctype": "Quotation",
                 "field_map": {
-                    "lead_name": "party_name",
+                    "name": "party_name",
                 },
             },
 

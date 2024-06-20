@@ -78,23 +78,18 @@ frappe.ui.form.on("Properties Table", {
       let row = locals[cdt][cdn];
 
       frappe.new_doc('Size Chart', {
-
+        "reference_doctype": "Properties Table",
+        "reference_name": row.name
       });
-      frappe.route_options = {
-          "reference_doctype": "Properties Table",
-          "reference_name": row.name
-      };
+
   },
   create_features: function(frm, cdt , cdn) {
        let row = locals[cdt][cdn];
 
        frappe.new_doc('Feature',{
-
+         "reference_doctype": "Properties Table",
+         "reference_name": row.name
        });
-       frappe.route_options = {
-           "reference_doctype": "Properties Table",
-           "reference_name": row.name
-       };
      }
 });
 

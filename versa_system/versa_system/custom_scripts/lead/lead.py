@@ -176,7 +176,7 @@ def fetch_size_chart_details(reference=None):
         Output: Returns a list containing size attribute details
     '''
     if reference:
-        size_chart_name = frappe.db.get_value("Size Chart", {"reference_name": reference}, "name")
+        size_chart_name = frappe.db.exists("Size Chart", {"reference_name": reference})
         if size_chart_name:
             size_attributes = frappe.get_all("Size Attribute",filters={"parenttype": "Size Chart","parent": size_chart_name},fields=["attribute", "value", "uom"])
             return size_attributes
@@ -185,6 +185,7 @@ def fetch_size_chart_details(reference=None):
             return []
     else:
         frappe.throw("Reference is required.")
+
 
 
 @frappe.whitelist()
@@ -201,6 +202,22 @@ def fetch_feature_details(reference=None):
             return feature_details
         else:
             frappe.msgprint("Feature not found for the given reference.")
+
+
+@frappe.whitelist()
+def fetch_raw_material_details(reference=None):
+    '''
+        Method: Fetches Raw Material from a Raw Material Bundle based on a provided reference.
+
+        Output: Returns a list containing raw material details
+    '''
+    if reference:
+        raw_material_name = frappe.db.exists("Raw Material Bundle", {"reference_name": reference})
+        if raw_material_name:
+            raw_material = frappe.get_all("Raw Material",filters={"parenttype": "Raw Material Bundle","parent": raw_material_name},fields=["item_code", "quantity", "uom","rate","total_amount"])
+            return raw_material
+        else:
+            frappe.msgprint("Raw Material not found for the given reference.")
             return []
     else:
         frappe.throw("Reference is required.")

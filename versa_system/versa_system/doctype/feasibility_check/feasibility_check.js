@@ -66,6 +66,7 @@ frappe.ui.form.on('Feasibility Solution', {
             }
         });
     },
+
     show_features: function(frm, cdt, cdn) {
         let row = locals[cdt][cdn];
         console.log(row);
@@ -90,6 +91,34 @@ frappe.ui.form.on('Feasibility Solution', {
                     });
                 } else {
                     frappe.msgprint(__('No Features available for this Feasibility Solution.'));
+                }
+            }
+
+        });
+    },
+
+    show_raw_material: function(frm, cdt, cdn) {
+        let row = locals[cdt][cdn];
+        frappe.call({
+            method: 'versa_system.versa_system.custom_scripts.lead.lead.fetch_raw_material_details',
+            args: {
+                'reference': cdn
+            },
+            callback: function(response) {
+                if (response.message && response.message.length > 0) {
+                    let raw_html = '<table class="table table-bordered">';
+                    raw_html += '<tr><th>Item Code</th><th>Quantity</th><th>UOM</th><th>Rate</th><th>Total Amount</th></tr>';
+                    response.message.forEach(attr => {
+                        raw_html += `<tr><td>${attr.item_code}</td><td>${attr.quantity}</td><td>${attr.uom}</td><td>${attr.rate}</td><td>${attr.total_amount}</td></tr>`;
+                    });
+                    raw_html += '</table>';
+
+                    frappe.msgprint({
+                        title: 'Raw Material',
+                        message: raw_html
+                    });
+                } else {
+                    frappe.msgprint(__('No Raw Material available for this Feasibility Solution.'));
                 }
             }
         });

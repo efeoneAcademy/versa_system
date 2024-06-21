@@ -1,6 +1,7 @@
 import frappe
 from frappe.model.mapper import get_mapped_doc
 from frappe import _
+
 @frappe.whitelist()
 def map_lead_to_quotation(source_name, target_doc=None):
     '''
@@ -243,16 +244,18 @@ def get_item_rate_from_rmb(item_code, lead):
        Method: Fetches Total Rate of Raw Materials From Raw Material Bundle.
 
        output: Returns Total Rate.
-    '''   
+    '''
 
-    grand_total = 0
     feasibility_check = frappe.db.exists("Feasibility Check", lead)
     if feasibility_check:
         feasibility_doc = frappe.get_doc("Feasibility Check", feasibility_check)
         for row in feasibility_doc.properties:
-            rmr = frappe.db.exists("Raw Material Bundle", {"reference_doctype":"Feasibility Solution", "reference_name":row.name})
-            if rmr:
-                rmr_doc = frappe.get_doc("Raw Material Bundle", rmr)
-                for row in rmr_doc.raw_material:
-                    grand_total += row.total_amount
-    return grand_total
+            if row.item_code == item_code:
+                grand_total = 0
+                rmr = frappe.db.exists("Raw Material Bundle", {"reference_doctype":"Feasibility Solution", "reference_name":row.name})
+                if rmr:
+                    rmr_doc = frappe.get_doc("Raw Material Bundle", rmr)
+                    for rmr_row in rmr_doc.raw_material:
+                        grand_total += rmr_row.total_amount
+                return grand_total
+    return 0

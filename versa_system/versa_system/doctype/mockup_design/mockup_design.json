@@ -7,9 +7,10 @@
  "engine": "InnoDB",
  "field_order": [
   "from_lead",
-  "properties",
   "column_break_xuvm",
-  "image"
+  "image",
+  "section_break_mfrw",
+  "properties"
  ],
  "fields": [
   {
@@ -21,8 +22,10 @@
   {
    "fieldname": "from_lead",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "From Lead",
-   "options": "Lead"
+   "options": "Lead",
+   "reqd": 1
   },
   {
    "fieldname": "properties",
@@ -34,12 +37,16 @@
   {
    "fieldname": "column_break_xuvm",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_mfrw",
+   "fieldtype": "Section Break"
   }
  ],
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-11 12:05:41.639797",
+ "modified": "2024-06-20 17:19:35.105572",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Mockup Design",

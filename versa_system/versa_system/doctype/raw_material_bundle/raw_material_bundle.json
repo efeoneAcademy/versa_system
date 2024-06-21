@@ -7,7 +7,9 @@
  "engine": "InnoDB",
  "field_order": [
   "reference_doctype",
+  "column_break_swvo",
   "reference_name",
+  "section_break_szla",
   "raw_material"
  ],
  "fields": [
@@ -20,19 +22,31 @@
   {
    "fieldname": "reference_doctype",
    "fieldtype": "Link",
-   "label": "Reference Doctype",
-   "options": "DocType"
+   "in_list_view": 1,
+   "label": "Reference DocType",
+   "options": "DocType",
+   "reqd": 1
   },
   {
    "fieldname": "reference_name",
    "fieldtype": "Dynamic Link",
+   "in_list_view": 1,
    "label": "Reference Name",
-   "options": "reference_doctype"
+   "options": "reference_doctype",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_swvo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_szla",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-13 09:17:46.715139",
+ "modified": "2024-06-20 17:11:05.159058",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Raw Material Bundle",

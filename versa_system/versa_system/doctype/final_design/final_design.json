@@ -7,17 +7,20 @@
  "engine": "InnoDB",
  "field_order": [
   "from_lead",
-  "properties_table",
-  "quotation_items",
   "column_break_edmg",
-  "image"
+  "image",
+  "section_break_hcmb",
+  "properties_table",
+  "section_break_ipql",
+  "quotation_items"
  ],
  "fields": [
   {
    "fieldname": "from_lead",
    "fieldtype": "Link",
    "label": "From Lead",
-   "options": "Lead"
+   "options": "Lead",
+   "reqd": 1
   },
   {
    "fieldname": "image",
@@ -43,11 +46,19 @@
    "label": "Quotation Items",
    "options": "Quotation Item",
    "read_only": 1
+  },
+  {
+   "fieldname": "section_break_hcmb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_ipql",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-11 15:31:08.615620",
+ "modified": "2024-06-20 17:18:35.036202",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Final Design",

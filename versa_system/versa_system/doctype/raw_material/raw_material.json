@@ -7,8 +7,8 @@
  "engine": "InnoDB",
  "field_order": [
   "item_code",
-  "uom",
   "quantity",
+  "uom",
   "rate",
   "total_amount"
  ],
@@ -18,13 +18,16 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Item Code",
-   "options": "Item"
+   "options": "Item",
+   "reqd": 1
   },
   {
    "fieldname": "quantity",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Quantity"
+   "label": "Quantity",
+   "non_negative": 1,
+   "reqd": 1
   },
   {
    "fetch_from": "item_code.stock_uom",
@@ -32,13 +35,15 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "UOM",
-   "options": "UOM"
+   "options": "UOM",
+   "reqd": 1
   },
   {
    "fieldname": "rate",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Rate"
+   "label": "Rate",
+   "non_negative": 1
   },
   {
    "fieldname": "total_amount",
@@ -52,13 +57,15 @@
    "fieldname": "quantity",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Quantity"
+   "label": "Quantity",
+   "non_negative": 1,
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-06-20 15:18:00.330595",
+ "modified": "2024-06-20 17:12:46.531155",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Raw Material",

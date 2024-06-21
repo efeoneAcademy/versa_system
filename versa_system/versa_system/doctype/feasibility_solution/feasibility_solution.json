@@ -12,14 +12,17 @@
   "quantity",
   "low_range",
   "high_range",
+  "column_break_ytlc",
   "view_size_chart",
-  "go_forward",
-  "remark",
-  "reference",
-  "show_features",
   "create_raw_material",
   "show_raw_material",
   "raw_material_exists"
+  "show_features",
+  "go_forward",
+  "reference",
+  "remark",
+  "section_break_hrvb",
+  "remark"
  ],
  "fields": [
   {
@@ -57,6 +60,7 @@
   {
    "fieldname": "reference",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Reference"
   },
   {
@@ -98,12 +102,25 @@
    "in_list_view": 1,
    "label": "Item Code",
    "options": "Item"
+  },
+  {
+   "fieldname": "view_size_chart",
+   "fieldtype": "Button",
+   "label": "View Size Chart"
+  },
+  {
+   "fieldname": "column_break_ytlc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_hrvb",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-06-20 16:29:54.308572",
+ "modified": "2024-06-20 16:53:08.223612",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Feasibility Solution",

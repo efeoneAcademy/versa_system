@@ -14,19 +14,21 @@
    "fieldname": "attribute",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Attribute"
+   "label": "Attribute",
+   "reqd": 1
   },
   {
    "fieldname": "value",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Value"
+   "label": "Value",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-06-19 09:54:51.599025",
+ "modified": "2024-06-20 17:14:43.804777",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Features Table",

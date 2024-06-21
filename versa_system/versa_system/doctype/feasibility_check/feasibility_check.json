@@ -20,8 +20,10 @@
   {
    "fieldname": "from_lead",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "From lead",
    "options": "Lead",
+   "reqd": 1,
    "unique": 1
   },
   {
@@ -34,7 +36,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-18 10:05:25.983981",
+ "modified": "2024-06-20 17:15:19.475424",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Feasibility Check",

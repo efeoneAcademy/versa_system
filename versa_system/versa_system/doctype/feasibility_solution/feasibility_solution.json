@@ -16,11 +16,10 @@
   "view_size_chart",
   "create_raw_material",
   "show_raw_material",
-  "raw_material_exists"
+  "raw_material_exists",
   "show_features",
   "go_forward",
   "reference",
-  "remark",
   "section_break_hrvb",
   "remark"
  ],
@@ -31,11 +30,6 @@
    "in_list_view": 1,
    "label": "Item Type",
    "options": "Item Type"
-  },
-  {
-   "fieldname": "view_size_chart",
-   "fieldtype": "Button",
-   "label": "View Size Chart"
   },
   {
    "default": "0",

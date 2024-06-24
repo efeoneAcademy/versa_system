@@ -40,7 +40,6 @@ frappe.ui.form.on('Feasibility Solution', {
      */
     view_size_chart: function(frm, cdt, cdn) {
         let row = locals[cdt][cdn];
-        console.log(row);
         frappe.call({
             method: 'versa_system.versa_system.custom_scripts.lead.lead.fetch_size_chart_details',
             args: {
@@ -69,7 +68,6 @@ frappe.ui.form.on('Feasibility Solution', {
 
     show_features: function(frm, cdt, cdn) {
         let row = locals[cdt][cdn];
-        console.log(row);
         frappe.call({
             method: 'versa_system.versa_system.custom_scripts.lead.lead.fetch_feature_details',
             args: {

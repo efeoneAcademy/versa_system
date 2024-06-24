@@ -238,6 +238,7 @@ def fetch_feature_detail():
         frappe.msgprint("No features found.")
         return []
 
+
 @frappe.whitelist()
 def get_item_rate_from_rmb(item_code, lead):
     '''

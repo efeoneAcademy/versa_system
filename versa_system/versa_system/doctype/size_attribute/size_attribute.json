@@ -13,9 +13,10 @@
  "fields": [
   {
    "fieldname": "attribute",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Attribute",
+   "options": "Attribute",
    "reqd": 1
   },
   {
@@ -37,7 +38,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-06-20 17:13:47.952034",
+ "modified": "2024-06-24 10:46:06.659032",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Size Attribute",

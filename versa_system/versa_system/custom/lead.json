@@ -230,7 +230,7 @@
    "name": "Lead-custom_made",
    "no_copy": 0,
    "non_negative": 0,
-   "options": "Hand Made\nMachine Made",
+   "options": "Hand Made\nMachine Made\nHybrid Made",
    "owner": "Administrator",
    "permlevel": 0,
    "precision": "",

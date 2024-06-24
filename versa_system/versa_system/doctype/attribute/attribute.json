@@ -12,13 +12,15 @@
   {
    "fieldname": "attribute",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Attribute",
+   "reqd": 1,
    "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-24 10:25:36.840850",
+ "modified": "2024-06-24 15:11:15.225563",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Attribute",

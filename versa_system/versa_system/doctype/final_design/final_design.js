@@ -113,3 +113,15 @@ frappe.ui.form.on('Properties', {
       });
   }
 });
+frappe.ui.form.on('Final Design', {
+    onload: function(frm) {
+        frm.set_query('from_lead', function() {
+            return {
+              "filters":{
+                Status :'Quotation'
+              }
+
+            };
+        });
+    }
+});

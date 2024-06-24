@@ -89,7 +89,7 @@ frappe.ui.form.on('Properties Table', {
        * Fetches and displays feature details in a message box.
        */
       let row = locals[cdt][cdn];
-      console.log(row);
+
       frappe.call({
           method: 'versa_system.versa_system.custom_scripts.lead.lead.fetch_feature_detail',
           callback: function(response) {

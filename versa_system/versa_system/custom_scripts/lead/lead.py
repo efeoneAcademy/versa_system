@@ -237,13 +237,14 @@ def fetch_feature_detail():
         frappe.msgprint("No features found.")
         return []
 
+
 @frappe.whitelist()
 def get_item_rate_from_rmb(item_code, lead):
     '''
        Method: Fetches Total Rate of Raw Materials From Raw Material Bundle.
 
        output: Returns Total Rate.
-    '''   
+    '''
 
     grand_total = 0
     feasibility_check = frappe.db.exists("Feasibility Check", lead)

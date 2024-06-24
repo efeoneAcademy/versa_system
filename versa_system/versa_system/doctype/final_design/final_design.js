@@ -82,7 +82,7 @@ frappe.ui.form.on('Final Design', {
 
 });
 
-frappe.ui.form.on('Properties Table', {
+frappe.ui.form.on('Properties', {
   show_features: function(frm, cdt, cdn) {
        /**
        * Function to display features for a selected property.

@@ -34,13 +34,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "properties_table",
-   "fieldtype": "Table",
-   "label": "Properties Table",
-   "options": "Properties Table",
-   "read_only": 1
-  },
-  {
    "fieldname": "quotation_items",
    "fieldtype": "Table",
    "label": "Quotation Items",
@@ -54,11 +47,18 @@
   {
    "fieldname": "section_break_ipql",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "properties_table",
+   "fieldtype": "Table",
+   "label": "Properties ",
+   "options": "Properties Table",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-20 17:18:35.036202",
+ "modified": "2024-06-24 10:37:58.895938",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Final Design",

@@ -12,9 +12,10 @@
  "fields": [
   {
    "fieldname": "attribute",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Attribute",
+   "options": "Attribute",
    "reqd": 1
   },
   {
@@ -28,7 +29,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-06-20 17:14:43.804777",
+ "modified": "2024-06-24 10:46:43.915055",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Features Table",

@@ -71,3 +71,15 @@ frappe.ui.form.on('Properties Table', {
     });
 }
 });
+frappe.ui.form.on('Mockup Design', {
+    onload: function(frm) {
+        frm.set_query('from_lead', function() {
+            return {
+              "filters":{
+                Status :'Feasibility check Approved'
+              }
+
+            };
+        });
+    }
+});

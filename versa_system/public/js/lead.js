@@ -70,7 +70,7 @@ frappe.ui.form.on('Lead', {
 
 
 
-frappe.ui.form.on("Properties Table", {
+frappe.ui.form.on("Properties", {
   item_type: function(frm, cdt, cdn) {
     set_model_query(frm);
   },
@@ -78,7 +78,7 @@ frappe.ui.form.on("Properties Table", {
       let row = locals[cdt][cdn];
 
       frappe.new_doc('Size Chart', {
-        "reference_doctype": "Properties Table",
+        "reference_doctype": "Properties",
         "reference_name": row.name
       });
 
@@ -87,7 +87,7 @@ frappe.ui.form.on("Properties Table", {
        let row = locals[cdt][cdn];
 
        frappe.new_doc('Feature',{
-         "reference_doctype": "Properties Table",
+         "reference_doctype": "Properties",
          "reference_name": row.name
        });
      }
@@ -96,7 +96,7 @@ frappe.ui.form.on("Properties Table", {
 
 function set_model_query(frm) {
   /*
-  * Function sets filter on Model field in Properties Table based on selected Item Type
+  * Function sets filter on Model field in Properties based on selected Item Type
   */
   frm.fields_dict["custom_property_table"].grid.get_field("model").get_query = function(doc, cdt, cdn) {
     var child = locals[cdt][cdn];

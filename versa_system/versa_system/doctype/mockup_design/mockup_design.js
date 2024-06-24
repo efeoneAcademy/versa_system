@@ -33,11 +33,11 @@ frappe.ui.form.on('Mockup Design', {
         }
     }
 });
-frappe.ui.form.on('Properties Table', {
+frappe.ui.form.on('Properties', {
   create_raw_material: function(frm, cdt , cdn) {
     let row = locals[cdt][cdn];
     frappe.new_doc('Raw Material Bundle', {
-      'reference_doctype': 'Properties Table',
+      'reference_doctype': 'Properties',
       'reference_name': row.name,
     })
   },
@@ -65,7 +65,7 @@ frappe.ui.form.on('Properties Table', {
                       message: feature_html
                   });
               } else {
-                  frappe.msgprint(__('No Features available for this Properties Table.'));
+                  frappe.msgprint(__('No Features available for this Properties.'));
               }
           }
     });

@@ -226,7 +226,7 @@ def fetch_raw_material_details(reference=None):
 
 @frappe.whitelist()
 def fetch_feature_detail():
-    '''
+    ''' 
         Method: Fetches all feature details.
 
         Output: Returns a list containing Feature details

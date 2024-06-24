@@ -127,13 +127,49 @@ frappe.ui.form.on('Feasibility Solution', {
 
 
 frappe.ui.form.on('Feasibility Check', {
+    onload: function(frm) {
+        frm.fields_dict.properties.grid.on('render', function() {
+            frm.fields_dict.properties.grid.grid_rows.forEach(function(row) {
+                row.get_field('go_forward').$input.on('change', function() {
+                    set_parent_go_forward_checkbox(frm);
+                });
+            });
+        });
+    },
+
+    go_forward: function(frm) {
+        // Update all child checkboxes based on the parent checkbox
+        frm.doc.properties.forEach(function(row) {
+            frappe.model.set_value(row.doctype, row.name, 'go_forward', frm.doc.go_forward ? 1 : 0);
+        });
+
+        // Save the form after updating checkboxes if needed
+        if (!frm.doc.__unsaved) {
+            frm.save('Update').then(function() {
+                frm.approve();
+            });
+        }
+    },
+
     validate: function(frm) {
-        // Check if all "Go Forward" checkboxes in the child table are checked
-        var allChecked = frm.doc.properties.every(function(row) {
+        // Ensure at least one "Go Forward" checkbox is selected
+        var atLeastOneChecked = frm.doc.properties.some(function(row) {
             return row.go_forward;
         });
 
-        // Set the "Go Forward" checkbox in the parent document accordingly
-        frm.set_value('go_forward', allChecked);
+        if (!atLeastOneChecked) {
+            frappe.msgprint("At least one 'Go Forward' checkbox must be selected.");
+            frappe.validated = false;
+        }
     }
 });
+
+
+function set_parent_go_forward_checkbox(frm) {
+    var atLeastOneChecked = frm.doc.properties.some(function(row) {
+        return row.go_forward;
+    });
+
+    // Set the parent checkbox accordingly
+    frm.set_value('go_forward', atLeastOneChecked);
+}

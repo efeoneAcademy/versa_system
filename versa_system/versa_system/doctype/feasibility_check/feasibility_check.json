@@ -7,8 +7,8 @@
  "engine": "InnoDB",
  "field_order": [
   "from_lead",
-  "properties",
-  "go_forward"
+  "go_forward",
+  "properties"
  ],
  "fields": [
   {
@@ -30,13 +30,12 @@
    "default": "0",
    "fieldname": "go_forward",
    "fieldtype": "Check",
-   "label": "Go Forward",
-   "read_only": 1
+   "label": "Go Forward"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-20 17:15:19.475424",
+ "modified": "2024-06-24 15:31:54.938887",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Feasibility Check",

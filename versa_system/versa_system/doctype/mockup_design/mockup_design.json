@@ -8,17 +8,10 @@
  "field_order": [
   "from_lead",
   "column_break_xuvm",
-  "image",
   "section_break_mfrw",
   "properties"
  ],
  "fields": [
-  {
-   "fieldname": "image",
-   "fieldtype": "Attach Image",
-   "label": "Mockup Design",
-   "reqd": 1
-  },
   {
    "fieldname": "from_lead",
    "fieldtype": "Link",
@@ -31,8 +24,7 @@
    "fieldname": "properties",
    "fieldtype": "Table",
    "label": "Properties",
-   "options": "Properties Table",
-   "read_only": 1
+   "options": "Properties Table"
   },
   {
    "fieldname": "column_break_xuvm",
@@ -43,10 +35,9 @@
    "fieldtype": "Section Break"
   }
  ],
- "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-20 17:19:35.105572",
+ "modified": "2024-06-24 15:01:29.428604",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Mockup Design",

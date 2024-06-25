@@ -15,7 +15,9 @@
   "column_break_aizn",
   "create_size_chart",
   "show_features",
-  "create_features"
+  "create_features",
+  "mockup_design",
+  "final_design"
  ],
  "fields": [
   {
@@ -69,12 +71,22 @@
   {
    "fieldname": "column_break_aizn",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mockup_design",
+   "fieldtype": "Attach",
+   "label": "Mockup Design"
+  },
+  {
+   "fieldname": "final_design",
+   "fieldtype": "Attach",
+   "label": "Final Design"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-06-20 17:09:58.376970",
+ "modified": "2024-06-24 14:39:56.667900",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Properties Table",

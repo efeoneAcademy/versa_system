@@ -125,3 +125,14 @@ frappe.ui.form.on('Final Design', {
         });
     }
 });
+
+frappe.ui.form.on('Final Design', {
+    refresh: function(frm) {
+        if (frm.doc.properties) {
+
+            // Update docfield properties to hide the fields
+            frm.fields_dict.properties.grid.update_docfield_property('create_size_chart', 'hidden', 1);
+            frm.fields_dict.properties.grid.update_docfield_property('create_features', 'hidden', 1);
+        }
+    }
+});

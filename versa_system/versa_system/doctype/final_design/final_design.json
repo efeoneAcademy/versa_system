@@ -8,7 +8,6 @@
  "field_order": [
   "from_lead",
   "column_break_edmg",
-  "image",
   "section_break_hcmb",
   "properties_table",
   "section_break_ipql",
@@ -18,15 +17,9 @@
   {
    "fieldname": "from_lead",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "From Lead",
    "options": "Lead",
-   "reqd": 1
-  },
-  {
-   "fieldname": "image",
-   "fieldtype": "Attach",
-   "in_list_view": 1,
-   "label": "Image",
    "reqd": 1
   },
   {
@@ -52,13 +45,12 @@
    "fieldname": "properties_table",
    "fieldtype": "Table",
    "label": "Properties ",
-   "options": "Properties Table",
-   "read_only": 1
+   "options": "Properties Table"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-24 10:37:58.895938",
+ "modified": "2024-06-25 12:29:59.134512",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Final Design",

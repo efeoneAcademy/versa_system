@@ -107,3 +107,15 @@ function set_model_query(frm) {
     };
   }
 }
+
+frappe.ui.form.on('Lead', {
+    refresh: function(frm) {
+        if (frm.doc.custom_property_table) {
+
+            // Update docfield properties to hide the fields
+            frm.fields_dict.custom_property_table.grid.update_docfield_property('mockup_design', 'hidden', 1);
+            frm.fields_dict.custom_property_table.grid.update_docfield_property('final_design', 'hidden', 1);
+            frm.fields_dict.custom_property_table.grid.update_docfield_property('show_features', 'hidden', 1);
+        }
+    }
+});

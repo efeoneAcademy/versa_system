@@ -175,3 +175,42 @@ frappe.ui.form.on('Feasibility Solution', {
         });
     }
 });
+
+frappe.ui.form.on('Feasibility Check', {
+    onload: function(frm) {
+        frm.fields_dict.properties.grid.on('render', function() {
+            frm.fields_dict.properties.grid.grid_rows.forEach(function(row) {
+                row.get_field('go_forward').$input.on('change', function() {
+                    set_parent_go_forward_checkbox(frm);
+                });
+            });
+        });
+    },
+
+    go_forward: function(frm) {
+        frm.doc.properties.forEach(function(row) {
+            frappe.model.set_value(row.doctype, row.name, 'go_forward', frm.doc.go_forward ? 1 : 0);
+        });
+        if (!frm.doc.__unsaved) {
+            frm.save('Update').then(function() {
+                frm.approve();
+            });
+        }
+    },
+
+    validate: function(frm) {
+      /*
+      *  Allow  to save the form without checking the "go forward" checkbox.
+      */
+        var atLeastOneChecked = frm.doc.properties.some(function(row) {
+            return row.go_forward;
+        });
+    }
+});
+
+function set_parent_go_forward_checkbox(frm) {
+    var atLeastOneChecked = frm.doc.properties.some(function(row) {
+        return row.go_forward;
+    });
+    frm.set_value('go_forward', atLeastOneChecked);
+}

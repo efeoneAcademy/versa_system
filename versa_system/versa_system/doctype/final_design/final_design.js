@@ -133,6 +133,8 @@ frappe.ui.form.on('Final Design', {
             // Update docfield properties to hide the fields
             frm.fields_dict.properties.grid.update_docfield_property('create_size_chart', 'hidden', 1);
             frm.fields_dict.properties.grid.update_docfield_property('create_features', 'hidden', 1);
+            frm.fields_dict.properties.grid.update_docfield_property('low_range', 'hidden', 1);
+            frm.fields_dict.properties.grid.update_docfield_property('high_range', 'hidden', 1);
         }
     }
 });

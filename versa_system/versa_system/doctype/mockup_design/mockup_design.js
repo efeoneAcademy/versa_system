@@ -95,6 +95,8 @@ frappe.ui.form.on('Mockup Design', {
             frm.fields_dict.properties.grid.update_docfield_property('final_design', 'hidden', 1);
             frm.fields_dict.properties.grid.update_docfield_property('create_size_chart', 'hidden', 1);
             frm.fields_dict.properties.grid.update_docfield_property('create_features', 'hidden', 1);
+            frm.fields_dict.properties.grid.update_docfield_property('low_range', 'hidden', 1);
+            frm.fields_dict.properties.grid.update_docfield_property('high_range', 'hidden', 1);
         }
     }
 });

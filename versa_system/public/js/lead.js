@@ -1,5 +1,14 @@
 frappe.ui.form.on('Lead', {
   refresh: function(frm) {
+    const is_lead_saved = !frm.is_new();
+
+    if (frm.doc.custom_property_table) {
+      frm.fields_dict.custom_property_table.grid.update_docfield_property('mockup_design', 'hidden', 1);
+      frm.fields_dict.custom_property_table.grid.update_docfield_property('final_design', 'hidden', 1);
+      frm.fields_dict.custom_property_table.grid.update_docfield_property('show_features', 'hidden', 1);
+      frm.fields_dict.custom_property_table.grid.update_docfield_property('create_size_chart', 'hidden', is_lead_saved ? 0 : 1);
+      frm.fields_dict.custom_property_table.grid.update_docfield_property('create_features', 'hidden', is_lead_saved ? 0 : 1);
+    }
     setTimeout(() => {
       frm.remove_custom_button('Quotation', 'Create');
       frm.remove_custom_button('Customer', 'Create');
@@ -68,9 +77,7 @@ frappe.ui.form.on('Lead', {
   }
 });
 
-
-
-frappe.ui.form.on("Properties", {
+frappe.ui.form.on("Properties Table", {
   item_type: function(frm, cdt, cdn) {
     set_model_query(frm);
   },
@@ -78,7 +85,7 @@ frappe.ui.form.on("Properties", {
       let row = locals[cdt][cdn];
 
       frappe.new_doc('Size Chart', {
-        "reference_doctype": "Properties",
+        "reference_doctype": "Properties Table",
         "reference_name": row.name
       });
 
@@ -87,12 +94,11 @@ frappe.ui.form.on("Properties", {
        let row = locals[cdt][cdn];
 
        frappe.new_doc('Feature',{
-         "reference_doctype": "Properties",
+         "reference_doctype": "Properties Table",
          "reference_name": row.name
-       });
-     }
+     });
+  }
 });
-
 
 function set_model_query(frm) {
   /*
@@ -107,15 +113,3 @@ function set_model_query(frm) {
     };
   }
 }
-
-frappe.ui.form.on('Lead', {
-    refresh: function(frm) {
-        if (frm.doc.custom_property_table) {
-
-            // Update docfield properties to hide the fields
-            frm.fields_dict.custom_property_table.grid.update_docfield_property('mockup_design', 'hidden', 1);
-            frm.fields_dict.custom_property_table.grid.update_docfield_property('final_design', 'hidden', 1);
-            frm.fields_dict.custom_property_table.grid.update_docfield_property('show_features', 'hidden', 1);
-        }
-    }
-});

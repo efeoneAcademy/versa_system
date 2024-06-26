@@ -136,12 +136,9 @@ frappe.ui.form.on('Feasibility Check', {
     },
 
     go_forward: function(frm) {
-        // Update all child checkboxes based on the parent checkbox
         frm.doc.properties.forEach(function(row) {
             frappe.model.set_value(row.doctype, row.name, 'go_forward', frm.doc.go_forward ? 1 : 0);
         });
-
-        // Save the form after updating checkboxes if needed
         if (!frm.doc.__unsaved) {
             frm.save('Update').then(function() {
                 frm.approve();
@@ -150,24 +147,18 @@ frappe.ui.form.on('Feasibility Check', {
     },
 
     validate: function(frm) {
-        // Ensure at least one "Go Forward" checkbox is selected
+      /*
+      *  Allow  to save the form without checking the "go forward" checkbox.
+      */
         var atLeastOneChecked = frm.doc.properties.some(function(row) {
             return row.go_forward;
         });
-
-        if (!atLeastOneChecked) {
-            frappe.msgprint("At least one 'Go Forward' checkbox must be selected.");
-            frappe.validated = false;
-        }
     }
 });
-
 
 function set_parent_go_forward_checkbox(frm) {
     var atLeastOneChecked = frm.doc.properties.some(function(row) {
         return row.go_forward;
     });
-
-    // Set the parent checkbox accordingly
     frm.set_value('go_forward', atLeastOneChecked);
 }

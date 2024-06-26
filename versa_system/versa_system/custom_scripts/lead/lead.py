@@ -75,23 +75,23 @@ def map_lead_to_mockup_design(source_name, target_doc=None):
        Output: data from lead is mapped to a new mockup design document
     """
     def set_missing_values(source, target):
-        pass
+        if frappe.db.exists("Feasibility Check", {"from_lead":source.name}):
+            feasibility_doc = frappe.get_doc("Feasibility Check", {"from_lead":source.name})
+            for row in feasibility_doc.properties:
+                if row.go_forward:
+                    target.append("properties", {
+                        'item_type': row.item_type,
+                        'item_code': row.item_code,
+                        'quantity' : row.quantity,
+                    })
+
+
 
     target_doc = get_mapped_doc("Lead", source_name,
     {
         "Lead": {
             "doctype": "Mockup Design",
             "field_map": {
-            },
-        },
-        "Properties Table": {
-            "doctype": "Properties Table",
-            "field_map": {
-                'item_type'  : 'item_type',
-                 'item_code' : 'item_code',
-                 'quantity'  : 'quantity',
-                 'low_range' : 'low_range',
-                 'high_range': 'high_range'
             },
         },
     }, target_doc, set_missing_values)
@@ -226,7 +226,7 @@ def fetch_raw_material_details(reference=None):
 
 @frappe.whitelist()
 def fetch_feature_detail():
-    ''' 
+    '''
         Method: Fetches all feature details.
 
         Output: Returns a list containing Feature details

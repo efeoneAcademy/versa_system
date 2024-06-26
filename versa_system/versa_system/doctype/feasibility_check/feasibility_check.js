@@ -1,5 +1,12 @@
 frappe.ui.form.on('Feasibility Check', {
-    from_lead: function(frm) {
+    refresh: function(frm) {
+    const is_saved = !frm.is_new();
+
+    if (frm.doc.properties) {
+      frm.fields_dict.properties.grid.update_docfield_property('create_raw_material', 'hidden', is_saved ? 0 : 1);
+    }
+  },
+  from_lead: function(frm) {
         if (frm.doc.from_lead) {
             frappe.call({
                 method: 'versa_system.versa_system.custom_scripts.lead.lead.get_lead_properties',
@@ -23,9 +30,54 @@ frappe.ui.form.on('Feasibility Check', {
                 }
             });
         }
-    }
+    },
+    onload: function(frm) {
+        frm.fields_dict.properties.grid.on('render', function() {
+            frm.fields_dict.properties.grid.grid_rows.forEach(function(row) {
+                row.get_field('go_forward').$input.on('change', function() {
+                    set_parent_go_forward_checkbox(frm);
+                });
+            });
+        });
+    },
 
+    go_forward: function(frm) {
+        // Update all child checkboxes based on the parent checkbox
+        frm.doc.properties.forEach(function(row) {
+            frappe.model.set_value(row.doctype, row.name, 'go_forward', frm.doc.go_forward ? 1 : 0);
+        });
+
+        // Save the form after updating checkboxes if needed
+        if (!frm.doc.__unsaved) {
+            frm.save('Update').then(function() {
+                frm.approve();
+            });
+        }
+    },
+
+    validate: function(frm) {
+        // Ensure at least one "Go Forward" checkbox is selected
+        var atLeastOneChecked = frm.doc.properties.some(function(row) {
+            return row.go_forward;
+        });
+
+        if (!atLeastOneChecked) {
+            frappe.msgprint("At least one 'Go Forward' checkbox must be selected.");
+            frappe.validated = false;
+        }
+    }
 });
+
+
+function set_parent_go_forward_checkbox(frm) {
+    var atLeastOneChecked = frm.doc.properties.some(function(row) {
+        return row.go_forward;
+    });
+
+    // Set the parent checkbox accordingly
+    frm.set_value('go_forward', atLeastOneChecked);
+}
+
 
 frappe.ui.form.on('Feasibility Solution', {
     create_raw_material: function(frm, cdt , cdn) {
@@ -65,6 +117,7 @@ frappe.ui.form.on('Feasibility Solution', {
             }
         });
     },
+
 
     show_features: function(frm, cdt, cdn) {
         let row = locals[cdt][cdn];
@@ -122,52 +175,3 @@ frappe.ui.form.on('Feasibility Solution', {
         });
     }
 });
-
-
-frappe.ui.form.on('Feasibility Check', {
-    onload: function(frm) {
-        frm.fields_dict.properties.grid.on('render', function() {
-            frm.fields_dict.properties.grid.grid_rows.forEach(function(row) {
-                row.get_field('go_forward').$input.on('change', function() {
-                    set_parent_go_forward_checkbox(frm);
-                });
-            });
-        });
-    },
-
-    go_forward: function(frm) {
-        // Update all child checkboxes based on the parent checkbox
-        frm.doc.properties.forEach(function(row) {
-            frappe.model.set_value(row.doctype, row.name, 'go_forward', frm.doc.go_forward ? 1 : 0);
-        });
-
-        // Save the form after updating checkboxes if needed
-        if (!frm.doc.__unsaved) {
-            frm.save('Update').then(function() {
-                frm.approve();
-            });
-        }
-    },
-
-    validate: function(frm) {
-        // Ensure at least one "Go Forward" checkbox is selected
-        var atLeastOneChecked = frm.doc.properties.some(function(row) {
-            return row.go_forward;
-        });
-
-        if (!atLeastOneChecked) {
-            frappe.msgprint("At least one 'Go Forward' checkbox must be selected.");
-            frappe.validated = false;
-        }
-    }
-});
-
-
-function set_parent_go_forward_checkbox(frm) {
-    var atLeastOneChecked = frm.doc.properties.some(function(row) {
-        return row.go_forward;
-    });
-
-    // Set the parent checkbox accordingly
-    frm.set_value('go_forward', atLeastOneChecked);
-}

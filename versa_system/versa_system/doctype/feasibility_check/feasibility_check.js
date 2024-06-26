@@ -60,11 +60,6 @@ frappe.ui.form.on('Feasibility Check', {
         var atLeastOneChecked = frm.doc.properties.some(function(row) {
             return row.go_forward;
         });
-
-        if (!atLeastOneChecked) {
-            frappe.msgprint("At least one 'Go Forward' checkbox must be selected.");
-            frappe.validated = false;
-        }
     }
 });
 

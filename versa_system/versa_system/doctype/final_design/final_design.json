@@ -9,9 +9,7 @@
   "from_lead",
   "column_break_edmg",
   "section_break_hcmb",
-  "properties_table",
-  "section_break_ipql",
-  "quotation_items"
+  "properties_table"
  ],
  "fields": [
   {
@@ -27,18 +25,7 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "quotation_items",
-   "fieldtype": "Table",
-   "label": "Quotation Items",
-   "options": "Quotation Item",
-   "read_only": 1
-  },
-  {
    "fieldname": "section_break_hcmb",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "section_break_ipql",
    "fieldtype": "Section Break"
   },
   {
@@ -50,7 +37,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-25 12:29:59.134512",
+ "modified": "2024-06-26 14:55:15.715032",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Final Design",

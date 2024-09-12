@@ -10,10 +10,20 @@ def map_lead_to_quotation(source_name, target_doc=None):
     '''
     def set_missing_values(source, target):
         target.quotation_to = "Lead"
-        for row in target.items:
-            row.item_name = frappe.db.get_value("Item", row.item_code, "item_name")
-            row.uom = frappe.db.get_value("Item", row.item_code, "stock_uom")
-            row.rate = get_item_rate_from_rmb(row.item_code, source_name)
+
+        target.items = []
+
+        if frappe.db.exists("Feasibility Check", {"from_lead": source.name}):
+            feasibility_doc = frappe.get_doc("Feasibility Check", {"from_lead": source.name})
+            for row in feasibility_doc.properties:
+                if row.go_forward:
+                    new_row = target.append("items", {
+                        'item_code': row.item_code,
+                        'qty': row.quantity,
+                        'item_name':row.item_type
+                    })
+                    new_row.uom = frappe.db.get_value("Item", row.item_code, "stock_uom")
+                    new_row.rate = get_item_rate_from_rmb(row.item_code, source_name)
 
     target_doc = get_mapped_doc("Lead", source_name,
         {
@@ -127,25 +137,16 @@ def map_lead_to_final_design(source_name, target_doc=None):
         Output: Updated Final Design document.
     '''
     def set_missing_values(source, target):
-        '''
-        Method: Sets missing values from Quotation items to the target Final Design document.
+        if frappe.db.exists("Mockup Design", {"from_lead":source.name}):
+            mockup_doc = frappe.get_doc("Mockup Design", {"from_lead":source.name})
+            for row in mockup_doc.properties:
+                    target.append("properties_table", {
+                        'item_type': row.item_type,
+                        'item_code': row.item_code,
+                        'quantity': row.quantity,
+                        'mockup_design': row.mockup_design,
+                    })
 
-        Output: None
-    '''
-        quotation = frappe.get_all("Quotation", filters={"party_name": source_name}, fields=["name"])
-        if quotation:
-            quotation_doc = frappe.get_doc("Quotation", quotation[0].name)
-            for item in quotation_doc.items:
-                target.append('quotation_items', {
-                    'item_code': item.item_code,
-                    'item_group': item.item_group,
-                    'stock_uom': item.stock_uom,
-                      'qty'    : item.qty,
-                      'rate'   :item.rate,
-                      'amount'  :item.amount,
-                      'item_name':item.item_name,
-                      'uom'      :item.uom,
-                })
 
     target_doc = get_mapped_doc("Lead", source_name,
         {
@@ -153,18 +154,8 @@ def map_lead_to_final_design(source_name, target_doc=None):
                 "doctype": "Final Design",
                 "field_map": {
                 },
-            },
-            "Properties Table": {
-                "doctype": "Properties Table",
-                "field_map": {
-                    'item_type': 'item_type',
-                    'item_code' : 'item_code',
-                    'quantity'  : 'quantity',
-                    'low_range' : 'low_range',
-                    'high_range': 'high_range'
-                },
-            },
-        }, target_doc, set_missing_values)
+         },
+    }, target_doc, set_missing_values)
 
     return target_doc
 

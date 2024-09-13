@@ -88,3 +88,23 @@ def check_final_design_status(party_name):
                 quotation_doc.final_design_approval = "Not Approved"
                 quotation_doc.save()
             return "Not Approved"
+
+def update_lead_status_on_rejection(doc, method=None):
+    """Update the status of the associated lead when the quotation is rejected."""
+    print("here")
+    if doc.party_name and doc.workflow_state == "Rejected":
+        print("here1")
+        try:
+            # Fetch the linked lead document
+            lead = frappe.get_doc("Lead", doc.party_name)
+
+            # Update the Lead status only if it isn't already "Quotation Rejected"
+            if lead.status != "Quotation Rejected":
+                print("here2")
+                lead.status = "Quotation Rejected"
+                lead.save()
+
+        except frappe.DoesNotExistError:
+            frappe.logger().error(f"Lead not found for party_name: {doc.party_name}")
+        except Exception as e:
+            frappe.logger().error(f"Error updating Lead status: {str(e)}")

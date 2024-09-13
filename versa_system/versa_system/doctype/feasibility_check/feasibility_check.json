@@ -1,0 +1,76 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-09-13 11:12:54.710909",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "properties",
+  "size_chart",
+  "from_lead",
+  "material",
+  "availability_of_materials",
+  "technical_constraints"
+ ],
+ "fields": [
+  {
+   "fieldname": "properties",
+   "fieldtype": "Table",
+   "label": "Properties",
+   "options": "Properties"
+  },
+  {
+   "fieldname": "from_lead",
+   "fieldtype": "Link",
+   "label": "From Lead",
+   "options": "Lead"
+  },
+  {
+   "fieldname": "size_chart",
+   "fieldtype": "Table",
+   "label": "Size Chart",
+   "options": "Size Chart"
+  },
+  {
+   "fetch_from": "from_lead.custom_material_type",
+   "fieldname": "material",
+   "fieldtype": "Link",
+   "label": "Material Type",
+   "options": "Lead"
+  },
+  {
+   "fieldname": "availability_of_materials",
+   "fieldtype": "Data",
+   "label": "Availability of Materials"
+  },
+  {
+   "fieldname": "technical_constraints",
+   "fieldtype": "Data",
+   "label": "Technical constraints"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-09-13 11:45:33.871579",
+ "modified_by": "Administrator",
+ "module": "Versa System",
+ "name": "Feasibility Check",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

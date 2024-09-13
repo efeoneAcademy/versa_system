@@ -1,0 +1,49 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-09-12 17:10:53.049237",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_v3mf",
+  "color",
+  "finishing",
+  "material"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_v3mf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "color",
+   "fieldtype": "Select",
+   "label": "color",
+   "options": "\nBrown\nBlack\nwhite"
+  },
+  {
+   "fieldname": "finishing",
+   "fieldtype": "Data",
+   "label": "Finishing"
+  },
+  {
+   "fieldname": "material",
+   "fieldtype": "Data",
+   "label": "Material",
+   "options": "\n"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-09-12 17:24:02.793604",
+ "modified_by": "Administrator",
+ "module": "Versa System",
+ "name": "Properties",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

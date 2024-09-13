@@ -1,0 +1,43 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-09-12 16:50:05.966231",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_fsxo",
+  "size",
+  "dimensions"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_fsxo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "size",
+   "fieldtype": "Select",
+   "label": "Size",
+   "length": 1,
+   "options": "\nSmall\nMedium\nLarge"
+  },
+  {
+   "fieldname": "dimensions",
+   "fieldtype": "Data",
+   "label": "Dimensions"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-09-12 17:02:09.603662",
+ "modified_by": "Administrator",
+ "module": "Versa System",
+ "name": "Size Chart",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

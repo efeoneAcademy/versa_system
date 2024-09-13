@@ -227,3 +227,25 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+fixtures = [
+    {
+        "dt": "Workflow",
+        "filters": [
+            ["name", "in", ["Feasibility Check"]]
+        ]
+    },
+    {
+        "dt": "Workflow State",
+        "filters": [
+            ["name", "in", ["Pending", "Approved", "Rejected"]]
+        ]
+    },
+    {
+        "dt": "Workflow Action Master",
+        "filters": [
+            ["name", "in", ["Approve","Reject","Review"]]
+        ]
+    }
+]
+
+

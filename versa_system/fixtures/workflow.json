@@ -1,0 +1,88 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Workflow",
+  "document_type": "Feasibility Check",
+  "is_active": 1,
+  "modified": "2024-09-13 13:03:49.304909",
+  "name": "Feasibility Check",
+  "override_status": 0,
+  "send_email_alert": 0,
+  "states": [
+   {
+    "allow_edit": "Sales User",
+    "avoid_status_override": 0,
+    "doc_status": "0",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "parent": "Feasibility Check",
+    "parentfield": "states",
+    "parenttype": "Workflow",
+    "state": "Pending",
+    "update_field": null,
+    "update_value": null,
+    "workflow_builder_id": "1"
+   },
+   {
+    "allow_edit": "Manufacturing User",
+    "avoid_status_override": 0,
+    "doc_status": "0",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "parent": "Feasibility Check",
+    "parentfield": "states",
+    "parenttype": "Workflow",
+    "state": "Approved",
+    "update_field": null,
+    "update_value": null,
+    "workflow_builder_id": "2"
+   },
+   {
+    "allow_edit": "Manufacturing User",
+    "avoid_status_override": 0,
+    "doc_status": "0",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "parent": "Feasibility Check",
+    "parentfield": "states",
+    "parenttype": "Workflow",
+    "state": "Rejected",
+    "update_field": null,
+    "update_value": null,
+    "workflow_builder_id": "3"
+   }
+  ],
+  "transitions": [
+   {
+    "action": "Approve",
+    "allow_self_approval": 1,
+    "allowed": "Sales User",
+    "condition": null,
+    "next_state": "Approved",
+    "parent": "Feasibility Check",
+    "parentfield": "transitions",
+    "parenttype": "Workflow",
+    "state": "Pending",
+    "workflow_builder_id": "action-1"
+   },
+   {
+    "action": "Reject",
+    "allow_self_approval": 1,
+    "allowed": "Sales User",
+    "condition": null,
+    "next_state": "Rejected",
+    "parent": "Feasibility Check",
+    "parentfield": "transitions",
+    "parenttype": "Workflow",
+    "state": "Pending",
+    "workflow_builder_id": "action-2"
+   }
+  ],
+  "workflow_data": "[{\"type\":\"state\",\"dimensions\":{\"width\":106,\"height\":53},\"handleBounds\":{\"source\":[{\"id\":\"top\",\"position\":\"top\",\"x\":49.638916015625,\"y\":-11.111099243164062,\"width\":7,\"height\":7},{\"id\":\"right\",\"position\":\"right\",\"x\":110.40283203125,\"y\":22.888900756835938,\"width\":7,\"height\":7},{\"id\":\"bottom\",\"position\":\"bottom\",\"x\":49.638916015625,\"y\":56.888885498046875,\"width\":7,\"height\":7},{\"id\":\"left\",\"position\":\"left\",\"x\":-11.111083984375,\"y\":22.888900756835938,\"width\":7,\"height\":7}]},\"computedPosition\":{\"x\":550,\"y\":100,\"z\":0},\"id\":\"1\",\"position\":{\"x\":550,\"y\":100}},{\"type\":\"state\",\"dimensions\":{\"width\":117,\"height\":53},\"handleBounds\":{\"source\":[{\"id\":\"top\",\"position\":\"top\",\"x\":54.8194580078125,\"y\":-11.111099243164062,\"width\":7,\"height\":7},{\"id\":\"right\",\"position\":\"right\",\"x\":120.75,\"y\":22.888900756835938,\"width\":7,\"height\":7},{\"id\":\"bottom\",\"position\":\"bottom\",\"x\":54.8194580078125,\"y\":56.888885498046875,\"width\":7,\"height\":7},{\"id\":\"left\",\"position\":\"left\",\"x\":-11.111083984375,\"y\":22.888900756835938,\"width\":7,\"height\":7}]},\"computedPosition\":{\"x\":973.5967793052214,\"y\":90.16800862282452,\"z\":0},\"id\":\"2\",\"position\":{\"x\":973.5967793052214,\"y\":90.16800862282452}},{\"type\":\"state\",\"dimensions\":{\"width\":110,\"height\":53},\"handleBounds\":{\"source\":[{\"id\":\"top\",\"position\":\"top\",\"x\":51.6666259765625,\"y\":-11.111099243164062,\"width\":7,\"height\":7},{\"id\":\"right\",\"position\":\"right\",\"x\":114.4444580078125,\"y\":22.888900756835938,\"width\":7,\"height\":7},{\"id\":\"bottom\",\"position\":\"bottom\",\"x\":51.6666259765625,\"y\":56.888885498046875,\"width\":7,\"height\":7},{\"id\":\"left\",\"position\":\"left\",\"x\":-11.111083984375,\"y\":22.888900756835938,\"width\":7,\"height\":7}]},\"computedPosition\":{\"x\":1350,\"y\":100,\"z\":0},\"id\":\"3\",\"position\":{\"x\":1350,\"y\":100}},{\"type\":\"action\",\"dimensions\":{\"width\":78,\"height\":33},\"handleBounds\":{\"source\":[{\"id\":\"top\",\"position\":\"top\",\"x\":36.013916015625,\"y\":-2.1110992431640625,\"width\":6,\"height\":6},{\"id\":\"right\",\"position\":\"right\",\"x\":74.138916015625,\"y\":13.388900756835938,\"width\":6,\"height\":6},{\"id\":\"bottom\",\"position\":\"bottom\",\"x\":36.013916015625,\"y\":28.888885498046875,\"width\":6,\"height\":6},{\"id\":\"left\",\"position\":\"left\",\"x\":-2.111083984375,\"y\":13.388900756835938,\"width\":6,\"height\":6}]},\"computedPosition\":{\"x\":800,\"y\":120,\"z\":0},\"id\":\"action-1\",\"position\":{\"x\":800,\"y\":120},\"data\":{\"from_id\":\"1\",\"to_id\":\"2\"}},{\"type\":\"action\",\"dimensions\":{\"width\":64,\"height\":33},\"handleBounds\":{\"source\":[{\"id\":\"top\",\"position\":\"top\",\"x\":28.8333740234375,\"y\":-2.1110992431640625,\"width\":6,\"height\":6},{\"id\":\"right\",\"position\":\"right\",\"x\":59.7916259765625,\"y\":13.388900756835938,\"width\":6,\"height\":6},{\"id\":\"bottom\",\"position\":\"bottom\",\"x\":28.8333740234375,\"y\":28.888885498046875,\"width\":6,\"height\":6},{\"id\":\"left\",\"position\":\"left\",\"x\":-2.111083984375,\"y\":13.388900756835938,\"width\":6,\"height\":6}]},\"computedPosition\":{\"x\":800,\"y\":120,\"z\":0},\"id\":\"action-2\",\"position\":{\"x\":800,\"y\":120},\"data\":{\"from_id\":\"1\",\"to_id\":\"3\"}},{\"sourceHandle\":\"right\",\"targetHandle\":\"left\",\"type\":\"transition\",\"source\":\"1\",\"target\":\"action-1\",\"updatable\":true,\"id\":\"edge-1-action-1\",\"animated\":true,\"sourceX\":667.40283203125,\"sourceY\":126.38890075683594,\"targetX\":797.888916015625,\"targetY\":136.38890075683594},{\"sourceHandle\":\"right\",\"targetHandle\":\"left\",\"type\":\"transition\",\"source\":\"action-1\",\"target\":\"2\",\"updatable\":true,\"id\":\"edge-action-1-2\",\"animated\":true,\"sourceX\":880.138916015625,\"sourceY\":136.38890075683594,\"targetX\":962.4856953208464,\"targetY\":116.55690937966045,\"markerEnd\":{\"type\":\"arrow\",\"width\":15,\"height\":15,\"strokeWidth\":1.5,\"color\":\"#687178\"}},{\"sourceHandle\":\"right\",\"targetHandle\":\"left\",\"type\":\"transition\",\"source\":\"1\",\"target\":\"action-2\",\"updatable\":true,\"id\":\"edge-1-action-2\",\"animated\":true,\"sourceX\":667.40283203125,\"sourceY\":126.38890075683594,\"targetX\":797.888916015625,\"targetY\":136.38890075683594},{\"sourceHandle\":\"right\",\"targetHandle\":\"left\",\"type\":\"transition\",\"source\":\"action-2\",\"target\":\"3\",\"updatable\":true,\"id\":\"edge-action-2-3\",\"animated\":true,\"sourceX\":865.7916259765625,\"sourceY\":136.38890075683594,\"targetX\":1338.888916015625,\"targetY\":126.38890075683594,\"markerEnd\":{\"type\":\"arrow\",\"width\":15,\"height\":15,\"strokeWidth\":1.5,\"color\":\"#687178\"}}]",
+  "workflow_name": "Feasibility Check",
+  "workflow_state_field": "workflow_state"
+ }
+]

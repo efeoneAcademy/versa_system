@@ -22,6 +22,14 @@ def map_lead_to_feasibility_check(source_name, target_doc=None):
                     'material': 'material'
                 },
             },
+            "Size Chart": {                               
+                "doctype": "Size Chart",
+                "field_map": {
+                    'size': 'size',             
+                    'dimensions': 'dimensions',
+                    
+                },
+            },
         }, target_doc)
 
     return target_doc

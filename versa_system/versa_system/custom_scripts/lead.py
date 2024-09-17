@@ -11,7 +11,7 @@ def map_lead_to_feasibility_check(source_name, target_doc=None):
                 "field_map": {
     
                     "from_lead": "from_lead",              
-                    "custom_material_type": "material_type"
+                    "custom_material_type": "material"
                 },
             },
             "Properties": {                               

@@ -18,9 +18,10 @@
   {
    "fieldname": "size",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Size",
-   "length": 1,
-   "options": "\nSmall\nMedium\nLarge"
+   "options": "\nSmall\nMedium\nLarge",
+   "reqd": 1
   },
   {
    "fieldname": "dimensions",
@@ -31,7 +32,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-09-12 17:02:09.603662",
+ "modified": "2024-09-18 10:51:14.577493",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Size Chart",

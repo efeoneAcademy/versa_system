@@ -232,25 +232,7 @@ fixtures = [
     {
         "dt": "Workflow",
         "filters": [
-            ["name", "in", ["Feasibility Check"]]
-        ]
-    },
-    {
-        "dt": "Workflow State",
-        "filters": [
-            ["name", "in", ["Pending", "Approved", "Rejected"]]
-        ]
-    },
-    {
-        "dt": "Workflow Action Master",
-        "filters": [
-            ["name", "in", ["Approve", "Reject", "Review"]]
-        ]
-    },  # Missing comma here
-    {
-        "dt": "Workflow",
-        "filters": [
-            ["name", "in", ["Mockup Design"]]
+            ["name", "in", ["Feasibility Check", "Mockup Design"]]
         ]
     },
     {

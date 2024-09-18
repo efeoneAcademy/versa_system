@@ -232,7 +232,7 @@ fixtures = [
     {
         "dt": "Workflow",
         "filters": [
-            ["name", "in", ["Feasibility Check"]]
+            ["name", "in", ["Feasibility Check", "Mockup Design"]]
         ]
     },
     {
@@ -244,9 +244,7 @@ fixtures = [
     {
         "dt": "Workflow Action Master",
         "filters": [
-            ["name", "in", ["Approve","Reject","Review"]]
+            ["name", "in", ["Approve", "Reject", "Review"]]
         ]
     }
 ]
-
-

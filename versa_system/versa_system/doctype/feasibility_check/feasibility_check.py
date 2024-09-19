@@ -2,8 +2,9 @@ import frappe
 from frappe.model.document import Document
 
 class FeasibilityCheck(Document):
+
     def on_update(self):
-        print(self.workflow_state)
+        "IF the feasibility Check is Approved then the moc design will be created "
         if self.workflow_state == 'Approved':
                     moc_design = frappe.get_doc({
                         'doctype': 'Mockup Design',

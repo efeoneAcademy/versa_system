@@ -1,13 +1,13 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:item_type",
  "creation": "2024-09-17 11:36:42.235990",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "section_break_bxeg",
-  "item_type",
-  "amended_from"
+  "item_type"
  ],
  "fields": [
   {
@@ -18,25 +18,16 @@
    "fieldname": "item_type",
    "fieldtype": "Data",
    "label": "Item Type"
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Item Type",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-09-17 14:10:09.234617",
+ "modified": "2024-09-23 15:46:08.911097",
  "modified_by": "Administrator",
  "module": "Versa System",
- "name": "Item Type",
+ "name": "Material Type",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

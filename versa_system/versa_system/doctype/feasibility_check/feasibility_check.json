@@ -37,7 +37,7 @@
    "fieldname": "material",
    "fieldtype": "Link",
    "label": "Material Type",
-   "options": "Lead"
+   "options": "Material Type"
   },
   {
    "fieldname": "availability_of_materials",
@@ -52,7 +52,8 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-20 15:57:12.207174",
+ "modified": "2024-09-24 13:12:25.156646",
+
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Feasibility Check",

@@ -1,3 +1,4 @@
+
 frappe.ui.form.on('Lead', {
     refresh: function(frm) {
         frm.add_custom_button(__('Feasibility Check'), function() {
@@ -13,6 +14,14 @@ frappe.ui.form.on('Lead', {
                 frm: frm
             });
         }, __('Create'));
+        
+        frm.add_custom_button(__('Mockup Design'), function() {
+             frappe.model.open_mapped_doc({
+                 method: 'versa_system.versa_system.custom_scripts.lead.map_lead_to_mockup_design',
+                 frm: frm
+             });
+         }, __('Create'));
+
 
         setTimeout(() => {
             frm.remove_custom_button('Quotation', 'Create');

@@ -4,45 +4,84 @@ from frappe.model.mapper import get_mapped_doc
 @frappe.whitelist()
 def map_lead_to_feasibility_check(source_name, target_doc=None):
     """
-    Map fields from the Lead DocType to Feasibility Check DocType.
-    
-    Parameters:
-        source_name (str): The name of the Lead document to be mapped.
-        target_doc (Document, optional): An existing target document to map to. Defaults to None.
-    
-    Returns:
-        Document: The mapped target document.
+    Map fields from Lead DocType to Feasibility Check DocType.
     """
+    def set_missing_values(source, target):
+        target.from_lead = source.name
+        target.material = source.custom_material_type
 
-    # Use get_mapped_doc to map fields from Lead to Feasibility Check and related DocTypes
+
+
     target_doc = get_mapped_doc("Lead", source_name,
         {
             "Lead": {
                 "doctype": "Feasibility Check",
                 "field_map": {
-                    "first_name": "from_lead"
-                    
+                    "first_name": "from_lead",
+                    'custom_material_type': 'material'
+
                 },
             },
-            "Properties": {                               
+            "Properties": {
                 "doctype": "Properties",
                 "field_map": {
-                    'finishing': 'finishing',  
+                    'finishing': 'finishing',
                     'color': 'color',
-                    'material': 'material'
+                    # 'material': 'material'
                 },
             },
-            "Size Chart": {                               
+            "Size Chart": {
                 "doctype": "Size Chart",
                 "field_map": {
-                    'size': 'size',          
+                    'size': 'size',
                     'dimensions': 'dimensions'
                 },
             },
-        }, target_doc)
+        }, target_doc, set_missing_values)
 
-    
-    if not target_doc:
-        frappe.throw("Target document could not be created.")
+    return target_doc
+
+@frappe.whitelist()
+def map_lead_to_quotation(source_name, target_doc=None):
+    """
+    Map fields from Lead DocType to Quotation DocType.
+    """
+    def set_missing_values(source, target):
+        target.quotation_to = "Lead"
+        target.party_name = source.name
+
+    target_doc = get_mapped_doc("Lead", source_name,
+        {
+            "Lead": {
+                "doctype": "Quotation",
+                "field_map": {
+                    "name": "party_name"
+                },
+            },
+        }, target_doc, set_missing_values)
+
+    return target_doc
+
+@frappe.whitelist()
+def map_lead_to_mockup_design(source_name, target_doc=None):
+    """
+    Map fields from Lead DocType to Mockup Design DocType.
+    """
+    def set_missing_values(source, target):
+        target.mockup_design_to = "Lead"
+        target.from_lead = source.name
+        if hasattr(source, 'custom_images'):
+            target.custom_images = source.custom_images  # Assuming you want to map this field
+
+    target_doc = get_mapped_doc("Lead", source_name,
+    {
+        "Lead": {
+            "doctype": "Mockup Design",
+            "field_map": {
+                "first_name": "from_lead",
+                "custom_material_type": "material_type"
+            },
+        },
+    }, target_doc, set_missing_values)
 
     return target_doc

@@ -36,13 +36,18 @@
    "fieldname": "material_type",
    "fieldtype": "Link",
    "label": "Material Type",
-   "options": "Lead"
-  }
+
+
+   "options": "Material Type"
+  },
+
+
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-09-23 12:19:50.534554",
+
+ "modified": "2024-09-23 14:59:00.119269",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Mockup Design",

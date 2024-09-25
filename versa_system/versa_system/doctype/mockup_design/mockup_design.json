@@ -36,12 +36,8 @@
    "fieldname": "material_type",
    "fieldtype": "Link",
    "label": "Material Type",
-
-
    "options": "Material Type"
-  },
-
-
+  }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,

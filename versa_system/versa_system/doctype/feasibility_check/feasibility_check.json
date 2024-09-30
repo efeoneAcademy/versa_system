@@ -33,11 +33,9 @@
    "options": "Size Chart"
   },
   {
-   "fetch_from": "from_lead.custom_material_type",
    "fieldname": "material",
-   "fieldtype": "Link",
-   "label": "Material Type",
-   "options": "Material Type"
+   "fieldtype": "Data",
+   "label": "Material Type"
   },
   {
    "fieldname": "availability_of_materials",
@@ -52,8 +50,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-24 13:12:25.156646",
-
+ "modified": "2024-09-27 15:24:29.536888",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Feasibility Check",

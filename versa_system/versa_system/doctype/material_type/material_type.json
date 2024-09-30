@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:item_type",
+ "autoname": "field:item_type",
  "creation": "2024-09-17 11:36:42.235990",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -17,17 +17,17 @@
   {
    "fieldname": "item_type",
    "fieldtype": "Data",
-   "label": "Item Type"
+   "label": "Item Type",
+   "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
- "is_submittable": 1,
  "links": [],
- "modified": "2024-09-23 15:46:08.911097",
+ "modified": "2024-09-30 12:17:03.375404",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Material Type",
- "naming_rule": "Expression",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -40,7 +40,6 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
-   "submit": 1,
    "write": 1
   }
  ],

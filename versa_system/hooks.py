@@ -244,7 +244,7 @@ fixtures = [
     {
         "dt": "Workflow Action Master",
         "filters": [
-            ["name", "in", ["Approve", "Reject", "Review","Sent to Customer"]]
+            ["name", "in", ["Approve", "Reject", "Rivision Requested","Sent to Customer"]]
         ]
     }
 ]

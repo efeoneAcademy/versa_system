@@ -2,13 +2,6 @@
  {
   "docstatus": 0,
   "doctype": "Workflow Action Master",
-  "modified": "2024-09-12 16:27:37.123867",
-  "name": "Review",
-  "workflow_action_name": "Review"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow Action Master",
   "modified": "2024-09-12 16:27:37.121348",
   "name": "Approve",
   "workflow_action_name": "Approve"
@@ -26,5 +19,12 @@
   "modified": "2024-09-20 12:10:35.358455",
   "name": "Sent to Customer",
   "workflow_action_name": "Sent to Customer"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2024-09-27 15:37:26.501768",
+  "name": "Rivision Requested",
+  "workflow_action_name": "Rivision Requested"
  }
 ]

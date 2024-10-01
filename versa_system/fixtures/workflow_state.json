@@ -30,6 +30,15 @@
   "docstatus": 0,
   "doctype": "Workflow State",
   "icon": "",
+  "modified": "2024-10-01 10:43:37.618338",
+  "name": "Review Request",
+  "style": "",
+  "workflow_state_name": "Review Request"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
   "modified": "2024-09-20 12:08:09.412748",
   "name": "Sent to Customer",
   "style": "",

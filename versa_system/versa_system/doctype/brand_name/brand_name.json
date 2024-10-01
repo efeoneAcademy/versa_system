@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:brand_name",
  "creation": "2024-10-01 13:32:16.383090",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -12,7 +13,8 @@
   {
    "fieldname": "brand_name",
    "fieldtype": "Data",
-   "label": "Brand Name"
+   "label": "Brand Name",
+   "unique": 1
   },
   {
    "fieldname": "item_type",
@@ -23,10 +25,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-01 13:34:00.592505",
+ "modified": "2024-10-01 16:03:34.176089",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Brand Name",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

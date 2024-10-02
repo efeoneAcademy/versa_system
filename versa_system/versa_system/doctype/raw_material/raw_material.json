@@ -11,7 +11,7 @@
   "column_break_wdg6",
   "material",
   "section_break_qpey",
-  "resources"
+  "raw_material"
  ],
  "fields": [
   {
@@ -27,23 +27,23 @@
    "options": "Item"
   },
   {
-   "fieldname": "resources",
-   "fieldtype": "Table",
-   "label": "Raw Material",
-   "options": "Raw materials"
-  },
-  {
    "fieldname": "column_break_wdg6",
    "fieldtype": "Column Break"
   },
   {
    "fieldname": "section_break_qpey",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "raw_material",
+   "fieldtype": "Table",
+   "label": "Raw Material",
+   "options": "Raw materials"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-30 15:24:09.310952",
+ "modified": "2024-10-02 12:16:59.412470",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Raw Material",

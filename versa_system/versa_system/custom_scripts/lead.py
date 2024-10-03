@@ -10,8 +10,6 @@ def map_lead_to_feasibility_check(source_name, target_doc=None):
         target.from_lead = source.name
         target.material = source.custom_material_type
 
-
-
     target_doc = get_mapped_doc("Lead", source_name,
         {
             "Lead": {
@@ -84,4 +82,17 @@ def map_lead_to_mockup_design(source_name, target_doc=None):
         },
     }, target_doc, set_missing_values)
 
+                    "from_lead": "from_lead",
+                    "custom_material_type": "material_type"
+                },
+            },
+            "Properties": {
+                "doctype": "Properties",
+                "field_map": {
+                    'finishing': 'finishing',
+                    'color': 'color',
+                    'material': 'material'
+                },
+            },
+        }, target_doc)
     return target_doc

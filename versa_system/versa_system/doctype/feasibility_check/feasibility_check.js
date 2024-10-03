@@ -1,3 +1,6 @@
+// Copyright (c) 2024, efeone and contributors
+// For license information, please see license.txt
+
 frappe.ui.form.on('Feasibility Check', {
     refresh: function(frm) {
         if (frm.doc.workflow_state === 'Approved') {

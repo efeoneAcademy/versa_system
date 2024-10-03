@@ -18,7 +18,7 @@
    "fieldname": "properties",
    "fieldtype": "Table",
    "label": "Properties",
-   "options": "Properties"
+   "options": "Properties" 
   },
   {
    "fieldname": "from_lead",
@@ -34,8 +34,11 @@
   },
   {
    "fieldname": "material",
-   "fieldtype": "Data",
-   "label": "Material Type"
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Material Type",
+   "options": "Material Type",
+   "reqd": 1
   },
   {
    "fieldname": "availability_of_materials",
@@ -50,7 +53,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-27 15:24:29.536888",
+ "modified": "2024-10-01 14:39:40.070135",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Feasibility Check",

@@ -31,5 +31,6 @@ frappe.ui.form.on('Lead', {
                 frm.remove_custom_button('Opportunity', 'Create');
             }, 10);
         }
+
     }
 });

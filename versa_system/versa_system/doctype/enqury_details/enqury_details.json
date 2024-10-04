@@ -11,10 +11,10 @@
   "rate_range",
   "design",
   "model",
-  "made_machinehand",
   "size",
   "colour",
-  "material"
+  "material",
+  "made_machinehand"
  ],
  "fields": [
   {
@@ -27,47 +27,55 @@
   },
   {
    "fieldname": "brand",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Brand",
-   "options": "\nAcme Furniture\nModern Designs\nClassic Interiors"
+   "options": "Brand"
   },
   {
    "fieldname": "rate_range",
-   "fieldtype": "Currency",
-   "label": "Rate Range"
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Rate Range",
+   "options": "100 -1000\n1000-10000\n10000-20000\n20000-50000\n50000 above"
   },
   {
    "fieldname": "design",
-   "fieldtype": "Select",
-   "label": "Design",
-   "options": "\nMinimalist\nContemporary\nTraditional"
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Design"
   },
   {
    "fieldname": "model",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Model",
    "options": "\nXYZ-101\nABC-202\nPQR-303"
   },
   {
    "fieldname": "made_machinehand",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Made (Machine/Hand)",
    "options": "\nMachine\nHand"
   },
   {
    "fieldname": "size",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Size",
    "options": "\nSmall\nMedium\nLarge"
   },
   {
    "fieldname": "colour",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Colour"
   },
   {
    "fieldname": "material",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Material",
    "options": "Item"
   }
@@ -75,7 +83,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-10-03 12:52:37.697468",
+ "modified": "2024-10-04 16:15:05.754550",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Enqury Details",

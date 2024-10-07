@@ -70,13 +70,14 @@ doctype_js = {"Lead" : "public/js/lead.js","Quotation" : "public/js/quotation.js
 # ------------
 
 # before_install = "versa_system.install.before_install"
-# after_install = "versa_system.install.after_install"
+after_install = "versa_system.setup.after_install"
+after_migrate =  "versa_system.setup.after_migrate"
 
 # Uninstallation
 # ------------
 
-# before_uninstall = "versa_system.uninstall.before_uninstall"
-# after_uninstall = "versa_system.uninstall.after_uninstall"
+before_uninstall = "versa_system.uninstall.before_uninstall"
+#after_uninstall = "versa_system.uninstall.after_uninstall"
 
 # Integration Setup
 # ------------------

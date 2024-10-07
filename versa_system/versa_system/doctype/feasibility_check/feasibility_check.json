@@ -6,20 +6,10 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "properties",
-  "size_chart",
   "from_lead",
-  "material",
-  "availability_of_materials",
-  "technical_constraints"
+  "enquiry"
  ],
  "fields": [
-  {
-   "fieldname": "properties",
-   "fieldtype": "Table",
-   "label": "Properties",
-   "options": "Properties" 
-  },
   {
    "fieldname": "from_lead",
    "fieldtype": "Link",
@@ -27,33 +17,15 @@
    "options": "Lead"
   },
   {
-   "fieldname": "size_chart",
+   "fieldname": "enquiry",
    "fieldtype": "Table",
-   "label": "Size Chart",
-   "options": "Size Chart"
-  },
-  {
-   "fieldname": "material",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Material Type",
-   "options": "Material Type",
-   "reqd": 1
-  },
-  {
-   "fieldname": "availability_of_materials",
-   "fieldtype": "Data",
-   "label": "Availability of Materials"
-  },
-  {
-   "fieldname": "technical_constraints",
-   "fieldtype": "Data",
-   "label": "Technical constraints"
+   "label": "Enquiry ",
+   "options": "Enqury Details"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-01 14:39:40.070135",
+ "modified": "2024-10-05 14:34:10.265977",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Feasibility Check",

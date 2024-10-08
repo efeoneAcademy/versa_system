@@ -8,7 +8,6 @@ app_license = "mit"
 
 # Includes in <head>
 # ------------------
-app_include_js = "/assets/versa_system/js/raw_material.js"
 # include js, css files in header of desk.html
 # app_include_css = "/assets/versa_system/css/versa_system.css"
 # app_include_js = "/assets/versa_system/js/versa_system.js"
@@ -70,14 +69,14 @@ doctype_js = {"Lead" : "public/js/lead.js","Quotation" : "public/js/quotation.js
 # ------------
 
 # before_install = "versa_system.install.before_install"
-after_install = "versa_system.setup.after_install"
+# after_install = "versa_system.setup.after_install"
 # after_migrate = "versa_system.setup.after_migrate"
 
 # Uninstallation
 # ------------
 
 # before_uninstall = "versa_system.uninstall.before_uninstall"
-after_uninstall = "versa_system.uninstall.after_uninstall"
+# after_uninstall = "versa_system.uninstall.after_uninstall"
 
 # Integration Setup
 # ------------------

@@ -1,9 +1,8 @@
-# Copyright (c) 2024, efeone and contributors
-# For license information, please see license.txt
+# /home/hanihassan/frappe-bench/apps/versa_system/versa_system/versa_system/doctype/raw_material/raw_material.py
 
-# import frappe
 from frappe.model.document import Document
 
-
 class RawMaterial(Document):
-	pass
+    pass  # You can add custom methods or properties here if needed
+
+

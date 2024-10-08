@@ -1,17 +1,18 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "RM#####",
+ "autoname": "RM.#####",
  "creation": "2024-09-30 12:40:56.189594",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "item_type",
+  "lead",
   "column_break_wdg6",
   "material",
   "section_break_qpey",
-  "raw_material"
+  "raw_materials"
  ],
  "fields": [
   {
@@ -35,15 +36,21 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "raw_material",
+   "fieldname": "raw_materials",
    "fieldtype": "Table",
-   "label": "Raw Material",
+   "label": "Raw materials",
    "options": "Raw materials"
+  },
+  {
+   "fieldname": "lead",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Lead"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-02 12:16:59.412470",
+ "modified": "2024-10-08 11:14:52.273484",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Raw Material",

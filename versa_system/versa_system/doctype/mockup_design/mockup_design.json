@@ -8,10 +8,8 @@
  "field_order": [
   "section_break_pdm5",
   "from_lead",
-  "material_type",
   "column_break_dtei",
-  "image",
-  "amended_from"
+  "image"
  ],
  "fields": [
   {
@@ -32,29 +30,12 @@
   {
    "fieldname": "column_break_dtei",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Mockup Design",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
-  },
-  {
-   "fieldname": "material_type",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Material Type",
-   "options": "Material Type"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-10-02 14:32:31.606493",
+ "modified": "2024-10-09 10:03:47.500999",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Mockup Design",

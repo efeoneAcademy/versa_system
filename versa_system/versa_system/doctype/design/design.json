@@ -1,36 +1,28 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "FC.#####",
- "creation": "2024-09-13 11:12:54.710909",
+ "autoname": "field:design",
+ "creation": "2024-10-07 14:58:23.879171",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "from_lead",
-  "details"
+  "design"
  ],
  "fields": [
   {
-   "fieldname": "from_lead",
-   "fieldtype": "Link",
-   "label": "From Lead",
-   "options": "Lead"
-  },
-  {
-   "fieldname": "details",
-   "fieldtype": "Table",
-   "label": "Details",
-   "options": "Enqury Details",
-   "read_only": 1
+   "fieldname": "design",
+   "fieldtype": "Data",
+   "label": "Design",
+   "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-09 09:47:47.316679",
+ "modified": "2024-10-07 15:02:04.250650",
  "modified_by": "Administrator",
  "module": "Versa System",
- "name": "Feasibility Check",
- "naming_rule": "Expression (old style)",
+ "name": "Design",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

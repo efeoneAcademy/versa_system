@@ -9,7 +9,9 @@
   "section_break_pdm5",
   "from_lead",
   "column_break_dtei",
-  "image"
+  "image",
+  "section_break_xldq",
+  "lead_details"
  ],
  "fields": [
   {
@@ -30,12 +32,23 @@
   {
    "fieldname": "column_break_dtei",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_xldq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "lead_details",
+   "fieldtype": "Table",
+   "label": "Lead Details",
+   "options": "Enqury Details",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-10-09 10:03:47.500999",
+ "modified": "2024-10-10 15:39:13.891682",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Mockup Design",

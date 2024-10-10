@@ -14,8 +14,8 @@ def map_mockup_design_to_quotation(source_name, target_doc=None):
     """
     def set_missing_values(source, target):
         target.quotation_to = "Mockup Design"
-        target.party_name = source.from_lead
-
+        target.party_name = source.name
+        target.customer_name = source.from_lead
     target_doc = get_mapped_doc("Mockup Design", source_name,
         {
             "Mockup Design": {

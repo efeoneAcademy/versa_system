@@ -16,14 +16,7 @@ frappe.ui.form.on('Lead', {
                 });
             }, __('Create'));
 
-            frm.add_custom_button(__('Mockup Design'), function() {
-                frappe.model.open_mapped_doc({
-                    method: 'versa_system.versa_system.custom_scripts.lead.map_lead_to_mockup_design',
-                    frm: frm
-                });
-            }, __('Create'));
-
-            // Removing default buttons
+      
             setTimeout(() => {
                 frm.remove_custom_button('Quotation', 'Create');
                 frm.remove_custom_button('Customer', 'Create');

@@ -1,26 +1,13 @@
-// Copyright (c) 2024, efeone and contributors
-// For license information, please see license.txt
-
 frappe.ui.form.on('Feasibility Check', {
     refresh: function(frm) {
+        // Check if the Feasibility Check is not new and is approved
         if (frm.doc.workflow_state === 'Approved') {
             frm.add_custom_button(__('Mockup Design'), function() {
-                frappe.call({
-                    method: 'frappe.client.insert',
-                    args: {
-                        doc: {
-                            doctype: 'Mockup Design',
-                            from_lead: frm.doc.from_lead
-                        }
-                    },
-                    callback: function(r) {
-                        if (r.message) {
-                            // Redirect to the newly created Mockup Design
-                            frappe.set_route('Form', 'Mockup Design', r.message.name);
-                        }
-                    }
+                frappe.model.open_mapped_doc({
+                    method: 'versa_system.versa_system.doctype.feasibility_check.feasibility_check.map_feasibility_to_mockup_design',
+                    frm: frm
                 });
-            });
+            }, __('Create'));
         }
     }
 });

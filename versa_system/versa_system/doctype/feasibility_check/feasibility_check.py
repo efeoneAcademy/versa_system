@@ -1,15 +1,39 @@
 import frappe
 from frappe.model.document import Document
+from frappe.model.mapper import get_mapped_doc
 
 class FeasibilityCheck(Document):
+    pass
 
-    def on_update(self):
-        "IF the feasibility Check is Approved then the mockup design will be created "
-        if self.workflow_state == 'Approved':
+@frappe.whitelist()
+def map_feasibility_to_mockup_design(source_name, target_doc=None):
+    """
+    Map fields from Feasibility Check DocType to Mockup Design DocType,
+    including the child table 'Enquiry Details' and its data.
+    """
+    def set_missing_values(source, target):
+        # Set any missing values if needed
+        pass
 
-            moc_design = frappe.get_doc({
-                'doctype': 'Mockup Design',
-                'from_lead': self.from_lead,
-            })
+    target_doc = get_mapped_doc("Feasibility Check", source_name,
+        {
+            "Feasibility Check": {
+                "doctype": "Mockup Design",
+                "field_map": {}
+            },
+            "Enqury Details": {  # Mapping the child table
+                "doctype": "Enqury Details",  # Ensure this matches the target child table in Mockup Design
+                "field_map": {
+                    "item": "item",
+                    "material": "material",
+                    "brand": "brand",
+                    "model": "model",
+                    "rate_range": "rate_range",
+                    "size": "size",
+                    "colour": "colour",
+                    "design": "design",
+                }
+            }
+        }, target_doc, set_missing_values)
 
-            moc_design.insert(ignore_permissions=True)
+    return target_doc

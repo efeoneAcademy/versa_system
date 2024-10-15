@@ -13,18 +13,21 @@
   {
    "fieldname": "lead",
    "fieldtype": "Link",
-   "label": "Lead",
+   "label": "From Lead",
    "options": "Lead"
   },
   {
    "fieldname": "image",
    "fieldtype": "Attach",
-   "label": "Image"
+   "in_list_view": 1,
+   "label": "Image",
+   "read_only": 1,
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-30 10:32:05.255308",
+ "modified": "2024-10-15 09:42:09.668884",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Final Design",

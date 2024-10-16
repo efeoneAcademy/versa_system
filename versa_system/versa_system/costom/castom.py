@@ -1,12 +1,16 @@
 import frappe
 
 def create_work_order_from_sales_order(doc, method, is_from_sales_order=True):
-    # Check if the function is called from the Sales Order context
+    """
+    Create Work Orders from Sales Order items,
+    linking the Sales Order to the Work Order and setting the Work Order status to Draft.
+    Skips creation if a Work Order for the item already exists.
+    """
+    
     if not is_from_sales_order:
         frappe.msgprint("Work Order creation is not triggered from Sales Order.")
-        return  # Exit if not creating from Sales Order
+        return
 
-    # Loop through items in the Sales Order
     for item in doc.items:
         # Check if the quantity is greater than zero
         if item.qty > 0:
@@ -34,6 +38,3 @@ def create_work_order_from_sales_order(doc, method, is_from_sales_order=True):
             
             work_order.insert()  # Insert the Work Order in Draft state
             frappe.msgprint(f"Work Order created for {item.item_code} in Draft state.")
-
-    # Commit the transaction to save the Work Order
-    frappe.db.commit()

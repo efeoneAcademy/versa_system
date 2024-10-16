@@ -124,13 +124,11 @@ doctype_js = {"Lead" : "public/js/lead.js","Quotation" : "public/js/quotation.js
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+   "Sales Order": {
+       "on_submit": "versa_system.versa_system.costom.castom.create_work_order_from_sales_order"
+   }
+}
 
 # Scheduled Tasks
 # ---------------

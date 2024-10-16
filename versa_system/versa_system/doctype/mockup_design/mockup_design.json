@@ -8,10 +8,9 @@
  "field_order": [
   "section_break_pdm5",
   "from_lead",
-  "column_break_dtei",
-  "image",
   "section_break_xldq",
-  "lead_details"
+  "lead_details",
+  "amended_from"
  ],
  "fields": [
   {
@@ -19,20 +18,10 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "image",
-   "fieldtype": "Attach Image",
-   "label": "Image",
-   "reqd": 1
-  },
-  {
    "fieldname": "from_lead",
    "fieldtype": "Link",
    "label": "From Lead",
    "options": "Lead"
-  },
-  {
-   "fieldname": "column_break_dtei",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "section_break_xldq",
@@ -44,12 +33,23 @@
    "label": "Lead Details",
    "options": "Enqury Details",
    "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Mockup Design",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-10-15 11:13:00.081460",
+ "max_attachments": 10,
+ "modified": "2024-10-16 16:27:39.149720",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Mockup Design",

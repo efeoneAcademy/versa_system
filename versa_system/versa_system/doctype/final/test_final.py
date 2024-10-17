@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestRawMaterial(FrappeTestCase):
+class TestFinal(FrappeTestCase):
 	pass

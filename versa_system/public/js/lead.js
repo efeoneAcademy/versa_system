@@ -38,3 +38,27 @@ frappe.ui.form.on("Lead", {
     }
   },
 });
+
+frappe.ui.form.on('Lead', {
+    refresh: function(frm) {
+        // Set query for 'item' field in the child table to show only 'Products'
+        frm.fields_dict["custom_enquiry_details"].grid.get_field("item").get_query = function() {
+            return {
+                filters: {
+                    "item_group": "Products"
+                }
+            };
+        };
+
+        // Set query for 'material' field in the child table to show only 'Raw Materials'
+        frm.fields_dict["custom_enquiry_details"].grid.get_field("material").get_query = function() {
+            return {
+                filters: {
+                    "item_group": "Raw Material"
+                }
+            };
+        };
+    }
+});
+
+

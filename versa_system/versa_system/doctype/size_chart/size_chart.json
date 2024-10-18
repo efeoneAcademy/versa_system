@@ -8,7 +8,8 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_fsxo",
-  "type"
+  "type",
+  "price"
  ],
  "fields": [
   {
@@ -21,11 +22,16 @@
    "in_list_view": 1,
    "label": "Type",
    "unique": 1
+  },
+  {
+   "fieldname": "price",
+   "fieldtype": "Currency",
+   "label": "Price"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-15 11:19:41.302507",
+ "modified": "2024-10-17 13:08:54.761779",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Size Chart",

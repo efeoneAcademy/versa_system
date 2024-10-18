@@ -6,7 +6,8 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "model"
+  "model",
+  "model_price"
  ],
  "fields": [
   {
@@ -14,11 +15,16 @@
    "fieldtype": "Data",
    "label": "Model",
    "unique": 1
+  },
+  {
+   "fieldname": "model_price",
+   "fieldtype": "Currency",
+   "label": " Model Price"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-07 15:14:29.779739",
+ "modified": "2024-10-18 13:50:06.116780",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Model",

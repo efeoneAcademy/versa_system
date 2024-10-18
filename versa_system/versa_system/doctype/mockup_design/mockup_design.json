@@ -31,8 +31,7 @@
    "fieldname": "lead_details",
    "fieldtype": "Table",
    "label": "Lead Details",
-   "options": "Enqury Details",
-   "read_only": 1
+   "options": "Enqury Details"
   },
   {
    "fieldname": "amended_from",
@@ -48,8 +47,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "max_attachments": 10,
- "modified": "2024-10-16 16:27:39.149720",
+ "modified": "2024-10-17 10:15:52.487506",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Mockup Design",

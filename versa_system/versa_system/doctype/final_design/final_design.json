@@ -7,7 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "lead",
-  "image"
+  "image_1"
  ],
  "fields": [
   {
@@ -17,17 +17,15 @@
    "options": "Lead"
   },
   {
-   "fieldname": "image",
-   "fieldtype": "Attach",
-   "in_list_view": 1,
+   "fieldname": "image_1",
+   "fieldtype": "Table",
    "label": "Image",
-   "read_only": 1,
-   "reqd": 1
+   "options": "Final"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-15 09:42:09.668884",
+ "modified": "2024-10-17 12:21:04.298437",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Final Design",

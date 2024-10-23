@@ -6,19 +6,31 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "model"
+  "model",
+  "item"
  ],
  "fields": [
   {
    "fieldname": "model",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Model",
+   "reqd": 1,
    "unique": 1
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item",
+   "options": "Item",
+   "reqd": 1,
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-07 15:14:29.779739",
+ "modified": "2024-10-23 09:28:08.074836",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Model",

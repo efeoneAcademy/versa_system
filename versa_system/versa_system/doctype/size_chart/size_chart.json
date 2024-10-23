@@ -7,25 +7,27 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "section_break_fsxo",
-  "type"
+  "type",
+  "item"
  ],
  "fields": [
-  {
-   "fieldname": "section_break_fsxo",
-   "fieldtype": "Section Break"
-  },
   {
    "fieldname": "type",
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Type",
    "unique": 1
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "label": "Item",
+   "options": "Item"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-15 11:19:41.302507",
+ "modified": "2024-10-23 09:52:25.196962",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Size Chart",

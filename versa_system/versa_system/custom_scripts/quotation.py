@@ -23,16 +23,21 @@ def map_quotation_to_final_design(source_name, target_doc=None):
                 "doctype": "Final Design",
                 "field_map": {
                     "party_name": "lead"
-                    # Add other field mappings here if necessary
                 },
             },
-            "Quotation Item": {  # Assuming the child table in Lead is 'lead_items'
-                "doctype": "Final",  # Actual child table DocType is 'Quotation Item'
+            "Quotation Item": {
+                "doctype": "Final",  # Assuming 'Final' is the correct child DocType in Final Design
                 "field_map": {
-                    "item_name": "item_code",
-                     # Map the rate if available
+                    "item_name": "item_code"
                 }
+            },
+            "Quotation Item": {  # Use a different key for the second child table
+                "doctype": "Quotation Item",  # This is for the additional child table
+                "field_map": {
+                    "qty": "qty",
+                    "uom": "uom"
                 }
+            }
         }, target_doc, set_missing_values)
 
     return target_doc

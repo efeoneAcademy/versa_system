@@ -7,9 +7,9 @@ frappe.ui.form.on("Sales Order", {
       // Add 10 days to today's date
       today.setDate(today.getDate() + 10);
       // Format the date to YYYY-MM-DD
-      var defaultDate = today.toISOString().split("T")[0];
+      var default_date = today.toISOString().split("T")[0];
       // Set the default date in the delivery_date field
-      frm.set_value("delivery_date", defaultDate);
+      frm.set_value("delivery_date", default_date);
     }
   },
 });

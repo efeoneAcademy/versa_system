@@ -6,26 +6,33 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "lead",
-  "image_1"
+  "from_lead",
+  "image_1",
+  "quotation_details"
  ],
  "fields": [
-  {
-   "fieldname": "lead",
-   "fieldtype": "Link",
-   "label": "From Lead",
-   "options": "Lead"
-  },
   {
    "fieldname": "image_1",
    "fieldtype": "Table",
    "label": "Image",
    "options": "Final"
+  },
+  {
+   "fieldname": "from_lead",
+   "fieldtype": "Link",
+   "label": "From Lead",
+   "options": "Lead"
+  },
+  {
+   "fieldname": "quotation_details",
+   "fieldtype": "Table",
+   "label": "Quotation Details",
+   "options": "Quotation Item"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-17 12:21:04.298437",
+ "modified": "2024-10-24 11:30:40.806173",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Final Design",

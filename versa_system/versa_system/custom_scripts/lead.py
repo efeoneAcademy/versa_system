@@ -50,7 +50,7 @@ def map_lead_to_quotation(source_name, target_doc=None):
             "Lead": {
                 "doctype": "Quotation",
                 "field_map": {
-                   
+
                     "name": "party_name"  # Map the Lead name to Quotation's party_name
                 },
             },
@@ -58,10 +58,10 @@ def map_lead_to_quotation(source_name, target_doc=None):
                 "doctype": "Quotation Item",  # Actual child table DocType is 'Quotation Item'
                 "field_map": {
                     "item": "item_name",
+                    "item": "item_code",
                      # Map the rate if available
                 }
             }
         }, target_doc, set_missing_values)
 
     return target_doc
-

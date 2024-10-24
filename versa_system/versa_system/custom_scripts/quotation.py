@@ -31,7 +31,7 @@ def map_quotation_to_final_design(source_name, target_doc=None):
                     "item_name": "item_code"
                 }
             },
-            "Quotation Item 2": {  # Use a different key for the second child table
+            "Quotation Item": {  # Use a different key for the second child table
                 "doctype": "Quotation Item",  # This is for the additional child table
                 "field_map": {
                     "qty": "qty",

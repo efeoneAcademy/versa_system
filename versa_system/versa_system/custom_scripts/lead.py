@@ -65,3 +65,8 @@ def map_lead_to_quotation(source_name, target_doc=None):
         }, target_doc, set_missing_values)
 
     return target_doc
+@frappe.whitelist()
+def update_lead_status_on_save(doc, method):
+    """Automatically change lead status to 'Interested' when saved."""
+    if doc.status == "Lead":
+        doc.status = "Interested"

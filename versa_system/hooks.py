@@ -131,11 +131,6 @@ doc_events = {
        "on_submit": "versa_system.versa_system.custom_scripts.work_order.create_work_order_from_sales_order"
    }
 }
-
-
-
-
->>>>>>> 33f425b (feat : Changing status automatically)
 # Scheduled Tasks
 # ---------------
 

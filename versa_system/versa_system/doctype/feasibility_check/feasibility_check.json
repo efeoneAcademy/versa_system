@@ -1,57 +1,49 @@
 {
- "actions": [],
- "allow_rename": 1,
- "autoname": "FC.#####",
- "creation": "2024-09-13 11:12:54.710909",
- "doctype": "DocType",
- "engine": "InnoDB",
- "field_order": [
-  "from_lead",
-  "details",
-  "comment"
- ],
- "fields": [
-  {
-   "fieldname": "from_lead",
-   "fieldtype": "Link",
-   "label": "From Lead",
-   "options": "Lead"
-  },
-  {
-   "fieldname": "details",
-   "fieldtype": "Table",
-   "label": "Details",
-   "options": "Enqury Details"
-  },
-  {
-   "fieldname": "comment",
-   "fieldtype": "Text",
-   "label": "Comment"
-  }
- ],
- "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2024-11-04 10:19:33.322068",
- "modified_by": "Administrator",
- "module": "Versa System",
- "name": "Feasibility Check",
- "naming_rule": "Expression (old style)",
- "owner": "Administrator",
- "permissions": [
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "System Manager",
-   "share": 1,
-   "write": 1
-  }
- ],
- "sort_field": "modified",
- "sort_order": "DESC",
- "states": []
+  "actions": [],
+  "allow_rename": 1,
+  "autoname": "FC.#####",
+  "creation": "2024-09-13 11:12:54.710909",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": ["from_lead", "details"],
+  "fields": [
+    {
+      "fieldname": "from_lead",
+      "fieldtype": "Link",
+      "label": "From Lead",
+      "options": "Lead"
+    },
+    {
+      "fieldname": "details",
+      "fieldtype": "Table",
+      "label": "Details",
+      "options": "Enqury Details"
+    }
+  ],
+  "index_web_pages_for_search": 1,
+  "links": [],
+
+  "modified": "2024-10-30 11:21:59.379276",
+  "modified_by": "Administrator",
+  "module": "Versa System",
+  "name": "Feasibility Check",
+  "naming_rule": "Expression (old style)",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": []
 }

@@ -14,11 +14,8 @@ frappe.ui.form.on('Mockup Design', {
 });
 frappe.ui.form.on('Mockup Design', {
     after_save: function(frm) {
-<<<<<<< HEAD
         // Check if the current status is 'Lead' and update it to 'Feasibility Approved'
-=======
         // Check if the current status is 'Lead' and update it to 'Mockup Design Approved'
->>>>>>> 4d68996 (fix:Corrected the issues)
         if (frm.doc.status === 'Lead') {
             frm.set_value('status', 'Mockup Design Approved');
             frm.save(); // Save again to persist the change
@@ -27,11 +24,8 @@ frappe.ui.form.on('Mockup Design', {
 
     approve: function(frm) {
         // Approve the mockup design and update lead status if linked
-<<<<<<< HEAD
         if (frm.doc.is_approved) {
-=======
         if (frm.doc.is_approved && frm.doc.status !== 'Mockup Design Approved') {
->>>>>>> 4d68996 (fix:Corrected the issues)
             frm.set_value('status', 'Mockup Design Approved');  // Set mockup design status
 
             // Update the linked lead's status if applicable
@@ -45,11 +39,8 @@ frappe.ui.form.on('Mockup Design', {
                         value: 'Mockup Design Approved',
                     },
                     callback: function(response) {
-<<<<<<< HEAD
                         if (response && !response.exc) {
-=======
                         if (response && response.message && !response.exc) {
->>>>>>> 4d68996 (fix:Corrected the issues)
                             frappe.msgprint(
                                 `Lead ${frm.doc.from_lead} status updated to 'Mockup Design Approved'.`,
                                 'Status Updated'
@@ -67,7 +58,6 @@ frappe.ui.form.on('Mockup Design', {
 
     reject: function(frm) {
         // Reject the mockup design and update lead status if linked
-<<<<<<< HEAD
         frm.set_value('status', 'Mockup Design Rejected'); // Set mockup design rejection status
 
         // Update the linked lead's status if applicable
@@ -94,7 +84,6 @@ frappe.ui.form.on('Mockup Design', {
         }
 
         frm.save(); // Save the document to persist the rejection
-=======
         if (frm.doc.status !== 'Mockup Design Rejected') {
             frm.set_value('status', 'Mockup Design Rejected'); // Set mockup design rejection status
 
@@ -123,6 +112,5 @@ frappe.ui.form.on('Mockup Design', {
 
             frm.save(); // Save the document to persist the rejection
         }
->>>>>>> 4d68996 (fix:Corrected the issues)
     }
 });

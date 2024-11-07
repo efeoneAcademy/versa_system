@@ -256,5 +256,4 @@ doc_events = {
     "Lead": {
         "before_save": "versa_system.versa_system.custom_scripts.lead.update_lead_status_on_save"
     }
-
 }

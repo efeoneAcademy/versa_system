@@ -1,12 +1,14 @@
 # Copyright (c) 2024, efeone and contributors
 # For license information, please see license.txt
 import frappe
+import frappe
 from frappe.model.document import Document
 
 class MockupDesign(Document):
     def on_update(self):
-        # Call the standalone function to update lead status when the document is updated
+        # Call the function to update lead status when the document is updated
         update_lead_status_on_mockup_design(self)
+
 
 def update_lead_status_on_mockup_design(doc):
     """Update the status of the associated lead when the mockup design is approved or rejected."""

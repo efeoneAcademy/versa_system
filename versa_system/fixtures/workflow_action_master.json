@@ -30,8 +30,8 @@
  {
   "docstatus": 0,
   "doctype": "Workflow Action Master",
-  "modified": "2024-09-20 12:10:35.358455",
-  "name": "Sent to Customer",
-  "workflow_action_name": "Sent to Customer"
+  "modified": "2024-11-26 17:04:00.696889",
+  "name": "Send to Customer",
+  "workflow_action_name": "Send to Customer"
  }
 ]

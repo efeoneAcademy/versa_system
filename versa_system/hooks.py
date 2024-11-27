@@ -131,9 +131,13 @@ doc_events = {
        "on_submit": "versa_system.versa_system.custom_scripts.work_order.create_work_order_from_sales_order"
    },
    "Final Design": {
-        "on_submit": "versa_system.versa_system.custom_scripts.quotation.check_final_design_status"
-    }
+       "on_submit": "versa_system.versa_system.custom_scripts.quotation.check_final_design_status"
+   },
+   "Quotation": {
+       "on_submit": "versa_system.versa_system.custom_scripts.quotation.update_lead_status_on_rejection"
+   }
 }
+
 # Scheduled Tasks
 # ---------------
 
@@ -247,7 +251,7 @@ fixtures = [
     {
         "dt": "Workflow Action Master",
         "filters": [
-            ["name", "in", ["Approve", "Reject", "Rivision Requested","Sent to Customer","Review"]]
+            ["name", "in", ["Approve", "Reject", "Rivision Requested","Send to Customer","Review"]]
         ]
     }
 ]

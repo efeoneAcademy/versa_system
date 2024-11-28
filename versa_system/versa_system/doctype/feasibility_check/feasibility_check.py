@@ -41,8 +41,8 @@ def map_feasibility_to_mockup_design(source_name, target_doc=None):
                 "doctype": "Mockup Design",
                 "field_map": {}
             },
-            "Enquiry Details": {  # Ensure this matches the target child table name
-                "doctype": "Enquiry Details",  # Corrected spelling
+            "Enqury Details": {  
+                "doctype": "Enqury Details",
                 "postprocess": filter_approved_items,  # Process only approved items
                 "condition": lambda doc: doc.approve  # Only map rows where 'approve' is checked
             }

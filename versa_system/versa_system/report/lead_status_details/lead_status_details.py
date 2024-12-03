@@ -1,4 +1,5 @@
 import frappe
+from frappe import _
 
 def execute(filters=None):
     """
@@ -15,7 +16,7 @@ def get_columns():
     return [
         {"label": "Lead ID", "fieldname": "lead_id", "fieldtype": "Link", "options": "Lead", "width": 200},
         {"label": "Lead Name", "fieldname": "lead_name", "fieldtype": "Data", "width": 200},
-        {"label": "Item", "fieldname": "item", "fieldtype": "Data", "width": 200},
+        {"label": "Item", "fieldname": "item", "fieldtype": "Link","options": "Item", "width": 200},
         {"label": "Status", "fieldname": "status", "fieldtype": "Data", "width": 200},
         {"label": "Creation Date", "fieldname": "creation", "fieldtype": "Datetime", "width": 180},
         {"label": "Feasibility Check ID", "fieldname": "feasibility_check_id", "fieldtype": "Link", "options": "Feasibility Check", "width": 200},
@@ -45,7 +46,38 @@ def get_data(filters=None):
     """
     Fetches the data to be displayed in the report.
     """
-    query = """
+    conditions = ""
+
+    # Apply filters if they are provided
+    if filters:
+        if filters.get("from_date"):
+            conditions += f" AND l.creation >= '{filters.get('from_date')}'"
+        if filters.get("to_date"):
+            conditions += f" AND l.creation <= '{filters.get('to_date')}'"
+        if filters.get("lead_id"):
+            conditions += f" AND l.name = '{filters.get('lead_id')}'"
+        if filters.get("item"):
+            conditions += f" AND ed.item = '{filters.get('item')}'"
+        if filters.get("customer"):
+            conditions += f" AND l.lead_name = '{filters.get('customer')}'"
+        if filters.get("company"):
+            conditions += f" AND l.company = '{filters.get('company')}'"
+        if filters.get("quotation_date"):
+            conditions += f" AND q.transaction_date = '{filters.get('quotation_date')}'"
+        if filters.get("sales_order_id"):
+            conditions += f" AND so.name = '{filters.get('sales_order_id')}'"
+        if filters.get("work_order_id"):
+            conditions += f" AND wo.name = '{filters.get('work_order_id')}'"
+        if filters.get("bom_id"):
+            conditions += f" AND wo.bom_no = '{filters.get('bom_id')}'"
+        if filters.get("delivery_note_id"):
+            conditions += f" AND dn.name = '{filters.get('delivery_note_id')}'"
+        if filters.get("sales_invoice_id"):
+            conditions += f" AND si.name = '{filters.get('sales_invoice_id')}'"
+
+
+    # SQL query with dynamic filter conditions
+    query = f"""
         SELECT
             l.name AS lead_id,
             l.lead_name AS lead_name,
@@ -97,7 +129,10 @@ def get_data(filters=None):
             `tabSales Invoice` si ON si.customer_name = so.customer_name
         LEFT JOIN
             `tabDelivery Note` dn ON dn.customer_name = so.customer_name
+        WHERE 1=1
+        {conditions}
         ORDER BY
             l.creation DESC, ed.idx
     """
+
     return frappe.db.sql(query, as_dict=True)

@@ -19,5 +19,20 @@ frappe.ui.form.on('Mockup Design', {
                 });
             }, __('Create'));
         }
-    }  
+    }, 
+ // Function to update the Lead with table data from Feasibility Check
+  all_select: function (frm) {
+    if (frm.doc. all_select) {
+      // Loop through all rows in the Details child table
+      frm.doc.lead_details.forEach(row => {
+        frappe.model.set_value(row.doctype, row.name, 'md_approved', 1); // Check the Approve column
+      });
+    } else {
+      // Uncheck the Approve column when Select All is unchecked
+      frm.doc.lead_details.forEach(row => {
+        frappe.model.set_value(row.doctype, row.name, 'md_approved', 0); // Uncheck the Approve column
+      });
+    }
+  }	
 });
+ 

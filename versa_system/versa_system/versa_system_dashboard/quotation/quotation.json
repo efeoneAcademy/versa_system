@@ -1,0 +1,29 @@
+{
+ "cards": [],
+ "charts": [
+  {
+   "chart": "Quotation",
+   "width": "Half"
+  },
+  {
+   "chart": "Quotation",
+   "width": "Half"
+  },
+  {
+   "chart": "Quotation",
+   "width": "Half"
+  }
+ ],
+ "creation": "2024-12-06 10:03:52.272707",
+ "dashboard_name": "Quotation",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 1,
+ "is_standard": 1,
+ "modified": "2024-12-06 10:14:20.047879",
+ "modified_by": "Administrator",
+ "module": "Versa System",
+ "name": "Quotation",
+ "owner": "Administrator"
+}

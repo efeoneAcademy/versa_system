@@ -1,0 +1,32 @@
+{
+ "chart_name": "Lead Status",
+ "chart_type": "Report",
+ "creation": "2024-12-05 10:19:36.512290",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "dynamic_filters_json": "{}",
+ "filters_json": "{}",
+ "group_by_type": "Count",
+ "idx": 7,
+ "is_public": 1,
+ "is_standard": 1,
+ "modified": "2024-12-06 10:00:27.662060",
+ "modified_by": "Administrator",
+ "module": "Versa System",
+ "name": "Lead Status",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "report_name": "Lead Status Details",
+ "roles": [],
+ "time_interval": "Yearly",
+ "timeseries": 0,
+ "timespan": "Last Year",
+ "type": "Pie",
+ "use_report_chart": 0,
+ "x_field": "quotation_date",
+ "y_axis": [
+  {
+   "y_field": "Quotation"
+  }
+ ]
+}

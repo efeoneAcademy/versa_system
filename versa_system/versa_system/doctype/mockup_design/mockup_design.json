@@ -8,6 +8,7 @@
  "field_order": [
   "section_break_pdm5",
   "from_lead",
+  "all_select",
   "section_break_xldq",
   "lead_details",
   "previous_details",
@@ -49,13 +50,19 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "all_select",
+   "fieldtype": "Check",
+   "label": "All Select"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
  "max_attachments": 10,
- "modified": "2024-11-19 12:51:39.712283",
+ "modified": "2024-11-28 11:18:49.782662",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Mockup Design",

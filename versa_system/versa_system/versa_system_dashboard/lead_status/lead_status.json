@@ -1,0 +1,37 @@
+{
+ "cards": [],
+ "charts": [
+  {
+   "chart": "Lead Status",
+   "width": "Half"
+  },
+  {
+   "chart": "Lead Status",
+   "width": "Half"
+  },
+  {
+   "chart": "Lead Status",
+   "width": "Half"
+  },
+  {
+   "chart": "Lead Status",
+   "width": "Half"
+  },
+  {
+   "chart": "Lead Status",
+   "width": "Half"
+  }
+ ],
+ "creation": "2024-12-05 10:20:32.893044",
+ "dashboard_name": "Lead Status",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2024-12-06 10:00:27.741086",
+ "modified_by": "Administrator",
+ "module": "Versa System",
+ "name": "Lead Status",
+ "owner": "Administrator"
+}

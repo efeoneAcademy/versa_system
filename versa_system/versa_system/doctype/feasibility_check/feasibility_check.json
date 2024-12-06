@@ -1,54 +1,92 @@
 {
-  "actions": [],
-  "allow_rename": 1,
-  "autoname": "FC.#####",
-  "creation": "2024-09-13 11:12:54.710909",
-  "doctype": "DocType",
-  "engine": "InnoDB",
-  "field_order": ["from_lead", "select_all", "details"],
-  "fields": [
-    {
-      "fieldname": "from_lead",
-      "fieldtype": "Link",
-      "label": "From Lead",
-      "options": "Lead"
-    },
-    {
-      "fieldname": "details",
-      "fieldtype": "Table",
-      "label": "Details",
-      "options": "Enqury Details"
-    },
-    {
-      "default": "0",
-      "fieldname": "select_all",
-      "fieldtype": "Check",
-      "label": "Select All"
-    }
-  ],
-  "index_web_pages_for_search": 1,
-  "links": [],
-  "modified": "2024-11-18 16:58:18.311136",
-  "modified_by": "Administrator",
-  "module": "Versa System",
-  "name": "Feasibility Check",
-  "naming_rule": "Expression (old style)",
-  "owner": "Administrator",
-  "permissions": [
-    {
-      "create": 1,
-      "delete": 1,
-      "email": 1,
-      "export": 1,
-      "print": 1,
-      "read": 1,
-      "report": 1,
-      "role": "System Manager",
-      "share": 1,
-      "write": 1
-    }
-  ],
-  "sort_field": "modified",
-  "sort_order": "DESC",
-  "states": []
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "FC.#####",
+ "creation": "2024-09-13 11:12:54.710909",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "from_lead",
+  "select_all",
+  "details",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "from_lead",
+   "fieldtype": "Link",
+   "label": "From Lead",
+   "options": "Lead"
+  },
+  {
+   "fieldname": "details",
+   "fieldtype": "Table",
+   "label": "Details",
+   "options": "Enqury Details"
+  },
+  {
+   "default": "0",
+   "fieldname": "select_all",
+   "fieldtype": "Check",
+   "label": "Select All"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Feasibility Check",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-12-06 14:39:39.612912",
+ "modified_by": "Administrator",
+ "module": "Versa System",
+ "name": "Feasibility Check",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Lead user",
+   "share": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Feasibility Check user",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
 }

@@ -30,7 +30,12 @@ def map_lead_to_feasibility_check(source_name, target_doc=None):
                     "design": "design",
                 }
             }
-        }, target_doc, set_missing_values)
+        },
+        target_doc,
+        set_missing_values
+    )
+    
+    target_doc.save(ignore_permissions=True)  # Save without permission checks
 
     return target_doc
 

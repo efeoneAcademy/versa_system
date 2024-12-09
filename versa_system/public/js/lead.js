@@ -94,10 +94,19 @@ function update_buttons(frm) {
     frm.add_custom_button(
       __("Feasibility Check"),
       function () {
-        frappe.model.open_mapped_doc({
+        frappe.call({
           method:
             "versa_system.versa_system.custom_scripts.lead.map_lead_to_feasibility_check",
-          frm: frm,
+          args: {
+            source_name: frm.doc.name,
+          },
+          callback: function (response) {
+            frappe.msgprint({
+              title: __("Notification"),
+              message: __("A Feasibility Check request has been sent."),
+              indicator: "green",
+            });
+          },
         });
       },
       __("Create")

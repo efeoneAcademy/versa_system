@@ -1,8 +1,12 @@
 import frappe
 from frappe.custom.doctype.custom_field.custom_field import create_custom_fields
+from frappe.utils.fixtures import sync_fixtures
 from frappe import _
 
+# After Install
 def after_install():
+    """This method runs after the app is installed."""
+    create_roles()
     create_custom_fields(get_brand_custom_fields(), ignore_validate=True)
     create_custom_fields(get_quotation_custom_fields(), ignore_validate=True)
     create_property_setters(get_property_setters())
@@ -14,6 +18,29 @@ def before_uninstall():
     delete_custom_fields(get_brand_custom_fields())
     delete_custom_fields(get_quotation_custom_fields())
 
+# Create Roles
+def create_roles():
+    """Create custom roles during app setup."""
+    roles = [
+        {"role_name": "Lead user", "desk_access": 1},
+        {"role_name": "Feasibility Check user", "desk_access": 1},
+    ]
+
+    for role in roles:
+        if not frappe.db.exists("Role", role["role_name"]):
+            doc = frappe.get_doc({
+                "doctype": "Role",
+                "role_name": role["role_name"],
+                "desk_access": role["desk_access"],
+                "is_custom": 1,
+            })
+            doc.insert()
+            frappe.db.commit()
+            frappe.msgprint(f"Role '{role['role_name']}' created successfully.")
+        else:
+            print(f"Role '{role['role_name']}' already exists.")
+
+# Delete Custom Fields
 def delete_custom_fields(custom_fields: dict):
     """
     Method to delete custom fields from doctypes.
@@ -29,6 +56,7 @@ def delete_custom_fields(custom_fields: dict):
         )
         frappe.clear_cache(doctype=doctype)
 
+# Custom Fields for Brand
 def get_brand_custom_fields():
     """
     Define custom fields for the Brand doctype.

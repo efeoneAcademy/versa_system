@@ -127,16 +127,20 @@ before_uninstall = "versa_system.setup.before_uninstall"
 # Hook on document methods and events
 # hooks.py
 doc_events = {
-   "Sales Order": {
-       "on_submit": "versa_system.versa_system.custom_scripts.work_order.create_work_order_from_sales_order"
-   },
-   "Final Design": {
-       "on_submit": "versa_system.versa_system.custom_scripts.quotation.check_final_design_status"
-   },
-   "Quotation": {
-       "on_submit": "versa_system.versa_system.custom_scripts.quotation.update_lead_status_on_rejection"
-   }
+    "Sales Order": {
+        "on_submit": "versa_system.versa_system.custom_scripts.work_order.create_work_order_from_sales_order"
+    },
+    "Final Design": {
+        "on_submit": "versa_system.versa_system.custom_scripts.quotation.check_final_design_status"
+    },
+    "Quotation": {
+        "on_submit": "versa_system.versa_system.custom_scripts.quotation.update_lead_status_on_rejection"
+    },
+    "Lead": {
+        "before_save": "versa_system.versa_system.custom_scripts.lead.update_lead_status_on_save"
+    }
 }
+
 
 # Scheduled Tasks
 # ---------------
@@ -255,8 +259,3 @@ fixtures = [
         ]
     }
 ]
-doc_events = {
-    "Lead": {
-        "before_save": "versa_system.versa_system.custom_scripts.lead.update_lead_status_on_save"
-    }
-}

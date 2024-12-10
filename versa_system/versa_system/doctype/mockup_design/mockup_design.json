@@ -62,7 +62,7 @@
  "is_submittable": 1,
  "links": [],
  "max_attachments": 10,
- "modified": "2024-11-28 11:18:49.782662",
+ "modified": "2024-12-09 15:31:28.813531",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Mockup Design",
@@ -80,6 +80,32 @@
    "role": "System Manager",
    "share": 1,
    "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Mockup Design user",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Feasibility Check user",
+   "select": 1,
+   "share": 1,
    "write": 1
   }
  ],

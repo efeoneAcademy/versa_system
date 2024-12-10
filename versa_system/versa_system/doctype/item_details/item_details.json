@@ -11,7 +11,6 @@
   "design",
   "model",
   "brand",
-  "size_chart",
   "rate_range",
   "made",
   "is_customized",
@@ -41,12 +40,6 @@
    "fieldtype": "Link",
    "label": "Brand",
    "options": "Brand"
-  },
-  {
-   "fieldname": "size_chart",
-   "fieldtype": "Link",
-   "label": "Size Chart",
-   "options": "Size Chart"
   },
   {
    "fieldname": "rate_range",
@@ -82,7 +75,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-12-07 13:59:44.540711",
+ "modified": "2024-12-10 13:17:14.346156",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Item Details",

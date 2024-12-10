@@ -1,0 +1,94 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-12-07 09:54:58.822091",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item",
+  "material",
+  "design",
+  "model",
+  "brand",
+  "size_chart",
+  "rate_range",
+  "made",
+  "is_customized",
+  "image"
+ ],
+ "fields": [
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "label": "Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "design",
+   "fieldtype": "Link",
+   "label": "Design",
+   "options": "Design"
+  },
+  {
+   "fieldname": "model",
+   "fieldtype": "Link",
+   "label": "Model",
+   "options": "Model"
+  },
+  {
+   "fieldname": "brand",
+   "fieldtype": "Link",
+   "label": "Brand",
+   "options": "Brand"
+  },
+  {
+   "fieldname": "size_chart",
+   "fieldtype": "Link",
+   "label": "Size Chart",
+   "options": "Size Chart"
+  },
+  {
+   "fieldname": "rate_range",
+   "fieldtype": "Link",
+   "label": "Rate Range",
+   "options": "Rate Range"
+  },
+  {
+   "fieldname": "made",
+   "fieldtype": "Select",
+   "label": "Made",
+   "options": "Hand Made\nMachine Made"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_customized",
+   "fieldtype": "Check",
+   "label": "Is customized"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Link",
+   "label": "Image",
+   "options": "Image"
+  },
+  {
+   "fieldname": "material",
+   "fieldtype": "Link",
+   "label": "Material",
+   "options": "Item"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-12-07 13:59:44.540711",
+ "modified_by": "Administrator",
+ "module": "Versa System",
+ "name": "Item Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

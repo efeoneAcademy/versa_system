@@ -4,6 +4,12 @@ app_publisher = "efeone"
 app_description = "Frappe app to manage operations in manufacturing industry"
 app_email = "info@efeone.com"
 app_license = "mit"
+
+
+doctype_js = {
+    "Lead": "public/lead.js"
+}
+
 # required_apps = []
 
 # Includes in <head>
@@ -226,4 +232,3 @@ app_license = "mit"
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-

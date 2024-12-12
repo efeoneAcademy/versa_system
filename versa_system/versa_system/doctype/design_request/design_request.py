@@ -1,12 +1,15 @@
+# Copyright (c) 2024, efeone and contributors
+# For license information, please see license.txt
 
 import frappe
 from frappe.model.document import Document
 from frappe.model.mapper import get_mapped_doc
 
-class FeasibilityCheck(Document):
-    pass
+
+class DesignRequest(Document):
+	pass
 @frappe.whitelist()
-def map_lead_to_feasibility_check(source_name, target_doc=None):
+def map_feasibility_check_to_moc(source_name, target_doc=None):
     """
     Map fields from Lead DocType to Feasibility Check DocType,
     including child table 'Enquiry Details'
@@ -15,10 +18,10 @@ def map_lead_to_feasibility_check(source_name, target_doc=None):
         # Set any missing values if needed
         pass
 
-    target_doc = get_mapped_doc("Lead", source_name,
+    target_doc = get_mapped_doc("Feasibility Check", source_name,
         {
-            "Lead": {
-                "doctype": "Feasibility Check",
+            "Feasibility Check": {
+                "doctype": "Design Request",
                 "field_map": {},
             },
             "Item Details": {  # Ensure that 'Item Details' is the correct child table name

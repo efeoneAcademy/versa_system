@@ -1,36 +1,26 @@
 // Copyright (c) 2024, efeone and contributors
 // For license information, please see license.txt
-
-// frappe.ui.form.on("Feasibility Check", {
-// 	refresh(frm) {
-
-// 	},
-// });
 frappe.ui.form.on('Feasibility Check', {
     refresh: function(frm) {
-        // Add a custom button to the Lead form
-        frm.add_custom_button(__('Create MOC UP Design'), function() {
-            frappe.new_doc('MOC UP Design');
-            // frappe.model.open_mapped_doc({
-            //     method: "versa_system.versa_system.doctype.feasibility_check.feasibility_check.map_lead_to_feasibility_check",  // Path to the server-side function
-            //     source_name: frm.doc.name  // The ID of the current Lead
-            // });xz
-        }, __("Create"));
+        // Check if child table 'item_details' exists
+        if (!frm.doc.item_details || !frm.doc.item_details.length) {
+            return; // Exit if the child table is empty
+        }
+
+        // Check if any row has 'is_customized' checked
+        let show_button = frm.doc.item_details.some(row => row.is_feasible === 1 || row.is_feasible === true);
+
+        if (show_button) {
+            frm.add_custom_button(
+                __("Create MOC UP Design"),
+                function () {
+                    frappe.model.open_mapped_doc({
+                        method: "versa_system.versa_system.doctype.design_request.design_request.map_feasibility_check_to_moc",
+                        frm: frm,
+                    });
+                },
+                __("Create")
+            );
+        }
     }
 });
-// refresh: function(frm) {
-//         // Add custom button to redirect to Feasibility Check
-//         frm.add_custom_button('Create MOC UP Design', function() {
-//             // Check if lead is saved
-//             if (!frm.doc.name) {
-//                 frappe.msgprint('Please save the Feasibility c first');
-//                 return;
-//             }
-//
-//             // Create or redirect to Feasibility Check
-//             frappe.new_doc('Feasibility Check', {
-//                 lead: frm.doc.name
-//             });
-//         }, __('Create'));
-//     }
-// });

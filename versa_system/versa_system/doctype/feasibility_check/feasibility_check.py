@@ -47,8 +47,8 @@ def map_feasibility_to_mockup_design(source_name, target_doc=None):
                 "doctype": "Mockup Design",
                 "field_map": {}
             },
-            "Enquiry Details": {  # Ensure the child table doctype names are correct
-                "doctype": "Enquiry Details",  # Match the target child table doctype
+            "Enqury Details": {  # Ensure the child table doctype names are correct
+                "doctype": "Enqury Details",  # Match the target child table doctype
                 "postprocess": filter_approved_items,  # Process only approved items
                 "condition": lambda doc: doc.approve  # Map rows where 'approve' is checked
             }
@@ -56,10 +56,10 @@ def map_feasibility_to_mockup_design(source_name, target_doc=None):
         target_doc,
         set_missing_values  # Apply missing values after mapping
     )
-
+    # Set the ignore_mandatory flag
+    target_doc.flags.ignore_mandatory = True
     # Save the mapped document
     target_doc.save(ignore_permissions=True)
-
     # Return the mapped document to the frontend
     return target_doc
 

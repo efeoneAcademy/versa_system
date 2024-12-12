@@ -6,7 +6,8 @@ from frappe.model.mapper import get_mapped_doc
 class MockupDesign(Document):
     def validate(self):
         # Ensure each row in lead_details table has an image
-        self.check_image_field_in_lead_details()
+        if not self.flags.ignore_mandatory:
+            self.check_image_field_in_lead_details()
 
     def on_update(self):
         # Call the function to update lead status when the document is updated

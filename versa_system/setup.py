@@ -24,7 +24,7 @@ def create_roles():
     roles = [
         {"role_name": "Lead user", "desk_access": 1},
         {"role_name": "Feasibility Check user", "desk_access": 1},
-        {"role_name": "Mockup Design user","desk_access": 1},
+        {"role_name": "Design user","desk_access": 1},
     ]
 
     for role in roles:

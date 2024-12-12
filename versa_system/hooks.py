@@ -9,7 +9,6 @@ app_license = "mit"
 doctype_js = {
     "Lead": "public/lead.js"
 }
-
 # required_apps = []
 
 # Includes in <head>
@@ -232,3 +231,14 @@ doctype_js = {
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
+fixtures = [
+    {"dt": "Workflow", "filters": [
+        ["name", "in", ["Feasibility Check Workflow", "Mockup Design Workflow"]]
+    ]},
+    {"dt": "Workflow State", "filters": [
+        ["name", "in", ["Draft", "Awaiting response from MF team", "Approved", "Rejected", "Awaiting Customer approval"]]
+    ]},
+    {"dt": "Workflow Action Master", "filters": [
+        ["name", "in", ["Send to Manufacturing Team","Not Feasible", "Feasible", "Approve", "Reject", "Send to Customer"]]
+    ]}
+]

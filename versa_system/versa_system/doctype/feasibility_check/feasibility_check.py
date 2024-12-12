@@ -15,11 +15,17 @@ def map_feasibility_to_mockup_design(source_name, target_doc=None):
     including only approved rows from the 'Enquiry Details' child table.
     """
     def set_missing_values(source, target):
-        # Set any additional values for the target if needed
-        pass
+        """
+        Set additional values for the target if needed.
+        For example, you can populate specific fields in the target document.
+        """
+        target.from_feasibility_check = source.name
 
     def filter_approved_items(source, target, source_parent):
-        # Only map rows where the 'approve' checkbox is checked
+        """
+        Only map rows where the 'approve' checkbox is checked in the child table.
+        This function defines how each child row is processed.
+        """
         if source.approve:
             target.item = source.item
             target.brand = source.brand
@@ -32,7 +38,7 @@ def map_feasibility_to_mockup_design(source_name, target_doc=None):
             target.made_machinehand = source.made_machinehand
             target.image = source.image
 
-    # Map Feasibility Check to Mockup Design, applying the filter to child table rows
+    # Map Feasibility Check to Mockup Design
     target_doc = get_mapped_doc(
         "Feasibility Check",
         source_name,
@@ -41,16 +47,20 @@ def map_feasibility_to_mockup_design(source_name, target_doc=None):
                 "doctype": "Mockup Design",
                 "field_map": {}
             },
-            "Enqury Details": {  
-                "doctype": "Enqury Details",
+            "Enqury Details": {  # Ensure the child table doctype names are correct
+                "doctype": "Enqury Details",  # Match the target child table doctype
                 "postprocess": filter_approved_items,  # Process only approved items
-                "condition": lambda doc: doc.approve  # Only map rows where 'approve' is checked
+                "condition": lambda doc: doc.approve  # Map rows where 'approve' is checked
             }
         },
         target_doc,
-        set_missing_values
+        set_missing_values  # Apply missing values after mapping
     )
-
+    # Set the ignore_mandatory flag
+    target_doc.flags.ignore_mandatory = True
+    # Save the mapped document
+    target_doc.save(ignore_permissions=True)
+    # Return the mapped document to the frontend
     return target_doc
 
 def update_lead_status_on_feasibility_check(doc):

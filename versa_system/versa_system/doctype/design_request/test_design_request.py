@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestMOCUPDesign(FrappeTestCase):
+class TestDesignRequest(FrappeTestCase):
 	pass

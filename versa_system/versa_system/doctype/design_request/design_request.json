@@ -1,17 +1,21 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2024-12-07 09:40:48.796073",
+ "autoname": "field:first_name",
+ "creation": "2024-12-12 15:59:53.945997",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_ili8",
+  "section_break_34ns",
   "amended_from",
-  "image"
+  "lead",
+  "first_name",
+  "item_details",
+  "type"
  ],
  "fields": [
   {
-   "fieldname": "section_break_ili8",
+   "fieldname": "section_break_34ns",
    "fieldtype": "Section Break"
   },
   {
@@ -19,24 +23,44 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Image",
+   "options": "Design Request",
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
   },
   {
-   "fieldname": "image",
-   "fieldtype": "Attach",
-   "label": "Image"
+   "fieldname": "lead",
+   "fieldtype": "Link",
+   "label": "Lead",
+   "options": "Lead"
+  },
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "First Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "item_details",
+   "fieldtype": "Table",
+   "label": "Item Details",
+   "options": "Item Details"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "Mockup Design\nFinal Design"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-12-07 09:41:20.076065",
+ "modified": "2024-12-12 16:10:21.658285",
  "modified_by": "Administrator",
  "module": "Versa System",
- "name": "Image",
+ "name": "Design Request",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

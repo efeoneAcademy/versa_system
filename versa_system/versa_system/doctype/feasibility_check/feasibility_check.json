@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "Feas.#####",
  "creation": "2024-12-07 16:11:46.809290",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -54,10 +55,11 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-12-09 13:39:06.197161",
+ "modified": "2024-12-13 13:27:59.468820",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Feasibility Check",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {

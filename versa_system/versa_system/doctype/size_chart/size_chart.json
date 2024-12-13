@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "Size.#####",
  "creation": "2024-12-10 14:28:54.738998",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -21,10 +22,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-10 14:30:48.847974",
+ "modified": "2024-12-13 13:30:11.249304",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Size Chart",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {

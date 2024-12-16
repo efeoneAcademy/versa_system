@@ -232,3 +232,23 @@ doctype_js = {
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
+fixtures = [
+    {
+        "dt": "Workflow",
+        "filters": [
+            ["name", "in", ["Feasibility workflow","Mockup Workflow"]]
+        ]
+    },
+    {
+        "dt": "Workflow State",
+        "filters": [
+            ["name", "in", ["Draft","Review Request","Approved","Approved","Send to Customer"]]
+        ]
+    },
+    {
+        "dt": "Workflow Action",
+        "filters": [
+            ["name", "in", ["Send to Customer","Approve","Reject","Review Request"]]
+        ]
+    }
+]

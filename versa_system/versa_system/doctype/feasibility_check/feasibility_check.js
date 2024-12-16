@@ -2,6 +2,7 @@
 // For license information, please see license.txt
 frappe.ui.form.on('Feasibility Check', {
     refresh: function(frm) {
+      if (frm.doc.workflow_state === "Approved") {
         // Check if child table 'item_details' exists
         if (!frm.doc.item_details || !frm.doc.item_details.length) {
             return; // Exit if the child table is empty
@@ -22,5 +23,6 @@ frappe.ui.form.on('Feasibility Check', {
                 __("Create")
             );
         }
+      }
     }
 });

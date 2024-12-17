@@ -11,6 +11,15 @@
  {
   "docstatus": 0,
   "doctype": "Workflow State",
+  "icon": "remove",
+  "modified": "2024-12-11 14:07:09.410613",
+  "name": "Rejected",
+  "style": "Danger",
+  "workflow_state_name": "Rejected"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
   "icon": "ok-sign",
   "modified": "2024-12-11 14:07:09.409973",
   "name": "Approved",

@@ -242,13 +242,13 @@ fixtures = [
     {
         "dt": "Workflow State",
         "filters": [
-            ["name", "in", ["Draft","Review Request","Approved","Approved","Send to Customer"]]
+            ["name", "in", ["Draft","Review Request","Approved","Rejected","Send to Customer"]]
         ]
     },
     {
-        "dt": "Workflow Action",
+        "dt": "Workflow Action Master",
         "filters": [
-            ["name", "in", ["Send to Customer","Approve","Reject","Review Request"]]
+            ["name", "in", ["Approve", "Reject", "Review Request","Send to Customer"]]
         ]
     }
 ]

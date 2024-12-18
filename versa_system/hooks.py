@@ -129,10 +129,10 @@ doctype_js = {
 # Hook on document methods and events
 
 # doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
+# 	"Lead": {
+# 		"on_save": "versa_system.versa_system.custom_script.lead.map_lead_to_quotation",
+# # 		# "on_cancel": "method",
+# # 		# "on_trash": "method"
 # 	}
 # }
 

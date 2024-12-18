@@ -7,7 +7,8 @@ app_license = "mit"
 
 
 doctype_js = {
-    "Lead": "public/lead.js"
+    "Lead": "public/lead.js",
+    "Quotation": "public/quotation.js"
 }
 
 # required_apps = []
@@ -236,7 +237,7 @@ fixtures = [
     {
         "dt": "Workflow",
         "filters": [
-            ["name", "in", ["Feasibility workflow","Mockup Workflow"]]
+            ["name", "in", ["Feasibility workflow","Mockup Workflow","Quotation Workflow"]]
         ]
     },
     {

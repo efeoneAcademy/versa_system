@@ -7,11 +7,11 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_34ns",
+  "type",
   "amended_from",
   "lead",
   "first_name",
-  "item_details",
-  "type"
+  "item_details"
  ],
  "fields": [
   {
@@ -56,7 +56,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-12-12 16:10:21.658285",
+ "modified": "2024-12-18 10:56:08.949380",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Design Request",

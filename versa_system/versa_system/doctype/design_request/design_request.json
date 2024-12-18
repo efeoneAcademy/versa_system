@@ -11,6 +11,7 @@
   "amended_from",
   "lead",
   "first_name",
+  "final_image",
   "item_details"
  ],
  "fields": [
@@ -51,12 +52,18 @@
    "fieldtype": "Select",
    "label": "Type",
    "options": "Mockup Design\nFinal Design"
+  },
+  {
+   "depends_on": "eval: doc.type == 'Final Design'\n",
+   "fieldname": "final_image",
+   "fieldtype": "Attach Image",
+   "label": "Final Image"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-12-18 10:56:08.949380",
+ "modified": "2024-12-18 16:18:24.476549",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Design Request",

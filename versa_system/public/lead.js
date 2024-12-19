@@ -29,6 +29,17 @@ frappe.ui.form.on('Lead', {
             __("Create")
         );
 
+                frm.add_custom_button(
+                    __("Go to Final Design"),
+                    function () {
+                        frappe.model.open_mapped_doc({
+                            method: "versa_system.versa_system.doctype.design_request.design_request.map_lead_to_design_request",
+                            frm: frm,
+                        });
+                    },
+                    __("Create")
+                );
+
         // Add "Create Quotation" button
         if (!frm.is_new()) {
             frm.page.remove_inner_button(__('Quotation'), 'Create');

@@ -4,7 +4,7 @@
   "doctype": "Workflow",
   "document_type": "Quotation",
   "is_active": 1,
-  "modified": "2024-12-17 17:13:16.916385",
+  "modified": "2024-12-19 09:57:24.225556",
   "name": "Quotation Workflow",
   "override_status": 0,
   "send_email_alert": 0,

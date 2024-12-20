@@ -233,11 +233,18 @@ doctype_js = {
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
+doc_events = {
+    "Design Request": {
+        "before_save":"versa_system.versa_system.doctype.design_request.design_request.set_workflow"
+    }
+}
+
+
 fixtures = [
     {
         "dt": "Workflow",
         "filters": [
-            ["name", "in", ["Feasibility workflow","Mockup Workflow","Quotation Workflow"]]
+            ["name", "in", ["Feasibility workflow","Mockup Workflow","Quotation Workflow","Design Request workflow"]]
         ]
     },
     {

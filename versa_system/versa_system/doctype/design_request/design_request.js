@@ -3,7 +3,7 @@
 
 frappe.ui.form.on('Design Request', {
     refresh: function(frm) {
-      if (frm.doc.workflow_state === "Approved") {
+      if (frm.doc.workflow_state === "Approved" && frm.doc.type === "Mockup Design") {
         // Add a custom button
         frm.add_custom_button(__('Go to Lead'), function() {
             // Check if the 'lead' field exists and has a value

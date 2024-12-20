@@ -72,3 +72,12 @@ def map_lead_to_design_request(source_name, target_doc=None):
         }, target_doc, set_missing_values)
 
     return target_doc
+
+#Function to dynamically activate one workflow and deactivate another
+def set_workflow(doc, method):
+    if doc.type == "Mockup Design":
+        frappe.db.set_value("Workflow", {"name": "Mockup Workflow"}, "is_active", 1)
+        frappe.db.set_value("Workflow", {"name": "Final Design Workflow"}, "is_active", 0)
+    elif doc.type == "Final Design":
+        frappe.db.set_value("Workflow", {"name": "Mockup Workflow"}, "is_active", 0)
+        frappe.db.set_value("Workflow", {"name": "Final Design Workflow"}, "is_active", 1)

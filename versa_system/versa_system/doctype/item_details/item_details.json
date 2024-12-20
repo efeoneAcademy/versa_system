@@ -82,16 +82,23 @@
   },
   {
    "default": "0",
-   "depends_on": "eval:['Lead', 'Item Details'].includes(doc.parenttype)\n",
+   "depends_on": "eval:['Lead', 'Item Details'].includes(doc.parenttype)",
    "fieldname": "is_feasible",
    "fieldtype": "Check",
    "label": "Is Feasible"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:parent && parent.docname && parent.doctype === 'Raw Material'",
+   "fieldname": "is_available",
+   "fieldtype": "Check",
+   "label": "Is Available"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-12-12 16:20:00.008165",
+ "modified": "2024-12-19 16:13:25.848888",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Item Details",

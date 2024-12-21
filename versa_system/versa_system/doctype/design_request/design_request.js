@@ -5,7 +5,7 @@ frappe.ui.form.on('Design Request', {
     refresh: function(frm) {
       if (frm.doc.workflow_state === "Approved" && frm.doc.type === "Mockup Design") {
         // Add a custom button
-        frm.add_custom_button(__('Go to Lead'), function() {
+        frm.add_custom_button(__('View Lead'), function() {
             // Check if the 'lead' field exists and has a value
             if (frm.doc.lead) {
                 // Redirect to the specific Lead document

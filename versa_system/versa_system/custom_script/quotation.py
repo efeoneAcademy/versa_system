@@ -17,9 +17,9 @@ def map_lead_to_quotation(source_name, target_doc=None):
 
     def filter_approved_items(source, target, source_parent):
         # Only map rows where the 'approve' checkbox is checked
-        if source.approve:
             target.item_name = source.item
             target.item_code = source.item  # Allow creating the quotation even if the user does not have permissions
+            target.qty = 1  # Set quantity to 1
 
     target_doc = get_mapped_doc("Lead", source_name,
         {
@@ -34,7 +34,8 @@ def map_lead_to_quotation(source_name, target_doc=None):
                 "doctype": "Quotation Item",  # Correct child table name in Quotation
                 "field_map": {
                     "item": "item_code"
-                }
+                },
+                 "postprocess": filter_approved_items  # Set qty=1 after mapping
             }
         }, target_doc, set_missing_values)
 

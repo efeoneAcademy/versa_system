@@ -15,5 +15,7 @@ frappe.ui.form.on('Design Request', {
             }
         }, __('Create Quatation from Lead')); // Group under "Actions"
       }
-    }
+
+    },
+
 });

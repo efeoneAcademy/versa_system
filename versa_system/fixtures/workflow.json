@@ -4,7 +4,7 @@
   "doctype": "Workflow",
   "document_type": "Design Request",
   "is_active": 0,
-  "modified": "2024-12-19 16:04:12.197154",
+  "modified": "2024-12-23 15:44:00.676133",
   "name": "Design Request workflow",
   "override_status": 0,
   "send_email_alert": 0,
@@ -34,7 +34,7 @@
     "parent": "Design Request workflow",
     "parentfield": "states",
     "parenttype": "Workflow",
-    "state": "Send to Customer",
+    "state": "Sent to Customer",
     "update_field": null,
     "update_value": null,
     "workflow_builder_id": null
@@ -76,7 +76,7 @@
     "allow_self_approval": 1,
     "allowed": "Administrator",
     "condition": null,
-    "next_state": "Send to Customer",
+    "next_state": "Sent to Customer",
     "parent": "Design Request workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
@@ -92,7 +92,7 @@
     "parent": "Design Request workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
-    "state": "Send to Customer",
+    "state": "Sent to Customer",
     "workflow_builder_id": null
    },
    {
@@ -104,7 +104,7 @@
     "parent": "Design Request workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
-    "state": "Send to Customer",
+    "state": "Sent to Customer",
     "workflow_builder_id": null
    },
    {
@@ -116,7 +116,7 @@
     "parent": "Design Request workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
-    "state": "Send to Customer",
+    "state": "Sent to Customer",
     "workflow_builder_id": null
    }
   ],
@@ -129,7 +129,7 @@
   "doctype": "Workflow",
   "document_type": "Quotation",
   "is_active": 1,
-  "modified": "2024-12-20 12:26:08.407074",
+  "modified": "2024-12-23 15:42:01.742560",
   "name": "Quotation Workflow",
   "override_status": 0,
   "send_email_alert": 0,
@@ -159,7 +159,7 @@
     "parent": "Quotation Workflow",
     "parentfield": "states",
     "parenttype": "Workflow",
-    "state": "Send to Customer",
+    "state": "Sent to Customer",
     "update_field": null,
     "update_value": null,
     "workflow_builder_id": null
@@ -216,7 +216,7 @@
     "allow_self_approval": 1,
     "allowed": "Administrator",
     "condition": null,
-    "next_state": "Send to Customer",
+    "next_state": "Sent to Customer",
     "parent": "Quotation Workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
@@ -228,7 +228,7 @@
     "allow_self_approval": 1,
     "allowed": "Administrator",
     "condition": null,
-    "next_state": "Send to Customer",
+    "next_state": "Sent to Customer",
     "parent": "Quotation Workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
@@ -240,7 +240,7 @@
     "allow_self_approval": 1,
     "allowed": "Administrator",
     "condition": null,
-    "next_state": "Send to Customer",
+    "next_state": "Sent to Customer",
     "parent": "Quotation Workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
@@ -256,7 +256,7 @@
     "parent": "Quotation Workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
-    "state": "Send to Customer",
+    "state": "Sent to Customer",
     "workflow_builder_id": null
    },
    {
@@ -268,7 +268,7 @@
     "parent": "Quotation Workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
-    "state": "Send to Customer",
+    "state": "Sent to Customer",
     "workflow_builder_id": null
    },
    {
@@ -280,7 +280,7 @@
     "parent": "Quotation Workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
-    "state": "Send to Customer",
+    "state": "Sent to Customer",
     "workflow_builder_id": null
    }
   ],
@@ -292,8 +292,8 @@
   "docstatus": 0,
   "doctype": "Workflow",
   "document_type": "Design Request",
-  "is_active": 0,
-  "modified": "2024-12-20 12:41:19.739558",
+  "is_active": 1,
+  "modified": "2024-12-23 15:28:59.148415",
   "name": "Mockup Workflow",
   "override_status": 0,
   "send_email_alert": 0,
@@ -368,7 +368,7 @@
     "parent": "Mockup Workflow",
     "parentfield": "states",
     "parenttype": "Workflow",
-    "state": "Send to Customer",
+    "state": "Sent to Customer",
     "update_field": null,
     "update_value": null,
     "workflow_builder_id": null
@@ -380,7 +380,7 @@
     "allow_self_approval": 1,
     "allowed": "Administrator",
     "condition": null,
-    "next_state": "Send to Customer",
+    "next_state": "Sent to Customer",
     "parent": "Mockup Workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
@@ -392,7 +392,7 @@
     "allow_self_approval": 1,
     "allowed": "Administrator",
     "condition": null,
-    "next_state": "Send to Customer",
+    "next_state": "Sent to Customer",
     "parent": "Mockup Workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
@@ -404,7 +404,7 @@
     "allow_self_approval": 1,
     "allowed": "Administrator",
     "condition": null,
-    "next_state": "Send to Customer",
+    "next_state": "Sent to Customer",
     "parent": "Mockup Workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
@@ -416,7 +416,7 @@
     "allow_self_approval": 1,
     "allowed": "Administrator",
     "condition": null,
-    "next_state": "Send to Customer",
+    "next_state": "Sent to Customer",
     "parent": "Mockup Workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
@@ -432,7 +432,7 @@
     "parent": "Mockup Workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
-    "state": "Send to Customer",
+    "state": "Sent to Customer",
     "workflow_builder_id": null
    },
    {
@@ -444,7 +444,7 @@
     "parent": "Mockup Workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
-    "state": "Send to Customer",
+    "state": "Sent to Customer",
     "workflow_builder_id": null
    },
    {
@@ -456,7 +456,7 @@
     "parent": "Mockup Workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
-    "state": "Send to Customer",
+    "state": "Sent to Customer",
     "workflow_builder_id": null
    }
   ],
@@ -469,7 +469,7 @@
   "doctype": "Workflow",
   "document_type": "Feasibility Check",
   "is_active": 1,
-  "modified": "2024-12-13 16:32:06.846241",
+  "modified": "2024-12-23 15:38:34.467880",
   "name": "Feasibility workflow",
   "override_status": 0,
   "send_email_alert": 0,
@@ -499,7 +499,7 @@
     "parent": "Feasibility workflow",
     "parentfield": "states",
     "parenttype": "Workflow",
-    "state": "Send to Customer",
+    "state": "Sent to Customer",
     "update_field": null,
     "update_value": null,
     "workflow_builder_id": null
@@ -507,7 +507,7 @@
    {
     "allow_edit": "Administrator",
     "avoid_status_override": 0,
-    "doc_status": "0",
+    "doc_status": "1",
     "is_optional_state": 0,
     "message": null,
     "next_action_email_template": null,
@@ -522,7 +522,7 @@
    {
     "allow_edit": "Administrator",
     "avoid_status_override": 0,
-    "doc_status": "0",
+    "doc_status": "1",
     "is_optional_state": 0,
     "message": null,
     "next_action_email_template": null,
@@ -541,7 +541,7 @@
     "allow_self_approval": 1,
     "allowed": "Administrator",
     "condition": null,
-    "next_state": "Send to Customer",
+    "next_state": "Sent to Customer",
     "parent": "Feasibility workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
@@ -553,7 +553,7 @@
     "allow_self_approval": 1,
     "allowed": "Administrator",
     "condition": null,
-    "next_state": "Send to Customer",
+    "next_state": "Sent to Customer",
     "parent": "Feasibility workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
@@ -565,7 +565,7 @@
     "allow_self_approval": 1,
     "allowed": "Administrator",
     "condition": null,
-    "next_state": "Send to Customer",
+    "next_state": "Sent to Customer",
     "parent": "Feasibility workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
@@ -577,7 +577,7 @@
     "allow_self_approval": 1,
     "allowed": "Administrator",
     "condition": null,
-    "next_state": "Send to Customer",
+    "next_state": "Sent to Customer",
     "parent": "Feasibility workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
@@ -593,7 +593,7 @@
     "parent": "Feasibility workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
-    "state": "Send to Customer",
+    "state": "Sent to Customer",
     "workflow_builder_id": null
    },
    {
@@ -605,7 +605,7 @@
     "parent": "Feasibility workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
-    "state": "Send to Customer",
+    "state": "Sent to Customer",
     "workflow_builder_id": null
    },
    {
@@ -617,7 +617,7 @@
     "parent": "Feasibility workflow",
     "parentfield": "transitions",
     "parenttype": "Workflow",
-    "state": "Send to Customer",
+    "state": "Sent to Customer",
     "workflow_builder_id": null
    }
   ],

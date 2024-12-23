@@ -1,10 +1,9 @@
-// Copyright (c) 2024, efeone and contributors
-// For license information, please see license.txt
 
 frappe.ui.form.on('Design Request', {
     refresh: function(frm) {
         // Ensure the 'type' field is read-only if its value is 'Mockup Design'
-        if (frm.doc.type === 'Mockup Design') {
+        // and workflow_state is 'Sent to Customer'
+        if (frm.doc.type === 'Mockup Design' && frm.doc.workflow_state === 'Sent to Customer') {
             frm.set_df_property('type', 'read_only', 1);
         }
 
@@ -22,7 +21,8 @@ frappe.ui.form.on('Design Request', {
 
     type: function(frm) {
         // Make the 'type' field read-only if its value is 'Mockup Design'
-        if (frm.doc.type === 'Mockup Design') {
+        // and workflow_state is 'Sent to Customer'
+        if (frm.doc.type === 'Mockup Design' && frm.doc.workflow_state === 'Sent to Customer') {
             frm.set_df_property('type', 'read_only', 1);
         } else {
             frm.set_df_property('type', 'read_only', 0);

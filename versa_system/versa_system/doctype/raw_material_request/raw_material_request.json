@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "RMR.#####",
+ "autoname": "format:RMR-{YYYY}-{#####}",
  "creation": "2024-12-18 12:52:55.342065",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -36,11 +36,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-20 10:57:21.382218",
+ "modified": "2024-12-24 09:54:06.501960",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Raw Material Request",
- "naming_rule": "Expression (old style)",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

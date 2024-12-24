@@ -13,7 +13,7 @@ frappe.ui.form.on('Feasibility Check', {
 
         if (show_button) {
             frm.add_custom_button(
-                __("Create MOC UP Design"),
+                __("Create Mockup Design"),
                 function () {
                     frappe.model.open_mapped_doc({
                         method: "versa_system.versa_system.doctype.design_request.design_request.map_feasibility_check_to_moc",

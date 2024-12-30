@@ -33,6 +33,7 @@ frappe.ui.form.on('Raw Material Request', {
                 function() {
                     // Add redirection logic to Quotation form here
                     frappe.set_route('List', 'Quotation');
+
                 }
             );
         }

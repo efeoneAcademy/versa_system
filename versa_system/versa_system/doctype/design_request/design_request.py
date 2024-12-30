@@ -73,6 +73,44 @@ def map_lead_to_design_request(source_name, target_doc=None):
 
     return target_doc
 
+@frappe.whitelist()
+def map_quotation_to_design_request(source_name, target_doc=None):
+    """
+    Map fields from Quotation DocType to Design Request DocType,
+    including specified fields like 'lead', 'customer_name', and mapping 'item_code' to 'item' in Item Details.
+    """
+    def set_missing_values(source, target):
+        # Set any missing values if needed
+        target.type = "Final Design"
+
+    # Get the mapped document
+    target_doc = get_mapped_doc(
+        "Quotation",
+        source_name,
+        {
+            "Quotation": {
+                "doctype": "Design Request",
+                "field_map": {
+                    "party_name": "lead",  # Map 'party_name' to 'lead'
+                    "customer_name": "first_name",  # Map 'customer_name' to 'first_name'
+                },
+            },
+            "Quotation Item": {  # Mapping item_code from Quotation to item in Item Details of Design Request
+                "doctype": "Item Details",  # Target table in Design Request
+                "field_map": {
+                    "item_code": "item",  # Map 'item_code' from Quotation to 'item' in Item Details
+                },
+            },
+        },
+        target_doc,
+        set_missing_values
+    )
+
+    return target_doc
+
+
+
+
 #Function to dynamically activate one workflow and deactivate another
 def set_workflow(doc, method):
     if doc.type == "Mockup Design":

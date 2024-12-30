@@ -1,11 +1,6 @@
 // Copyright (c) 2024, efeone and contributors
 // For license information, please see license.txt
 
-// frappe.ui.form.on("Raw Material Request", {
-// 	refresh(frm) {
-
-// 	},
-// });
 frappe.ui.form.on('Raw Material Request', {
     refresh: function(frm) {
         // Remove existing buttons to avoid duplicates
@@ -23,7 +18,10 @@ frappe.ui.form.on('Raw Material Request', {
             frm.add_custom_button(
                 __('Raw Material Purchase'),
                 function() {
-                    // Add functionality for "Raw Material Purchase" here
+                  frappe.model.open_mapped_doc({
+                    method: "versa_system.versa_system.custom_script.material_request.map_raw_material_to_material_request",
+                    frm: frm
+                  });
                 }
             );
         }

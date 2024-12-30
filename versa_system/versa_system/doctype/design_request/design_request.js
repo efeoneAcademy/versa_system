@@ -14,5 +14,14 @@ frappe.ui.form.on('Design Request', {
         }, __('Create Quatation from Lead')); // Group under "Actions"
       }
 
+      // Add a custom button
+      if (frm.doc.workflow_state === "Approved" && frm.doc.type === "Final Design") {
+        frm.add_custom_button(__('Raw Material Check'), function() {
+          frappe.model.open_mapped_doc({
+            method: "versa_system.versa_system.doctype.raw_material_request.raw_material_request.map_lead_to_raw_material_request",
+            frm: frm,
+          });
+        }, __('Create')); // Group under "Create"
+      }
     },
 });

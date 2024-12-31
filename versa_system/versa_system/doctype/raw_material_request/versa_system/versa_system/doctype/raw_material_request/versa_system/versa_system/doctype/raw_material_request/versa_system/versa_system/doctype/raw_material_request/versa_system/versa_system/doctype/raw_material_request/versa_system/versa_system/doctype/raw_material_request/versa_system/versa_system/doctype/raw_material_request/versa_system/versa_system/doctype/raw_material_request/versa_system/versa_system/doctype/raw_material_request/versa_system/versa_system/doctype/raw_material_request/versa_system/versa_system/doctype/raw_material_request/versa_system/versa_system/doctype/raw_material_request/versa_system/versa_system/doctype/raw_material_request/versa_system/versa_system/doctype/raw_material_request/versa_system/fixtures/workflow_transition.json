@@ -1,0 +1,50 @@
+[
+ {
+  "action": "Send to customer",
+  "allow_self_approval": 1,
+  "allowed": "Administrator",
+  "condition": null,
+  "docstatus": 0,
+  "doctype": "Workflow Transition",
+  "modified": "2024-12-13 15:32:51.989162",
+  "name": "kt5il738bk",
+  "next_state": "Send to customer",
+  "parent": "Quotation Workflow",
+  "parentfield": "transitions",
+  "parenttype": "Workflow",
+  "state": "Draft",
+  "workflow_builder_id": null
+ },
+ {
+  "action": "Send to Customer",
+  "allow_self_approval": 1,
+  "allowed": "Administrator",
+  "condition": null,
+  "docstatus": 0,
+  "doctype": "Workflow Transition",
+  "modified": "2024-12-17 16:16:54.064915",
+  "name": "nt1rrp2aat",
+  "next_state": "Send to Customer",
+  "parent": "Mockup Workflow",
+  "parentfield": "transitions",
+  "parenttype": "Workflow",
+  "state": "Draft",
+  "workflow_builder_id": null
+ },
+ {
+  "action": "Send to Customer",
+  "allow_self_approval": 1,
+  "allowed": "Administrator",
+  "condition": null,
+  "docstatus": 0,
+  "doctype": "Workflow Transition",
+  "modified": "2024-12-17 16:16:54.237567",
+  "name": "v4b60oknig",
+  "next_state": "Send to Customer",
+  "parent": "Feasibility workflow",
+  "parentfield": "transitions",
+  "parenttype": "Workflow",
+  "state": "Draft",
+  "workflow_builder_id": null
+ }
+]

@@ -1,0 +1,111 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-12-07 09:54:58.822091",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item",
+  "material",
+  "design",
+  "model",
+  "brand",
+  "made",
+  "size_chart",
+  "image",
+  "is_customized",
+  "is_feasible",
+  "is_available"
+ ],
+ "fields": [
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "design",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Design",
+   "options": "Design"
+  },
+  {
+   "fieldname": "model",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Model",
+   "options": "Model"
+  },
+  {
+   "fieldname": "brand",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Brand",
+   "options": "Brand"
+  },
+  {
+   "default": "Machine Made",
+   "fieldname": "made",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Made",
+   "options": "Hand Made\nMachine Made"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_customized",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is customized"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Image"
+  },
+  {
+   "fieldname": "material",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Material",
+   "options": "Item"
+  },
+  {
+   "fieldname": "size_chart",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Size Chart",
+   "options": "Size Chart"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:['Lead', 'Item Details'].includes(doc.parenttype)\n",
+   "fieldname": "is_feasible",
+   "fieldtype": "Check",
+   "label": "Is Feasible"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.parent_doctype == 'Raw Material Request'\n\n\n\n",
+   "fieldname": "is_available",
+   "fieldtype": "Check",
+   "label": "Is Available"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-12-20 12:28:24.971886",
+ "modified_by": "Administrator",
+ "module": "Versa System",
+ "name": "Item Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

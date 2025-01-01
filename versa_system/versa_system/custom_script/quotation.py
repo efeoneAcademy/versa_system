@@ -21,15 +21,15 @@ def map_lead_to_quotation(source_name, target_doc=None):
             item.qty = item.qty or 1  # Default quantity is 1
 
         # Ensure the 'Item Details' child table is also populated correctly
-        for item_detail in source.custom_item_details:
+        for item_details in source.custom_item_details:
             target.append('item_details', {
-                'item': item_detail.item,
-                'material': item_detail.material,
-                'brand': item_detail.brand,
-                'model': item_detail.model,
-                'rate_range': item_detail.rate_range,
-                'size_chart': item_detail.size_chart,
-                'design': item_detail.design
+                'item': item_details.item,
+                'material': item_details.material,
+                'brand': item_details.brand,
+                'model': item_details.model,
+                'rate_range': item_details.rate_range,
+                'size_chart': item_details.size_chart,
+                'design': item_details.design
             })
 
     def filter_approved_items(source, target, source_parent):
@@ -56,7 +56,8 @@ def map_lead_to_quotation(source_name, target_doc=None):
             "Item Details": {  # Child table in Lead
                 "doctype": "Quotation Item",  # Target child table in Quotation
                 "field_map": {
-                    "item": "item_code",  # Map item to item_code
+                    "item": "item_code",
+                    "item": "item_name",# Map item to item_code
                     "material": "material",
                     "brand": "brand",
                     "model": "model",

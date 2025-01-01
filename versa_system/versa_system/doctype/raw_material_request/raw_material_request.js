@@ -2,7 +2,7 @@ frappe.ui.form.on('Raw Material Request', {
     refresh: function(frm) {
         // Remove existing buttons to avoid duplicates
         frm.remove_custom_button(__('Raw Material Purchase'));
-        frm.remove_custom_button(__('Go to Quotation'));
+        frm.remove_custom_button(__('Goto Quotation'));
 
         // Check 'is_available' status in item_details
         let has_unchecked = frm.doc.item_details.some(row => row.is_available === 0 || row.is_available === false);
@@ -24,7 +24,7 @@ frappe.ui.form.on('Raw Material Request', {
         // Add "Go to Quotation" button if all rows are checked
         if (all_checked) {
             frm.add_custom_button(
-                __('Go to Quotation'),
+                __('Goto Quotation'),
                 function() {
                     frappe.call({
                         method: "frappe.client.get_list",

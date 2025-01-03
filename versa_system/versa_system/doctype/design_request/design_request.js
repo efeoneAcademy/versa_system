@@ -1,4 +1,3 @@
-
 frappe.ui.form.on('Design Request', {
     refresh: function(frm) {
       if (frm.doc.workflow_state === "Approved" && frm.doc.type === "Mockup Design") {
@@ -22,6 +21,11 @@ frappe.ui.form.on('Design Request', {
             frm: frm,
           });
         }, __('Create')); // Group under "Create"
+      }
+      if (frm.fields_dict['item_details']) {
+            frm.fields_dict['item_details'].grid.toggle_display('is_customized', false);
+            frm.fields_dict['item_details'].grid.toggle_display('is_feasible', false);
+            frm.fields_dict['item_details'].grid.toggle_display('is_available', false);
       }
     },
 });

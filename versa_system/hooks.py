@@ -8,7 +8,8 @@ app_license = "mit"
 
 doctype_js = {
     "Lead": "public/lead.js",
-    "Quotation": "public/quotation.js"
+    "Quotation": "public/quotation.js",
+    "Sales Order":"public/sales_order.js"
 }
 
 # required_apps = []
@@ -75,7 +76,9 @@ doctype_js = {
 # ------------
 
 # before_install = "versa_system.install.before_install"
-# after_install = "versa_system.install.after_install"
+after_install = "versa_system.setup.after_install"
+
+after_migrate = "versa_system.setup.after_migrate"
 
 # Uninstallation
 # ------------
@@ -129,13 +132,14 @@ doctype_js = {
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"Lead": {
-# 		"on_save": "versa_system.versa_system.custom_script.lead.map_lead_to_quotation",
-# # 		# "on_cancel": "method",
-# # 		# "on_trash": "method"
-# 	}
-# }
+doc_events = {
+    "Design Request": {
+        "before_save":"versa_system.versa_system.doctype.design_request.design_request.set_workflow"
+    },
+    "Work Order": {
+        "onload": "versa_system.versa_system.custom_script.work_order.update_sales_order_status_on_work_order_completion"
+    }
+}
 
 # Scheduled Tasks
 # ---------------
@@ -233,12 +237,6 @@ doctype_js = {
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-doc_events = {
-    "Design Request": {
-        "before_save":"versa_system.versa_system.doctype.design_request.design_request.set_workflow"
-    }
-}
-
 
 fixtures = [
     {

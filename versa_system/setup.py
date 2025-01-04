@@ -6,10 +6,14 @@ from frappe import _
 def after_install():
     """Runs after the app is installed."""
     create_property_setters(get_property_setters())
+    create_custom_fields(get_quotion_custom_fields(), ignore_validate=True)
 
 def after_migrate():
     """Runs after migration."""
     after_install()
+
+def before_uninstall():
+    delete_custom_fields(get_quotion_custom_fields())
 
 def get_property_setters():
     """
@@ -57,3 +61,20 @@ def create_property_setters(property_setter_datas):
             frappe.db.commit()
         except Exception as e:
             frappe.log_error(f"Error creating property setter for {data['doc_type']} - {data['field_name']}: {str(e)}")
+
+
+def get_quotion_custom_fields():
+    '''
+        Custom fields that need to be added to the Student Group DocType
+    '''
+    return {
+        "Quotation": [
+            {
+                "fieldname": "item_details",
+                "fieldtype": "Table",
+                "label": "item Details",
+                "insert_after": "scan_barcode",
+                "options":"Item Details"
+            }
+        ]
+    }

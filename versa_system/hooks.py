@@ -75,7 +75,7 @@ doctype_js = {
 # Installation
 # ------------
 
-# before_install = "versa_system.install.before_install"
+before_install = "versa_system.install.before_install"
 after_install = "versa_system.setup.after_install"
 
 after_migrate = "versa_system.setup.after_migrate"

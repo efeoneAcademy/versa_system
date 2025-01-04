@@ -19,5 +19,10 @@ frappe.ui.form.on('Quotation', {
                 });
             }, __("Create"));
         }
+        if (frm.fields_dict['item_details']) {
+              frm.fields_dict['item_details'].grid.toggle_display('is_customized', false);
+              frm.fields_dict['item_details'].grid.toggle_display('is_feasible', false);
+              frm.fields_dict['item_details'].grid.toggle_display('is_available', false);
+        }
     }
 });

@@ -95,10 +95,16 @@ def map_quotation_to_design_request(source_name, target_doc=None):
                     "customer_name": "first_name",  # Map 'customer_name' to 'first_name'
                 },
             },
-            "Quotation Item": {  # Mapping item_code from Quotation to item in Item Details of Design Request
-                "doctype": "Item Details",  # Target table in Design Request
+            "Item Details": {  # Ensure that 'Item Details' is the correct child table name
+                "doctype": "Item Details",  # Ensure this matches the target child table
                 "field_map": {
-                    "item_code": "item",  # Map 'item_code' from Quotation to 'item' in Item Details
+                    "item": "item",
+                    "material": "material",
+                    "brand": "brand",
+                    "model": "model",
+                    "rate_range": "rate_range",
+                    "size": "size",
+                    "design": "design",
                 },
             },
         },

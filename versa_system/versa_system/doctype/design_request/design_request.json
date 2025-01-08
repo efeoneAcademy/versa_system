@@ -38,8 +38,7 @@
   {
    "fieldname": "first_name",
    "fieldtype": "Data",
-   "label": "First Name",
-   "unique": 1
+   "label": "First Name"
   },
   {
    "fieldname": "item_details",
@@ -64,7 +63,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-12-27 13:29:47.531744",
+ "modified": "2025-01-07 13:08:30.553808",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Design Request",

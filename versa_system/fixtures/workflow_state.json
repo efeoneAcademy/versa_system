@@ -3,7 +3,7 @@
   "docstatus": 0,
   "doctype": "Workflow State",
   "icon": "",
-  "modified": "2024-12-13 15:18:18.630945",
+  "modified": "2025-01-07 17:33:54.770569",
   "name": "Review Request",
   "style": "",
   "workflow_state_name": "Review Request"
@@ -30,18 +30,18 @@
   "docstatus": 0,
   "doctype": "Workflow State",
   "icon": "",
-  "modified": "2024-12-13 15:20:38.120192",
+  "modified": "2025-01-07 17:01:11.293296",
   "name": "Draft",
-  "style": "",
+  "style": "Danger",
   "workflow_state_name": "Draft"
  },
  {
   "docstatus": 0,
   "doctype": "Workflow State",
   "icon": "",
-  "modified": "2024-12-21 10:03:38.276915",
+  "modified": "2025-01-07 17:00:11.155214",
   "name": "Sent to Customer",
-  "style": "",
+  "style": "Info",
   "workflow_state_name": "Sent to Customer"
  }
 ]

@@ -7,6 +7,7 @@ def after_install():
     """Runs after the app is installed."""
     create_property_setters(get_property_setters())
     create_custom_fields(get_quotion_custom_fields(), ignore_validate=True)
+    create_roles()
 
 def after_migrate():
     """Runs after migration."""
@@ -78,3 +79,21 @@ def get_quotion_custom_fields():
             }
         ]
     }
+
+
+def create_roles():
+    """Create custom roles required by the app."""
+    roles = [
+        {"role_name": "Buyer", "desk_access": 1},
+        {"role_name": "Feasibility Analyst", "desk_access": 1}
+    ]
+
+    for role in roles:
+        if not frappe.db.exists("Role", role["role_name"]):
+            frappe.get_doc({
+                "doctype": "Role",
+                "role_name": role["role_name"],
+                "desk_access": role.get("desk_access", 1),
+                "restrict_to_domain": role.get("restrict_to_domain", None)
+            }).insert(ignore_permissions=True)
+            frappe.db.commit()

@@ -4,7 +4,7 @@
   "doctype": "Workflow",
   "document_type": "Design Request",
   "is_active": 0,
-  "modified": "2024-12-23 15:44:00.676133",
+  "modified": "2025-01-07 16:31:38.969064",
   "name": "Design Request workflow",
   "override_status": 0,
   "send_email_alert": 0,
@@ -40,7 +40,7 @@
     "workflow_builder_id": null
    },
    {
-    "allow_edit": "Administrator",
+    "allow_edit": "Buyer",
     "avoid_status_override": 0,
     "doc_status": "1",
     "is_optional_state": 0,
@@ -55,7 +55,7 @@
     "workflow_builder_id": null
    },
    {
-    "allow_edit": "Administrator",
+    "allow_edit": "Buyer",
     "avoid_status_override": 0,
     "doc_status": "1",
     "is_optional_state": 0,
@@ -86,7 +86,7 @@
    {
     "action": "Review Request",
     "allow_self_approval": 1,
-    "allowed": "Administrator",
+    "allowed": "Buyer",
     "condition": null,
     "next_state": "Draft",
     "parent": "Design Request workflow",
@@ -98,7 +98,7 @@
    {
     "action": "Approve",
     "allow_self_approval": 1,
-    "allowed": "Administrator",
+    "allowed": "Buyer",
     "condition": null,
     "next_state": "Approved",
     "parent": "Design Request workflow",
@@ -110,7 +110,7 @@
    {
     "action": "Reject",
     "allow_self_approval": 1,
-    "allowed": "Administrator",
+    "allowed": "Buyer",
     "condition": null,
     "next_state": "Rejected",
     "parent": "Design Request workflow",
@@ -129,7 +129,7 @@
   "doctype": "Workflow",
   "document_type": "Quotation",
   "is_active": 1,
-  "modified": "2024-12-23 15:42:01.742560",
+  "modified": "2025-01-08 10:11:56.828411",
   "name": "Quotation Workflow",
   "override_status": 0,
   "send_email_alert": 0,
@@ -165,7 +165,7 @@
     "workflow_builder_id": null
    },
    {
-    "allow_edit": "Administrator",
+    "allow_edit": "Buyer",
     "avoid_status_override": 0,
     "doc_status": "1",
     "is_optional_state": 0,
@@ -180,7 +180,7 @@
     "workflow_builder_id": null
    },
    {
-    "allow_edit": "Administrator",
+    "allow_edit": "Buyer",
     "avoid_status_override": 0,
     "doc_status": "1",
     "is_optional_state": 0,
@@ -195,7 +195,7 @@
     "workflow_builder_id": null
    },
    {
-    "allow_edit": "Administrator",
+    "allow_edit": "Buyer",
     "avoid_status_override": 0,
     "doc_status": "0",
     "is_optional_state": 0,
@@ -248,9 +248,21 @@
     "workflow_builder_id": null
    },
    {
-    "action": "Approve",
+    "action": "Send to Customer",
     "allow_self_approval": 1,
     "allowed": "Administrator",
+    "condition": null,
+    "next_state": "Sent to Customer",
+    "parent": "Quotation Workflow",
+    "parentfield": "transitions",
+    "parenttype": "Workflow",
+    "state": "Draft",
+    "workflow_builder_id": null
+   },
+   {
+    "action": "Approve",
+    "allow_self_approval": 1,
+    "allowed": "Buyer",
     "condition": null,
     "next_state": "Approved",
     "parent": "Quotation Workflow",
@@ -262,7 +274,7 @@
    {
     "action": "Reject",
     "allow_self_approval": 1,
-    "allowed": "Administrator",
+    "allowed": "Buyer",
     "condition": null,
     "next_state": "Rejected",
     "parent": "Quotation Workflow",
@@ -274,7 +286,7 @@
    {
     "action": "Review Request",
     "allow_self_approval": 1,
-    "allowed": "Administrator",
+    "allowed": "Buyer",
     "condition": null,
     "next_state": "Draft",
     "parent": "Quotation Workflow",
@@ -293,7 +305,7 @@
   "doctype": "Workflow",
   "document_type": "Design Request",
   "is_active": 1,
-  "modified": "2024-12-23 15:28:59.148415",
+  "modified": "2025-01-08 10:03:34.771967",
   "name": "Mockup Workflow",
   "override_status": 0,
   "send_email_alert": 0,
@@ -314,7 +326,7 @@
     "workflow_builder_id": null
    },
    {
-    "allow_edit": "Administrator",
+    "allow_edit": "Buyer",
     "avoid_status_override": 0,
     "doc_status": "0",
     "is_optional_state": 0,
@@ -329,7 +341,7 @@
     "workflow_builder_id": null
    },
    {
-    "allow_edit": "Administrator",
+    "allow_edit": "Buyer",
     "avoid_status_override": 0,
     "doc_status": "1",
     "is_optional_state": 0,
@@ -344,7 +356,7 @@
     "workflow_builder_id": null
    },
    {
-    "allow_edit": "Administrator",
+    "allow_edit": "Buyer",
     "avoid_status_override": 0,
     "doc_status": "1",
     "is_optional_state": 0,
@@ -424,9 +436,21 @@
     "workflow_builder_id": null
    },
    {
-    "action": "Approve",
+    "action": "Send to Customer",
     "allow_self_approval": 1,
     "allowed": "Administrator",
+    "condition": null,
+    "next_state": "Sent to Customer",
+    "parent": "Mockup Workflow",
+    "parentfield": "transitions",
+    "parenttype": "Workflow",
+    "state": "Draft",
+    "workflow_builder_id": null
+   },
+   {
+    "action": "Approve",
+    "allow_self_approval": 1,
+    "allowed": "Buyer",
     "condition": null,
     "next_state": "Approved",
     "parent": "Mockup Workflow",
@@ -438,7 +462,7 @@
    {
     "action": "Reject",
     "allow_self_approval": 1,
-    "allowed": "Administrator",
+    "allowed": "Buyer",
     "condition": null,
     "next_state": "Rejected",
     "parent": "Mockup Workflow",
@@ -450,7 +474,7 @@
    {
     "action": "Review Request",
     "allow_self_approval": 1,
-    "allowed": "Administrator",
+    "allowed": "Buyer",
     "condition": null,
     "next_state": "Draft",
     "parent": "Mockup Workflow",
@@ -469,7 +493,7 @@
   "doctype": "Workflow",
   "document_type": "Feasibility Check",
   "is_active": 1,
-  "modified": "2024-12-23 15:38:34.467880",
+  "modified": "2025-01-07 17:27:54.678117",
   "name": "Feasibility workflow",
   "override_status": 0,
   "send_email_alert": 0,
@@ -505,7 +529,7 @@
     "workflow_builder_id": null
    },
    {
-    "allow_edit": "Administrator",
+    "allow_edit": "Feasibility Analyst",
     "avoid_status_override": 0,
     "doc_status": "1",
     "is_optional_state": 0,
@@ -520,7 +544,7 @@
     "workflow_builder_id": null
    },
    {
-    "allow_edit": "Administrator",
+    "allow_edit": "Feasibility Analyst",
     "avoid_status_override": 0,
     "doc_status": "1",
     "is_optional_state": 0,
@@ -549,45 +573,9 @@
     "workflow_builder_id": null
    },
    {
-    "action": "Send to Customer",
-    "allow_self_approval": 1,
-    "allowed": "Administrator",
-    "condition": null,
-    "next_state": "Sent to Customer",
-    "parent": "Feasibility workflow",
-    "parentfield": "transitions",
-    "parenttype": "Workflow",
-    "state": "Draft",
-    "workflow_builder_id": null
-   },
-   {
-    "action": "Send to Customer",
-    "allow_self_approval": 1,
-    "allowed": "Administrator",
-    "condition": null,
-    "next_state": "Sent to Customer",
-    "parent": "Feasibility workflow",
-    "parentfield": "transitions",
-    "parenttype": "Workflow",
-    "state": "Draft",
-    "workflow_builder_id": null
-   },
-   {
-    "action": "Send to Customer",
-    "allow_self_approval": 1,
-    "allowed": "Administrator",
-    "condition": null,
-    "next_state": "Sent to Customer",
-    "parent": "Feasibility workflow",
-    "parentfield": "transitions",
-    "parenttype": "Workflow",
-    "state": "Draft",
-    "workflow_builder_id": null
-   },
-   {
     "action": "Review Request",
     "allow_self_approval": 1,
-    "allowed": "Administrator",
+    "allowed": "Feasibility Analyst",
     "condition": null,
     "next_state": "Draft",
     "parent": "Feasibility workflow",
@@ -599,7 +587,7 @@
    {
     "action": "Approve",
     "allow_self_approval": 1,
-    "allowed": "Administrator",
+    "allowed": "Feasibility Analyst",
     "condition": null,
     "next_state": "Approved",
     "parent": "Feasibility workflow",
@@ -611,7 +599,7 @@
    {
     "action": "Reject",
     "allow_self_approval": 1,
-    "allowed": "Administrator",
+    "allowed": "Feasibility Analyst",
     "condition": null,
     "next_state": "Rejected",
     "parent": "Feasibility workflow",

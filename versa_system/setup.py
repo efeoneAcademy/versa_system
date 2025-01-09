@@ -85,7 +85,8 @@ def create_roles():
     """Create custom roles required by the app."""
     roles = [
         {"role_name": "Buyer", "desk_access": 1},
-        {"role_name": "Feasibility Analyst", "desk_access": 1}
+        {"role_name": "Feasibility Analyst", "desk_access": 1},
+        {"role_name": "Lead User", "desk_access": 1}
     ]
 
     for role in roles:

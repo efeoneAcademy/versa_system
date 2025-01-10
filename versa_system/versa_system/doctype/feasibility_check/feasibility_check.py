@@ -1,4 +1,3 @@
-
 import frappe
 from frappe.model.document import Document
 from frappe.model.mapper import get_mapped_doc
@@ -11,14 +10,24 @@ def map_lead_to_feasibility_check(source_name, target_doc=None):
     Map fields from Lead DocType to Feasibility Check DocType,
     including child table 'Enquiry Details'
     """
-    existing_feasibility = frappe.get_all(
-        'Feasibility Check',
-        filters={'lead': source_name},
-        fields=['name']
+    # Validate if a feasibility check already exists for this lead
+    existing_feasibility = frappe.db.exists(
+        "Feasibility Check",
+        {
+            "lead": source_name,
+            "docstatus": ["<", 2],
+            "workflow_state": ["!=", "Rejected"]
+        }
     )
 
     if existing_feasibility:
-        frappe.throw(f"A feasibility check already exists for this lead (Lead: {source_name}).")
+        frappe.msgprint(
+            f"A feasibility check already exists for this lead (Lead: {source_name}).",
+            title="Notification",
+            indicator="red"
+        )
+        return None  
+
     def set_missing_values(source, target):
         # Set any missing values if needed
         pass

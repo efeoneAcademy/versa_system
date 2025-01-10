@@ -481,7 +481,7 @@
   "doctype": "Workflow",
   "document_type": "Feasibility Check",
   "is_active": 1,
-  "modified": "2025-01-09 11:51:49.118864",
+  "modified": "2025-01-10 11:21:17.250888",
   "name": "Feasibility workflow",
   "override_status": 0,
   "send_email_alert": 0,

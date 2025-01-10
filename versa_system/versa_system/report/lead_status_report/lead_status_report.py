@@ -1,102 +1,173 @@
 
 import frappe
-from frappe import _
 
 def execute(filters=None):
-    columns = get_columns()
-    data = get_data(filters)
+    columns, data = get_columns(), get_data(filters)
     return columns, data
 
 def get_columns():
     return [
-        {"label": "Lead ID", "fieldname": "lead_id", "fieldtype": "Link", "options": "Lead", "width": 200},
+        {"label": "Lead ID", "fieldname": "lead_id", "fieldtype": "Link", "options": "Lead", "width": 150},
         {"label": "Lead Name", "fieldname": "lead_name", "fieldtype": "Data", "width": 200},
         {"label": "Lead Owner", "fieldname": "lead_owner", "fieldtype": "Link", "options": "User", "width": 150},
-        {"label": "Lead Status", "fieldname": "lead_status", "fieldtype": "Select", "width": 100},
+        {"label": "Lead Status", "fieldname": "lead_status", "fieldtype": "Select", "options": "Open\nWorking\nClosed", "width": 100},
         {"label": "Creation Date", "fieldname": "creation", "fieldtype": "Datetime", "width": 150},
-        {"label": "Feasibility Check ID", "fieldname": "feasibility_check_id", "fieldtype": "Link", "options": "Feasibility Check", "width": 200},
-        {"label": "Feasibility Workflow", "fieldname": "feasibility_workflow", "fieldtype": "Data", "width": 200},
-        {"label": "Design Request ID", "fieldname": "design_request_id", "fieldtype": "Link", "options": "Design Request", "width": 200},
-        {"label": "Mockup Design Workflow", "fieldname": "mockup_workflow", "fieldtype": "Data", "width": 150},
-        {"label": "Quotation ID", "fieldname": "quotation_id", "fieldtype": "Link", "options": "Quotation", "width": 200},
+
+        # Feasibility Check fields
+        {"label": "Feasibility Check ID", "fieldname": "feasibility_check_id", "fieldtype": "Link", "options": "Feasibility Check", "width": 150},
+        {"label": "Feasibility Workflow", "fieldname": "feasibility_workflow", "fieldtype": "Data", "width": 150},
+
+        # Quotation fields
+        {"label": "Quotation ID", "fieldname": "quotation_id", "fieldtype": "Link", "options": "Quotation", "width": 150},
         {"label": "Quotation Date", "fieldname": "quotation_date", "fieldtype": "Date", "width": 150},
-        {"label": "Quotation Workflow", "fieldname": "quotation_workflow", "fieldtype": "Data", "width": 150},  # Updated field label
-        {"label": "Quotation Amount", "fieldname": "quotation_amount", "fieldtype": "Currency", "width": 150},
+        {"label": "Quotation Workflow", "fieldname": "quotation_workflow", "fieldtype": "Data", "width": 150},
+        {"label": "Quotation Amount", "fieldname": "quotation_total_amount", "fieldtype": "Currency", "width": 150},
+
+        # Design Request fields
+        {"label": "Final Design ID", "fieldname": "final_design_id", "fieldtype": "Link", "options": "Design Request", "width": 150},
+        {"label": "Final Design Workflow", "fieldname": "final_design_workflow", "fieldtype": "Data", "width": 150},
+        {"label": "Mockup Design ID", "fieldname": "mockup_design_id", "fieldtype": "Link", "options": "Design Request", "width": 150},
+        {"label": "Mockup Design Workflow", "fieldname": "mockup_design_workflow", "fieldtype": "Data", "width": 150},
+
+        # Sales Order fields
+        {"label": "Sales Order ID", "fieldname": "sales_order_name", "fieldtype": "Link", "options": "Sales Order", "width": 200},
+        {"label": "Sales Order Status", "fieldname": "sales_order_status", "fieldtype": "Data", "width": 150},
+        {"label": "Sales Order Date", "fieldname": "sales_order_date", "fieldtype": "Date", "width": 150},
+
+        # Sales Invoice fields
+        {"label": "Sales Invoice ID", "fieldname": "sales_invoice_id", "fieldtype": "Link", "options": "Sales Invoice", "width": 200},
+        {"label": "Sales Invoice Status", "fieldname": "sales_invoice_status", "fieldtype": "Data", "width": 150},
+
+        # Work Order fields
+        {"label": "Work Order ID", "fieldname": "work_order_id", "fieldtype": "Link", "options": "Work Order", "width": 200},
+        {"label": "Work Order Status", "fieldname": "work_order_status", "fieldtype": "Data", "width": 150},
+        {"label": "Actual Start Date", "fieldname": "actual_start_date", "fieldtype": "Datetime", "width": 180},
+        {"label": "Actual End Date", "fieldname": "actual_end_date", "fieldtype": "Datetime", "width": 180},
+
+        # Delivery Note fields
+        {"label": "Delivery Note ID", "fieldname": "delivery_note_id", "fieldtype": "Link", "options": "Delivery Note", "width": 200},
+        {"label": "Delivery Note Date", "fieldname": "delivery_note_date", "fieldtype": "Date", "width": 150},
+        {"label": "Delivery Note Status", "fieldname": "delivery_note_status", "fieldtype": "Data", "width": 150},
     ]
 
-def get_data(filters):
-    conditions, values = get_conditions(filters)
-
-
-    query = """
-        SELECT
-            l.name AS lead_id,
-            l.lead_name,
-            l.lead_owner,
-            l.status AS lead_status,
-            l.creation,
-            fc.name AS feasibility_check_id,
-            fc.workflow_state AS feasibility_workflow,
-            dr.name AS design_request_id,
-            dr.workflow_state AS mockup_workflow,
-            q.name AS quotation_id,
-            q.transaction_date AS quotation_date,
-            q.workflow_state AS quotation_workflow,
-            q.net_total AS quotation_amount
-        FROM
-            `tabLead` l
-        LEFT JOIN
-            `tabFeasibility Check` fc ON fc.lead = l.name
-        LEFT JOIN
-            `tabDesign Request` dr ON dr.lead = l.name AND dr.type = 'Mockup Design'
-        LEFT JOIN
-            `tabQuotation` q ON q.party_name = l.name
-        {conditions}
-    """.format(conditions=conditions)
-
-    # Log query for debugging
-    frappe.logger().debug({"query": query, "values": values})
-
-    # Execute query and return data
-    try:
-        return frappe.db.sql(query, values, as_dict=True)
-    except Exception as e:
-        frappe.logger().error(f"Error fetching report data: {e}")
-        return []
-
-def get_conditions(filters):
+def get_data(filters=None):
     conditions = []
-    values = {}
+    params = {}
+
+    # Dynamically build conditions based on filters
+    if filters.get("lead_owner"):
+        conditions.append("lead.lead_owner = %(lead_owner)s")
+        params["lead_owner"] = filters.get("lead_owner")
 
     if filters.get("lead_status"):
-        conditions.append("l.status = %(lead_status)s")
-        values["lead_status"] = filters["lead_status"]
-    if filters.get("lead_name"):
-        conditions.append("l.lead_name LIKE %(lead_name)s")
-        values["lead_name"] = f"%{filters['lead_name']}%"
-    if filters.get("creation_date"):
-        conditions.append("DATE(l.creation) = %(creation_date)s")
-        values["creation_date"] = filters["creation_date"]
+        conditions.append("lead.status = %(lead_status)s")
+        params["lead_status"] = filters.get("lead_status")
+
+    if filters.get("quotation_id"):
+        conditions.append("qt.name = %(quotation_id)s")
+        params["quotation_id"] = filters.get("quotation_id")
+
     if filters.get("feasibility_check_id"):
         conditions.append("fc.name = %(feasibility_check_id)s")
-        values["feasibility_check_id"] = filters["feasibility_check_id"]
-    if filters.get("design_request_id"):
-        conditions.append("dr.name = %(design_request_id)s")
-        values["design_request_id"] = filters["design_request_id"]
-    if filters.get("quotation_id"):
-        conditions.append("q.name = %(quotation_id)s")
-        values["quotation_id"] = filters["quotation_id"]
-    if filters.get("quotation_date"):
-        conditions.append("DATE(q.transaction_date) = %(quotation_date)s")
-        values["quotation_date"] = filters["quotation_date"]
-    if filters.get("quotation_workflow"):
-        conditions.append("q.workflow_state = %(quotation_workflow)s")
-        values["quotation_workflow"] = filters["quotation_workflow"]
-    if filters.get("quotation_amount"):
-        conditions.append("q.net_total = %(quotation_amount)s")
-        values["quotation_amount"] = filters["quotation_amount"]
+        params["feasibility_check_id"] = filters.get("feasibility_check_id")
 
-    if conditions:
-        return "WHERE " + " AND ".join(conditions), values
-    else:
-        return "", values
+    if filters.get("sales_order_name"):
+        conditions.append("so.name = %(sales_order_name)s")
+        params["sales_order_name"] = filters.get("sales_order_name")
+
+    if filters.get("sales_invoice_id"):
+        conditions.append("si.name = %(sales_invoice_id)s")
+        params["sales_invoice_id"] = filters.get("sales_invoice_id")
+
+    if filters.get("work_order_id"):
+        conditions.append("wo.name = %(work_order_id)s")
+        params["work_order_id"] = filters.get("work_order_id")
+
+    if filters.get("delivery_note_id"):
+        conditions.append("dn.name = %(delivery_note_id)s")
+        params["delivery_note_id"] = filters.get("delivery_note_id")
+
+    if filters.get("final_design_id"):
+        conditions.append("""
+            (SELECT name FROM `tabDesign Request`
+             WHERE type = 'Final Design' AND lead = lead.name LIMIT 1) = %(final_design_id)s
+        """)
+        params["final_design_id"] = filters.get("final_design_id")
+
+    # Combine conditions
+    where_clause = " AND ".join(conditions)
+    if where_clause:
+        where_clause = f"WHERE {where_clause}"
+
+    query = f"""
+    SELECT
+        lead.name AS lead_id,
+        lead.lead_name,
+        lead.lead_owner,
+        lead.status AS lead_status,
+        lead.creation,
+
+        -- Feasibility Check
+        fc.name AS feasibility_check_id,
+        fc.workflow_state AS feasibility_workflow,
+
+        -- Quotation
+        qt.name AS quotation_id,
+        qt.transaction_date AS quotation_date,
+        qt.workflow_state AS quotation_workflow,
+        qt.total AS quotation_total_amount,
+
+        -- Final Design
+        (SELECT name FROM `tabDesign Request`
+         WHERE type = 'Final Design' AND lead = lead.name LIMIT 1) AS final_design_id,
+        (SELECT workflow_state FROM `tabDesign Request`
+         WHERE type = 'Final Design' AND lead = lead.name LIMIT 1) AS final_design_workflow,
+
+        -- Mockup Design
+        (SELECT name FROM `tabDesign Request`
+         WHERE type = 'Mockup Design' AND lead = lead.name LIMIT 1) AS mockup_design_id,
+        (SELECT workflow_state FROM `tabDesign Request`
+         WHERE type = 'Mockup Design' AND lead = lead.name LIMIT 1) AS mockup_design_workflow,
+
+        -- Sales Order
+        so.name AS sales_order_name,
+        so.status AS sales_order_status,
+        so.transaction_date AS sales_order_date,
+
+        -- Sales Invoice
+        si.name AS sales_invoice_id,
+        si.status AS sales_invoice_status,
+
+        -- Work Order
+        wo.name AS work_order_id,
+        wo.status AS work_order_status,
+        wo.actual_start_date AS actual_start_date,
+        wo.actual_end_date AS actual_end_date,
+
+        -- Delivery Note
+        dn.name AS delivery_note_id,
+        dn.posting_date AS delivery_note_date,
+        dn.status AS delivery_note_status
+
+    FROM
+        `tabLead` AS lead
+    LEFT JOIN
+        `tabFeasibility Check` AS fc ON fc.lead = lead.name
+    LEFT JOIN
+        `tabQuotation` AS qt ON qt.party_name = lead.name
+    LEFT JOIN
+        `tabSales Order` so ON so.customer_name = qt.customer_name
+    LEFT JOIN
+        `tabSales Invoice` si ON si.customer_name = qt.customer_name
+    LEFT JOIN
+        `tabWork Order` wo ON wo.sales_order = so.name
+    LEFT JOIN
+        `tabDelivery Note` dn ON dn.customer_name = qt.customer_name
+
+    {where_clause}
+
+    ORDER BY
+        lead.creation DESC
+    LIMIT 50
+    """
+    return frappe.db.sql(query, params, as_dict=True)

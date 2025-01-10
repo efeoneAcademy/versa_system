@@ -11,6 +11,14 @@ def map_lead_to_feasibility_check(source_name, target_doc=None):
     Map fields from Lead DocType to Feasibility Check DocType,
     including child table 'Enquiry Details'
     """
+    existing_feasibility = frappe.get_all(
+        'Feasibility Check',
+        filters={'lead': source_name},
+        fields=['name']
+    )
+
+    if existing_feasibility:
+        frappe.throw(f"A feasibility check already exists for this lead (Lead: {source_name}).")
     def set_missing_values(source, target):
         # Set any missing values if needed
         pass

@@ -21,13 +21,32 @@ frappe.ui.form.on('Lead', {
         frm.add_custom_button(
             __("Feasibility Check"),
             function () {
-                frappe.model.open_mapped_doc({
-                    method: "versa_system.versa_system.doctype.feasibility_check.feasibility_check.map_lead_to_feasibility_check",
-                    frm: frm,
+                frappe.call({
+                    method: "frappe.client.get_list",
+                    args: {
+                        doctype: "Feasibility Check",
+                        filters: { lead: frm.doc.name },
+                        fields: ["name"]
+                    },
+                    callback: function (response) {
+                        if (response.message && response.message.length > 0) {
+                            frappe.msgprint({
+                                title: __("Message"),
+                                indicator: "red",
+                                message: `A feasibility check already exists for this lead: ${frm.doc.name}.`
+                            });
+                        } else {
+                            frappe.model.open_mapped_doc({
+                                method: "versa_system.versa_system.doctype.feasibility_check.feasibility_check.map_lead_to_feasibility_check",
+                                frm: frm,
+                            });
+                        }
+                    }
                 });
             },
             __("Create")
         );
+
 
                 frm.add_custom_button(
                     __("Go to Final Design"),

@@ -73,3 +73,17 @@ def map_lead_to_quotation(source_name, target_doc=None):
     )
 
     return target_doc
+
+@frappe.whitelist()
+def get_quotations_by_lead(lead_name):
+    """
+    Function to fetch all Quotations associated with a specific Lead.
+    This method is intended to be called from the client side via an API call
+    """
+    if not lead_name:
+        frappe.throw(_("Lead name is required"))
+    return frappe.get_all(
+        "Quotation",
+        filters={"party_name": lead_name},  # Use the correct field here
+        fields=["name"]
+    )

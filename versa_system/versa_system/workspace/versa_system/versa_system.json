@@ -1,0 +1,123 @@
+{
+ "charts": [
+  {
+   "chart_name": "Quotation Chart",
+   "label": "Quotation Chart"
+  },
+  {
+   "chart_name": "Sales Order Analysis",
+   "label": "Sales Order"
+  }
+ ],
+ "content": "[{\"id\":\"XHAR8ubVPA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Versa System</span>\",\"col\":12}},{\"id\":\"GK9rRsUbny\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Item List\",\"col\":3}},{\"id\":\"v0yjZvbO7d\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lead List\",\"col\":3}},{\"id\":\"peGN2-ZubQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Feasibility List\",\"col\":3}},{\"id\":\"l3YX9ZtwsY\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Design Request\",\"col\":3}},{\"id\":\"KxCVDmhGXQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Quotation List\",\"col\":3}},{\"id\":\"u1W_6QrG5S\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Order\",\"col\":3}},{\"id\":\"03n7ma7lOQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Invoice\",\"col\":3}},{\"id\":\"DVuRuPgdob\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bom\",\"col\":3}},{\"id\":\"ESFCMEAx1A\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Report\",\"col\":3}},{\"id\":\"9JQNIeVCbp\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lead Analysis Chart\",\"col\":3}},{\"id\":\"_Xk-XhAvV7\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Lead List\",\"col\":4}},{\"id\":\"cl0dNQF5Sb\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Quotation Chart\",\"col\":12}},{\"id\":\"VuLlDHLi7L\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Sales Order\",\"col\":12}}]",
+ "creation": "2025-01-10 14:13:50.575198",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "both",
+ "idx": 1,
+ "indicator_color": "red",
+ "is_hidden": 0,
+ "label": "Versa System",
+ "links": [],
+ "modified": "2025-01-13 12:54:19.878989",
+ "modified_by": "Administrator",
+ "module": "Versa System",
+ "name": "Versa System",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [
+  {
+   "document_type": "Lead",
+   "label": "Lead List",
+   "quick_list_filter": "[]"
+  }
+ ],
+ "roles": [],
+ "sequence_id": 22.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Report",
+   "link_to": "Lead Status Report",
+   "type": "Report"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Bom",
+   "link_to": "BOM",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Item List",
+   "link_to": "Item",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Lead Analysis Chart",
+   "link_to": "Versa System",
+   "type": "Dashboard"
+  },
+  {
+   "color": "Yellow",
+   "doc_view": "List",
+   "label": "Sales Invoice",
+   "link_to": "Sales Invoice",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Pink",
+   "doc_view": "List",
+   "label": "Sales Order",
+   "link_to": "Sales Order",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Red",
+   "doc_view": "List",
+   "label": "Quotation List",
+   "link_to": "Quotation",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Cyan",
+   "doc_view": "List",
+   "label": "Design Request",
+   "link_to": "Design Request",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Pink",
+   "doc_view": "List",
+   "label": "Feasibility List",
+   "link_to": "Feasibility Check",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Orange",
+   "doc_view": "List",
+   "label": "Lead List",
+   "link_to": "Lead",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Versa System"
+}

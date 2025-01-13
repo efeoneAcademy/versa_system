@@ -1,56 +1,68 @@
-frappe.query_reports["Lead Status and Workflow Report"] = {
-    filters: [
-        {
-            fieldname: "lead_status",
-            label: __("Lead Status"),
-            fieldtype: "Select",
-            options: ["Open", "Converted", "Lost", "Do Not Contact"],
-            default: "Open"
-        },
-        {
-            fieldname: "lead_name",
-            label: __("Lead Name"),
-            fieldtype: "Data",
-            placeholder: __("Enter Lead Name")
-        },
-        {
-            fieldname: "creation_date",
-            label: __("Creation Date"),
-            fieldtype: "Date"
-        },
-        {
-            fieldname: "feasibility_check_id",
-            label: __("Feasibility Check ID"),
-            fieldtype: "Link",
-            options: "Feasibility Check"
-        },
-        {
-            fieldname: "mockup_workflow",
-            label: __("Mockup Design Workflow"),
-            fieldtype: "Data"
-        },
-
-
-        {
-            fieldname: "quotation_id",
-            label: __("Quotation ID"),
-            fieldtype: "Link",
-            options: "Quotation"
-        },
-        {
-            fieldname: "quotation_date",
-            label: __("Quotation Date"),
-            fieldtype: "Date"
-        },
-        {
-            fieldname: "quotation_workflow_state",
-            label: __("Quotation Workflow State"),
-            fieldtype: "Select",
-            options: ["Draft", "Submitted", "Cancelled", "To Be Billed"]
-        },
-        {
-            fieldname: "quotation_amount",
-            label: __("Quotation Amount"),
-            fieldtype: "Currency"
-        }
-    ],
+frappe.query_reports["Lead Status Report"] = {
+  filters: [
+    {
+         fieldname: "lead_owner",
+         label: __("Lead Owner"),
+         fieldtype: "Link",
+         options: "User",
+       },
+       {
+         fieldname: "lead_status",
+         label: __("Lead Status"),
+         fieldtype: "Select",
+         options: ["", "Open", "Replied", "Opportunity","Lost","Quotation","Interested","Converted","Do Not Contact"],
+       },
+       {
+         fieldname: "quotation_date_from",
+         label: __("Quotation Date From"),
+         fieldtype: "Date",
+       },
+       {
+         fieldname: "quotation_date_to",
+         label: __("Quotation Date To"),
+         fieldtype: "Date",
+       },
+       {
+         fieldname: "quotation_id",
+         label: __("Quotation ID"),
+         fieldtype: "Link",
+         options: "Quotation",
+       },
+       {
+         fieldname: "feasibility_check_id",
+         label: __("Feasibility Check ID"),
+         fieldtype: "Link",
+         options: "Feasibility Check",
+       },
+       {
+         fieldname: "sales_order_name",
+         label: __("Sales Order ID"),
+         fieldtype: "Link",
+         options: "Sales Order",
+       },
+       {
+         fieldname: "sales_invoice_id",
+         label: __("Sales Invoice ID"),
+         fieldtype: "Link",
+         options: "Sales Invoice",
+       },
+       {
+         fieldname: "work_order_id",
+         label: __("Work Order ID"),
+         fieldtype: "Link",
+         options: "Work Order",
+       },
+       {
+         fieldname: "delivery_note_id",
+         label: __("Delivery Note ID"),
+         fieldtype: "Link",
+         options: "Delivery Note",
+       },
+       {
+         fieldname: "final_design_id",
+         label: __("Final Design ID"),
+         fieldtype: "Link",
+         options: "Design Request",
+       }
+  ]
+};

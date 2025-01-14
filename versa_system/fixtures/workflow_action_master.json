@@ -26,5 +26,12 @@
   "modified": "2024-12-13 15:29:39.126493",
   "name": "Send to Customer",
   "workflow_action_name": "Send to Customer"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-01-13 15:41:16.165025",
+  "name": "Send to Feasibility Analyst",
+  "workflow_action_name": "Send to Feasibility Analyst"
  }
 ]

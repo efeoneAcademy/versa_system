@@ -11,6 +11,15 @@
  {
   "docstatus": 0,
   "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-01-13 15:39:50.784815",
+  "name": "Sent to Feasibility Analyst",
+  "style": "",
+  "workflow_state_name": "Sent to Feasibility Analyst"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
   "icon": "remove",
   "modified": "2024-12-11 14:07:09.410613",
   "name": "Rejected",

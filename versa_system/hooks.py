@@ -233,3 +233,14 @@ doctype_js = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+# Whitelist the function for API access
+override_whitelisted_methods = {
+    "map_moc_design_to_quotation": "versa_system.custom_script.quotation.map_moc_design_to_quotation"
+}
+# doc_events = {
+#     "Quotation": {
+#         "before_insert": "versa_system.custom_script.quotation.map_moc_design_to_quotation"
+#     }
+# }
+
+

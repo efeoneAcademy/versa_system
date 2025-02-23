@@ -1,0 +1,70 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-18 21:34:08.631039",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "material_type",
+  "size",
+  "brand",
+  "rate_range",
+  "image",
+  "feasible",
+  "quantity"
+ ],
+ "fields": [
+  {
+   "fieldname": "material_type",
+   "fieldtype": "Link",
+   "label": "Material Type",
+   "options": "Material Types"
+  },
+  {
+   "fieldname": "size",
+   "fieldtype": "Link",
+   "label": "Size",
+   "options": "Item Size Chart"
+  },
+  {
+   "fieldname": "brand",
+   "fieldtype": "Select",
+   "label": "Brand",
+   "options": "Godrej\nVertue\nDurian\nUrban Ladder"
+  },
+  {
+   "fieldname": "rate_range",
+   "fieldtype": "Data",
+   "label": "Rate Range"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach",
+   "label": "Image"
+  },
+  {
+   "default": "0",
+   "fieldname": "feasible",
+   "fieldtype": "Check",
+   "label": "Feasible"
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Int",
+   "label": "Quantity"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-02-19 23:57:45.625184",
+ "modified_by": "Administrator",
+ "module": "Versa System",
+ "name": "Lead Material Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,56 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-20 02:18:38.736499",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "feasibility_check",
+  "lead",
+  "moc_design"
+ ],
+ "fields": [
+  {
+   "fieldname": "moc_design",
+   "fieldtype": "Table",
+   "label": "MOC Design",
+   "options": "Lead Material Details"
+  },
+  {
+   "fieldname": "feasibility_check",
+   "fieldtype": "Link",
+   "label": "Feasibility Check",
+   "options": "Feasibility Check"
+  },
+  {
+   "fieldname": "lead",
+   "fieldtype": "Link",
+   "label": "Lead",
+   "options": "Lead"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-20 02:57:37.278698",
+ "modified_by": "Administrator",
+ "module": "Versa System",
+ "name": "MOC Design",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

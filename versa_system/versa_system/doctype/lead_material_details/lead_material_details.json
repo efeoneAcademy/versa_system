@@ -12,7 +12,8 @@
   "rate_range",
   "image",
   "feasible",
-  "quantity"
+  "quantity",
+  "availability"
  ],
  "fields": [
   {
@@ -53,12 +54,18 @@
    "fieldname": "quantity",
    "fieldtype": "Int",
    "label": "Quantity"
+  },
+  {
+   "fieldname": "availability",
+   "fieldtype": "Select",
+   "label": "Availability",
+   "options": "Available\nNot Available"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-02-19 23:57:45.625184",
+ "modified": "2025-02-25 23:48:13.158021",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Lead Material Details",

@@ -31,7 +31,9 @@ app_license = "mit"
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 doctype_js = {
     "Lead": "public/js/lead.js",
-    "Feasibility Check": "public/js/moc_design.js"
+    "Quotation":"public/js/quotation.js",
+    "Feasibility Check": "public/js/moc_design.js",
+    "sales_order":"public/js/sales_order.js"
 
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
@@ -75,6 +77,9 @@ doctype_js = {
 
 # before_install = "versa_system.install.before_install"
 # after_install = "versa_system.install.after_install"
+after_install = "versa_system.setup.after_install"
+
+after_migrate = "versa_system.setup.after_migrate"
 
 # Uninstallation
 # ------------
@@ -135,6 +140,15 @@ doctype_js = {
 # 		"on_trash": "method"
 # 	}
 # }
+doc_events = {
+     "Work Order": {
+        "onload": "versa_system.versa_system.custom_script.work_order.update_sales_order_status_on_work_order_completion"
+    }
+}
+
+ 
+
+
 
 # Scheduled Tasks
 # ---------------
@@ -237,10 +251,7 @@ doctype_js = {
 override_whitelisted_methods = {
     "map_moc_design_to_quotation": "versa_system.custom_script.quotation.map_moc_design_to_quotation"
 }
-# doc_events = {
-#     "Quotation": {
-#         "before_insert": "versa_system.custom_script.quotation.map_moc_design_to_quotation"
-#     }
-# }
+
+
 
 

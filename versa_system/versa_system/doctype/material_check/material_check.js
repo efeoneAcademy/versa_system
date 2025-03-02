@@ -18,13 +18,3 @@ frappe.ui.form.on("Material Check", {
 	},
 });
 
-// frappe.ui.form.on("Material Check", {
-// 	refresh(frm) {
-//         frm.add_custom_button(
-//             __("Work Order"),
-//             function () {
-//                 frappe.set_route("Form", "Work Order", "new-material-request","New Work Order");
-//             }
-//         );
-// 	},
-// });

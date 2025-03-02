@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:MC-{YY}-{####}",
  "creation": "2025-02-25 22:29:41.601797",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -17,10 +18,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-25 23:46:15.548259",
+ "modified": "2025-02-27 23:44:12.774258",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Material Check",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

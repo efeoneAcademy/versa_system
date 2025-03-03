@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "LD.####",
+ "autoname": "format:FC-{YY}-{#####}",
  "creation": "2025-02-18 22:54:33.356673",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -25,11 +25,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-20 03:24:46.517252",
+ "modified": "2025-02-28 02:44:35.596369",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Feasibility Check",
- "naming_rule": "Expression (old style)",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

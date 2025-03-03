@@ -3,7 +3,7 @@
 
 frappe.ui.form.on("Feasibility Check", {
     refresh(frm) {
-        if (!frm.is_new()) { // Ensure the button appears only after saving
+        if (frm.doc.workflow_state === "Approved") { // Ensure the button appears only after saving
             frm.add_custom_button(
                 __("GoTo MOC Design"),
                 function () {
@@ -16,6 +16,8 @@ frappe.ui.form.on("Feasibility Check", {
         }
     },
 });
+
+
 
 
 

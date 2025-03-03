@@ -1,5 +1,4 @@
-# # # Copyright (c) 2025, efeone and contributors
-# #  # For license information, please see license.txt
+ 
 
 import frappe
 from frappe.model.document import Document
@@ -39,6 +38,8 @@ def map_lead_to_feasibility_check(source_name, target_doc=None):
         }, target_doc, set_missing_values)
 
     return target_doc
+
+
 
 
 

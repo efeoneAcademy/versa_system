@@ -27,11 +27,11 @@ def final_design_to_material_check(source_name, target_doc=None):
                 "doctype": "Lead Material Details",  
                 "field_map": {
                     "material_type": "material_type",
-                    # "size": "size",
-                    # "brand": "brand",
-                    # "rate_range": "rate_range",
-                    # "image": "image",
-                    # "feasible": "feasible",
+                    "size": "size",
+                    "brand": "brand",
+                    "rate_range": "rate_range",
+                    "image": "image",
+                    "feasible": "feasible",
                     "quantity": "quantity"
                 },
                 "add_if_empty": True 

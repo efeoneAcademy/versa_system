@@ -1,8 +1,8 @@
 import frappe
 from frappe.custom.doctype.custom_field.custom_field import create_custom_fields
 from frappe import _
-   
-    
+
+# After Install
 def after_install():
     """Runs after the app is installed."""
     create_property_setters(get_property_setters())
@@ -23,7 +23,14 @@ def get_property_setters():
             "property": "options",
             "value": "Draft\nOn Hold\nTo Deliver and Bill\nTo Bill\nTo Deliver\nCompleted\nCancelled\nClosed\nProforma Invoice"
         },
-         
+        {
+            "doctype_or_field": "DocField",
+            "doc_type": "Sales Order",
+            "field_name": "status",
+            "property": "allow_on_submit",
+            "property_type": "Check",
+            "value": 1
+        }
     ]
 
 def create_property_setters(property_setter_datas):

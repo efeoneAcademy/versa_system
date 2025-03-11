@@ -14,7 +14,8 @@
    "fieldname": "lead",
    "fieldtype": "Link",
    "label": "Lead ",
-   "options": "Lead"
+   "options": "Lead",
+   "read_only": 1
   },
   {
    "fieldname": "feasible_material_details",
@@ -25,7 +26,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-28 02:44:35.596369",
+ "modified": "2025-03-04 23:53:23.789715",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Feasibility Check",

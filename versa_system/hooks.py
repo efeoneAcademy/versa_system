@@ -145,11 +145,7 @@ doc_events = {
         "onload": "versa_system.versa_system.custom_script.work_order.update_sales_order_status_on_work_order_completion"
     }
 }
-doc_events = {
-    "Lead": {
-        "on_change": "versa_system.versa_system.custom_script.lead.get_only_products"
-    }
-}
+
 
 
  

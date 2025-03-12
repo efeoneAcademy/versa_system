@@ -10,13 +10,10 @@ class FinalDesign(Document):
             self.fetch_lead_items()
 
     def fetch_lead_items(self):
-        # Fetch Lead document
         lead_doc = frappe.get_doc("Lead", self.lead)
 
-        # Clear existing items in the child table
         self.set("items", [])
 
-        # Check if the lead has a child table named 'lead_material_details'
         if hasattr(lead_doc, "lead_material_details"):
             for item in lead_doc.lead_material_details:
                 self.append("items", {

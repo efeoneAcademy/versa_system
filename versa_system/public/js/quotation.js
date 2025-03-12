@@ -12,7 +12,7 @@ frappe.ui.form.on("Quotation", {
                     });
                 },
                 __("Create")
-            );  // <-- Corrected closing bracket
+            );  
         }
     }
 });

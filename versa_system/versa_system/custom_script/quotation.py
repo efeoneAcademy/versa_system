@@ -9,28 +9,28 @@ def map_moc_design_to_quotation(source_name, target_doc=None):
     """
 
     def set_missing_values(source, target):
-
-
+        target.party_name = source.lead
         
         lead_materials = frappe.get_all(
             "Lead Material Details",
             filters={"parent": source.name},  
-            fields=["material_type", "size", "brand", "rate_range", "quantity", "image", "feasible"]
+            fields=["product_item", "size", "brand", "rate_range", "quantity", "image", "feasible"]
         )
 
         for item in lead_materials:
-            item_code = item.get("material_type")
+            item_code = item.get("product_item") 
 
-            # Fetch `item_name` and `uom` from Item doctype
+            if not item_code:
+                frappe.throw(f"Product Item is missing for an entry in Lead Material Details: {item}")
+
             item_details = frappe.get_value("Item", item_code, ["item_name", "stock_uom"], as_dict=True)
 
             if not item_details:
-                frappe.throw(f"Item `{item_code}` not found in Item Master.")
+                frappe.throw(f"Item {item_code} not found in Item Master.")
 
-            # Append to 'material_item' table if it exists
             if hasattr(target, "material_item"):
                 target.append("material_item", {
-                    "material_type": item_code,
+                    "product_item": item_code,  
                     "size": item.get("size"),
                     "brand": item.get("brand"),
                     "rate_range": item.get("rate_range"),
@@ -52,7 +52,10 @@ def map_moc_design_to_quotation(source_name, target_doc=None):
         "MOC Design", source_name,
         {
             "MOC Design": {
-                "doctype": "Quotation"
+                "doctype": "Quotation",
+                "field_map": {
+                    "lead": "party_name"  
+                }
             }
         },
         target_doc,  
@@ -60,6 +63,3 @@ def map_moc_design_to_quotation(source_name, target_doc=None):
     )
 
     return target_doc
-
-
-

@@ -3,7 +3,7 @@
 
 frappe.ui.form.on("MOC Design", {
 	refresh(frm) {
-    if (frm.doc.workflow_state === "Approved") { // Ensure the button appears only after saving
+    if (frm.doc.workflow_state === "Approved") { 
         frm.add_custom_button(
             __("GoTo Quotation"),
             function () {

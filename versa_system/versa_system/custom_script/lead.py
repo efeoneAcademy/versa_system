@@ -14,5 +14,4 @@ def get_only_products(doctype, txt='', searchfield='name', start=0, page_len=20,
         page_length=page_len
     )
 
-
     return [(item["name"],) for item in items]  

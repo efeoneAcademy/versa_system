@@ -16,6 +16,8 @@ def map_lead_to_feasibility_check(source_name, target_doc=None):
     def set_missing_values(source,target):
         pass
 
+    
+
     target_doc = get_mapped_doc("Lead", source_name,
         {
             "Lead": {
@@ -26,6 +28,7 @@ def map_lead_to_feasibility_check(source_name, target_doc=None):
                 "doctype": "Lead Material Details",  
                 "field_map": {
                     "material_type": "material_type",
+                    "product_item":"product_item",
                     "size": "size",
                     "brand": "brand",
                     "rate_range": "rate_range",
@@ -38,6 +41,7 @@ def map_lead_to_feasibility_check(source_name, target_doc=None):
         }, target_doc, set_missing_values)
 
     return target_doc
+
 
 
 

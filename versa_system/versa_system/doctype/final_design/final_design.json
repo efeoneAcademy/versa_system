@@ -20,12 +20,13 @@
    "fieldname": "lead",
    "fieldtype": "Link",
    "label": "Lead",
-   "options": "Lead"
+   "options": "Lead",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-25 22:19:47.411803",
+ "modified": "2025-03-05 21:04:15.751651",
  "modified_by": "Administrator",
  "module": "Versa System",
  "name": "Final Design",

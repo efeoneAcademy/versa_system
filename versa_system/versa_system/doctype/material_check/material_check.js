@@ -3,12 +3,14 @@
 
 frappe.ui.form.on("Material Check", {
 	refresh(frm) {
+        if(!frm.is_new())
         frm.add_custom_button(
             __("Material Request"),
             function () {
                 frappe.set_route("Form", "Material Request", "new-material-request");
             }
         );
+        if(!frm.is_new())
         frm.add_custom_button(
             __("Work Order"),
             function () {
